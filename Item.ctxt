@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=s
+comment0.target=Item(java.util.Scanner)
+comment1.params=name
+comment1.target=boolean\ goesBy(java.lang.String)
+comment1.text=\r\n\ goesBy\r\n\ @\ param\ name\ \ \ \ \ item\ name\ to\ look\ up\r\n\ @\ return\ \ \ \ \ \ \ \ \ returns\ true\ if\ item\ is\ known\ by\ a\ certain\ name\r\n
+comment2.params=
+comment2.target=java.lang.String\ getPrimaryName()
+comment2.text=\r\n\ getPrimaryName\r\n\ @\ return\ \ \ \ \ \ \ \ \ returns\ this\ objects\ primary\ name\r\n
+comment3.params=verb
+comment3.target=java.lang.String\ getMessageForVerb(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment5.params=
+comment5.target=int\ getWeight()
+numComments=6

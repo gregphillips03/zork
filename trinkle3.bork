@@ -1,0 +1,83 @@
+Trinkle Hall
+Bork v3.0
+===
+Items:
+DrPepper
+10
+kick:The can skitters down the hallway.
+shake:A liquid fizzes menacingly inside the can.
+drink:Gulp, gulp -- that was GOOD!
+---
+magicWand
+5
+---
+StarWarsToy
+5
+touch:Yoda says, "Do, or do not! There is no try."
+break:Whoops!
+---
+chainsaw
+35
+---
+WawaTravelMug
+10
+---
+donut
+7
+eat:You feel mildly guilt-ridden.
+---
+===
+Rooms:
+Rotunda
+You are in a beautiful round entry chamber, with tall white pillars that seemingly reach to the skies. There is an elevator here.
+---
+Basement hallway
+Contents: DrPepper
+A long, white hallway stretches to the east and west. It is cold here, and you can detect the faint buzz of computers. A vending machine hums softly in the corner.
+---
+Stephen's office
+Contents: StarWarsToy,WawaTravelMug,donut
+This is a cluttered office, with many geeky toys sprawling on a desk.
+---
+Room B6
+Sunlight streams through tall windows and illuminates a brilliant classroom.
+---
+Rotunda balcony
+Contents: chainsaw,magicWand
+You stand on a circular white balcony overlooking an entry hall. Columnar bannisters in ancient Grecian style stand between you and the precipice.
+---
+===
+Exits:
+Rotunda
+u
+Rotunda balcony
+---
+Rotunda balcony
+d
+Rotunda
+---
+Rotunda
+d
+Basement hallway
+---
+Basement hallway
+u
+Rotunda
+---
+Room B6
+w
+Basement hallway
+---
+Basement hallway
+e
+Room B6
+---
+Basement hallway
+w
+Stephen's office
+---
+Stephen's office
+e
+Basement hallway
+---
+===

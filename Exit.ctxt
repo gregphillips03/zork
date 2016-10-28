@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=dir\ src\ dest
+comment0.target=Exit(java.lang.String,\ Room,\ Room)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Exit\r\n
+comment1.params=s\ d
+comment1.target=Exit(java.util.Scanner,\ Dungeon)
+comment2.params=
+comment2.target=java.lang.String\ describe()
+comment2.text=\r\n\ Describes\ the\ exit\r\n\ \r\n\ Package\ visibility\r\n\ @return\ \ \ \ \ returns\ exit\ description\r\n
+comment3.params=
+comment3.target=java.lang.String\ getDir()
+comment3.text=\r\n\ Get\ the\ Direction\ of\ this\ exit\ object\r\n\ \r\n\ Public\ visibility\r\n\ @return\ \ \ \ \ returns\ direction\ to\ exit\r\n
+comment4.params=
+comment4.target=Room\ getSrc()
+comment4.text=\r\n\ Get\ the\ Source\ room\ FROM\ which\ to\ exit\r\n\ \r\n\ Public\ visibility\r\n\ @return\ \ \ \ \ returns\ the\ FROM\ room\r\n
+comment5.params=
+comment5.target=Room\ getDest()
+comment5.text=\r\n\ Get\ the\ Destination\ room\ TO\ exit\ to\r\n\ \r\n\ Public\ visibility\r\n\ @return\ \ \ \ \ returns\ the\ DESTINATION\ room\r\n
+numComments=6

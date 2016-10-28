@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ Main\ program\ to\ intialize\ game\ sequence.\ \r\n\ Creates\ buffered\ reader\ object\ to\ manipulate\ in\ promptUser()\ method.\r\n\ Cycles\ until\ it\ receives\ the\ letter\ q\ from\ the\ promptUser()\ method.\ \r\n\ Initiates\ instances\ of\ Singleton\ GameState\ and\ CommandFactory\ objects\r\n
+comment1.params=commandLine
+comment1.target=java.lang.String\ promptUser(java.io.BufferedReader)
+comment1.text=\r\n\ Gets\ input\ from\ the\ system\ user.\r\n\ @return\ userInput\ \ \ \ returns\ text\ that\ user\ types\ into\ keyboard.\r\n
+comment2.params=
+comment2.target=void\ beginGame()
+comment2.text=\r\n\ beginGame()\ attempts\ to\ reduce\ the\ overhead\ load\ placed\ on\ the\ interpreter\ main\ method\r\n\ De-clutters\ the\ main\ method\ by\ moving\ aesthetics\ and\ startup\ information\r\n\ \r\n
+comment3.params=
+comment3.target=void\ introMessage()
+comment3.text=\ \r\n\ Welcomes\ user\ to\ the\ dungeon\ by\ the\ dungeon's\ name\r\n\ Provides\ user\ with\ initial\ description\ of\ entry\ room\r\n
+numComments=4

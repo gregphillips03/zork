@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CommandFactory()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CommandFactory\r\n
+comment1.params=
+comment1.target=CommandFactory\ instance()
+comment1.text=\r\n\ Exists\ to\ control\ object\ creation\ \r\n\ \r\n\ @return\ commandFactory\ \ \ returns\ commandFactory\ object\r\n
+comment2.params=commandString
+comment2.target=Command\ parse(java.lang.String)
+comment2.text=\r\n\ \r\n
+numComments=3

@@ -1,0 +1,63 @@
+
+/**
+ * KillGame terminates the program after fluff
+ * 
+ * @author      William (Greg) Phillips
+ * @version     Bork v2
+ */
+public class KillGame
+{
+    public static void gameKill(String s) throws InterruptedException
+    {   
+            //aesthetics
+            System.out.println("+++Critical ERROR+++"); 
+            Thread.sleep(1000); 
+            System.out.println("+++Scrapcode Evident in Data Loom+++"); 
+            Thread.sleep(500);
+            System.out.println(s); 
+            Thread.sleep(200); 
+            System.out.print("+++Transmission Degrading+++"); 
+            System.out.println(); 
+            Thread.sleep(500); 
+            System.out.print("."); 
+            Thread.sleep(500); 
+            System.out.print("."); 
+            Thread.sleep(500); 
+            System.out.print("."); 
+            Thread.sleep(200); 
+            System.out.println(); 
+            System.out.println("+++Transmission Lost+++"); 
+            Thread.sleep(3000); 
+            //aesthetics
+            
+            //meat
+            System.exit(1); 
+            //meat
+    }
+    
+    public static void endGame() throws InterruptedException
+    {
+            //aesthetics
+            System.out.println("+++Data Link Malfunction+++"); 
+            Thread.sleep(1000); 
+            System.out.println("+++Transmission Degrading+++"); 
+            Thread.sleep(500);
+            System.out.print("+++Transmission Degrading+++"); 
+            System.out.println(); 
+            Thread.sleep(500); 
+            System.out.print("."); 
+            Thread.sleep(500); 
+            System.out.print("."); 
+            Thread.sleep(500); 
+            System.out.print("."); 
+            Thread.sleep(200); 
+            System.out.println(); 
+            System.out.println("+++Transmission Lost+++"); 
+            Thread.sleep(3000); 
+            //aesthetics
+            
+            //meat
+            System.exit(0); 
+            //meat   
+    }
+}
