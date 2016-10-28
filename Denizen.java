@@ -6,7 +6,7 @@ import java.util.regex.*;
  * Denizen
  * 
  * The Denizen class relates to the dungeon's NPCs. 
- * It creats the Denizens themselves and moves around according to predefined rules 
+ * It creats the Denizens themselves and moves around according to predefined rules for each NPC 
  * 
  * @author William (Greg) Phillips
  * @version Zork v1
