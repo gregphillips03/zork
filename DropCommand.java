@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * DropCommand
+ * DropCommand Class
  * 
  * @author      William (Greg) Phillips
  * @version     Bork v3.0
