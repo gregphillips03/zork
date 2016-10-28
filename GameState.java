@@ -98,6 +98,16 @@ class GameState
             r = s.substring(0, s.lastIndexOf(",")); 
             pw.write(r); 
         }
+        pw.write("\n"); 
+        pw.write("===\n"); 
+        pw.write("NPC States:\n");
+        Set<String> keys = gs.getDungeon().npcInDungeon.keySet();
+        for(String key : keys)
+        {
+            Denizen npc = gs.getDungeon().getNPC(key); 
+            npc.storeState(pw); 
+        }   
+        pw.write("===\n"); 
         pw.close(); 
     }    
 

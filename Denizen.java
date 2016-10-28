@@ -19,7 +19,7 @@ public class Denizen
     private int health = 0; 
     private boolean isMobile = false; 
     private boolean isAngered = false; 
-    private ArrayList<Item> carriedItems = new ArrayList<Item>(); 
+    ArrayList<Item> carriedItems = new ArrayList<Item>(); 
     
     public Denizen(String name, String desc, int health, boolean mobile)
     {
@@ -96,6 +96,16 @@ public class Denizen
     public int getHealth()
     {
         return this.health; 
+    }
+    
+    public boolean getMobility()
+    {
+        return this.isMobile; 
+    }
+    
+    public boolean getMood()
+    {
+        return this.isAngered; 
     }
     
     private void setHealth(int h)
@@ -206,4 +216,25 @@ public class Denizen
         tempRoom.addNpc(npc); 
         System.out.println("goToAdjacentRoom move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "'."); 
     }
+    
+    public void storeState(PrintWriter pw)
+    {
+            pw.write(this.name + "\n"); 
+            pw.write(this.health + "\n"); 
+            pw.write("isMobile=" + this.isMobile + "\n"); 
+            pw.write("isAngered=" + this.isAngered + "\n"); 
+            if(!this.carriedItems.isEmpty())
+            {
+                String s = ""; 
+                String r = ""; 
+                pw.write("Carries: "); 
+                for(Item item : this.carriedItems)
+                {
+                    s = s + item.getPrimaryName() + ","; 
+                }
+                r = s.substring(0, s.lastIndexOf(",")); 
+                pw.write(r + "\n");  
+                pw.write("---\n"); 
+            }            
+        }        
 }
