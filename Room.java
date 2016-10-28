@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.regex.*; 
 
 /**
- * Room class contains room objects. Each room has a description, and knows if it has been visited or not. 
+ * Room Class contains room objects. Each room has a description, and knows if it has been visited or not. 
  * 
  * @ Author     William (Greg) Phillips
  * @ Version    Bork v3
