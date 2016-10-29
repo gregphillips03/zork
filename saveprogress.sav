@@ -1,13 +1,9 @@
 Bork v3.0 save data
 Dungeon file: /forward.bork
 Room states:
-Decon Secundus:
-beenHere=false
-NPCs: OrkNob
----
 Engine Control:
 beenHere=true
-Contents: holoplinth
+Contents: dataslate,holoplinth
 NPCs: OrkBoy
 ---
 Aft Propellant Plenum Exchange:
@@ -21,15 +17,22 @@ Contents: chainsword
 Equipment Locker:
 beenHere=false
 Contents: datacoil,servoskull1
+---
+Intersection Gamma Eng:
+beenHere=true
 NPCs: Squig
 ---
 Corridor Bravo Eng:
-beenHere=false
+beenHere=true
 Contents: boltpistol
 ---
 Intersection Epsilon Eng:
 beenHere=false
 Contents: powerpack
+---
+Reactor Room NW Corner:
+beenHere=false
+NPCs: OrkNob
 ---
 Reactor Entrance West:
 beenHere=false
@@ -37,8 +40,7 @@ Contents: servoskull2
 ---
 ===
 Adventurer:
-Current room: Engine Control
-Inventory: dataslate
+Current room: Intersection Gamma Eng
 ===
 NPC States:
 OrkBoy

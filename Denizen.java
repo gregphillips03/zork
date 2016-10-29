@@ -29,7 +29,7 @@ public class Denizen
         this.isMobile = mobile; 
     }
     
-    public Denizen(Scanner s, Dungeon d)
+    public Denizen(Scanner s, Dungeon d, boolean initState)
     {
         String pattern1 = "---"; 
         String pattern2 = "Carries:"; 
@@ -38,7 +38,10 @@ public class Denizen
         this.name = s.nextLine();
         String subRoom = s.nextLine();
         Room tempRoom = d.getRoom(subRoom);   
-        this.currentRoom = tempRoom; 
+        if(initState)
+        {
+            this.currentRoom = tempRoom; 
+        }
         this.health = s.nextInt();
         s.nextLine(); //needed to advance token past npc's health int
         if(s.nextLine().equals("mobile"))
@@ -67,13 +70,19 @@ public class Denizen
                 for(String string : pieces)
                 {
                     Item item = d.getItem(string); 
-                    this.add(item);
+                    if(initState)
+                    {
+                        this.add(item);
+                    }
                     //System.out.println("Added " +item.getPrimaryName()+ " to " + this.getName() + " inventory."); 
                 }
             }
             this.desc = this.desc + "\n" + s.nextLine(); 
         }
-        tempRoom.addNpc(this); 
+        if(initState)
+        {
+            tempRoom.addNpc(this); 
+        }
         //System.out.println("Added " +this.name+ " to room " +tempRoom.getTitle() + ".");
         //System.out.println("Mobile: " + this.isMobile); 
         //System.out.println("Angry: " + this.isAngered);
@@ -113,7 +122,7 @@ public class Denizen
         health = h; 
     }
     
-    private void setRoom(Room rm)
+    void setRoom(Room rm)
     {
         currentRoom = rm; 
     }
@@ -217,7 +226,7 @@ public class Denizen
         System.out.println("goToAdjacentRoom move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "'."); 
     }
     
-    public void storeState(PrintWriter pw)
+    void storeState(PrintWriter pw)
     {
             pw.write(this.name + "\n"); 
             pw.write(this.health + "\n"); 
@@ -236,5 +245,43 @@ public class Denizen
                 pw.write(r + "\n");  
                 pw.write("---\n"); 
             }            
-        }        
+    } 
+    
+    void restoreState(Scanner s, Denizen den)
+    {
+        String pattern1 = "---"; 
+        GameState gs = GameState.instance(); 
+        this.health = s.nextInt(); 
+        s.nextLine(); // needed to advance the token
+        if(s.nextLine().equals("isMobile=true"))
+        {
+            this.isMobile = true; 
+        }else
+        {
+            this.isMobile = false; 
+        }
+        if(s.nextLine().equals("isAngered=true"))
+        {
+            this.isAngered = true; 
+        }else
+        {
+            this.isAngered = false; 
+        }
+        if(!s.hasNext(pattern1))
+        {
+            String sub = s.nextLine(); 
+            String [] parts = sub.split(" "); 
+            String sub2 = parts[1]; 
+            String [] pieces = sub2.split(","); 
+            for(String string : pieces)
+            {
+                Item item = gs.getDungeon().getItem(string); 
+                if(item != null) // this handles the damn burrito
+                {
+                    this.add(item); 
+                }
+            }                
+        }
+        s.nextLine(); 
+    }
 }

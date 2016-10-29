@@ -32,8 +32,7 @@ public class Room
     {      
         String pattern1 = "---"; 
         String pattern2 = "Contents:";
-        Pattern p = Pattern.compile(pattern2); 
-  
+        Pattern p = Pattern.compile(pattern2);  
         this.title = s.nextLine(); 
         while(!s.hasNext(pattern1)) // this does not advance the token
         {
@@ -284,7 +283,10 @@ public class Room
     void restoreState(Scanner r)
     {
         String pattern2 = "Contents:";
-        Pattern p = Pattern.compile(pattern2); 
+        String pattern3 = "NPCs:"; 
+        Pattern p = Pattern.compile(pattern2);
+        Pattern pp = Pattern.compile(pattern3); 
+        GameState gs = GameState.instance(); 
         
         if(r.nextLine().equals("beenHere=true"))
         {
@@ -297,7 +299,6 @@ public class Room
         }
         if(r.hasNext(p))
         {
-            GameState gs = GameState.instance(); 
             String sub = r.nextLine(); 
             String [] parts = sub.split(" "); 
             String sub2 = parts[1]; 
@@ -310,6 +311,22 @@ public class Room
                     this.add(item); 
                 }
             }            
+        }
+        if(r.hasNext(pp))
+        {
+            String sub = r.nextLine();
+            String [] parts = sub.split(" "); 
+            String sub2 = parts[1]; 
+            String [] pieces = sub2.split(","); 
+            for(String string : pieces)
+            {
+                Denizen den = gs.getDungeon().getNPC(string); 
+                if(den != null)
+                {
+                    this.addNpc(den); 
+                    den.setRoom(this); 
+                }
+            }
         }
         r.nextLine(); 
     }

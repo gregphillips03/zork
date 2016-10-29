@@ -101,11 +101,17 @@ class GameState
         pw.write("\n"); 
         pw.write("===\n"); 
         pw.write("NPC States:\n");
-        Set<String> keys = gs.getDungeon().npcInDungeon.keySet();
+        Set<String> keys = gs.getDungeon().collection.keySet();
         for(String key : keys)
         {
-            Denizen npc = gs.getDungeon().getNPC(key); 
-            npc.storeState(pw); 
+            Room room = gs.getDungeon().getRoom(key); 
+            if(!room.npcHere.isEmpty())
+            {
+               for(Denizen den : room.npcHere)
+               {
+                  den.storeState(pw); 
+               }
+            }
         }   
         pw.write("===\n"); 
         pw.close(); 
@@ -139,7 +145,7 @@ class GameState
             scan.nextLine(); 
         }
         gs.getDungeon().restoreState(scan); 
-        if(scan.hasNextLine())
+        if(!scan.hasNext(pattern2))
         {
             String sub = scan.nextLine(); 
             String [] parts = sub.split(" "); 
@@ -150,6 +156,18 @@ class GameState
                 Item item = getDungeon().getItem(string); 
                 carriedItems.add(item); 
             }               
+        }
+        scan.nextLine(); // advances token
+        while(!scan.nextLine().equals("NPC States:"))
+        {
+            scan.nextLine(); 
+        } 
+        
+        while(!scan.hasNext(pattern2))
+        {
+            String s = scan.nextLine(); 
+            Denizen den = gs.getDungeon().getNPC(s); 
+            den.restoreState(scan, den); 
         }
     }
     

@@ -90,7 +90,7 @@ public class Dungeon
             
             while(!scan.hasNext(pattern2))
             {
-                Denizen npc = new Denizen(scan, this); 
+                Denizen npc = new Denizen(scan, this, b); 
                 this.addNpc(npc); 
                 //System.out.println("Added '" + npc.getName() + "' to dungeon list."); 
             }

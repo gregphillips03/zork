@@ -28,6 +28,10 @@ public class GeneralCommand extends Command
             {
                 s = s + "There is a '" + item.getPrimaryName() + "' here." + "\n"; 
             }
+            for(Denizen den: gs.getAdventurersCurrentRoom().npcHere)
+            {
+                s = s + "A '" + den.getName() + "' is here." + "\n"; 
+            }
             return s; 
         }
         else if(this.gen.equals("exits"))
