@@ -2,10 +2,10 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * Item
+ * Item class contains Item objects that are stored in rooms, with the user, or with a NPC
  * 
  * @author William (Greg) Phillips
- * @version Bork v3.0
+ * @version Zork v1
  */
 public class Item
 {
@@ -13,6 +13,11 @@ public class Item
     private int weight = 0; 
     private Hashtable<String, String> messages = new Hashtable<String, String>(); 
     
+    /**
+     * Constructor for objects of class Item
+     * 
+     * @param s     Scanner object handed focus by Dungeon Class
+     */
     public Item(Scanner s)
     {
         String pattern1 = "---"; 
@@ -36,24 +41,24 @@ public class Item
     }
     
     /**
-     * goesBy
-     * @ param name     item name to look up
-     * @ return         returns true if item is known by a certain name
-     **/
-    public boolean goesBy(String name)
-    {
-        return false; 
-    }
-    
-    /**
      * getPrimaryName
-     * @ return         returns this objects primary name
+     * Returns the item's primary name
+     * 
+     * @ return         Returns this objects primary name as a String
      **/
     public String getPrimaryName()
     {
         return this.primaryName; 
     }
     
+    /**
+     * getMessageForVerb
+     * Returns corresponding message string that accompanies a verb
+     * 
+     * @param verb                      Verb as String to look for in messages hashtable
+     * @return this.messages.get(verb)  Returns the corresponding message for the verb as a String
+     * @return null                     Returns null if verb is not part of the hashtable key
+     */
     public String getMessageForVerb(String verb)
     {
         if(this.messages.containsKey(verb))
@@ -63,7 +68,12 @@ public class Item
         //System.out.println(verb + " not found.\n"); 
         return null; 
     }
-    
+    /**
+     * toString
+     * Displays the Item's available verbs as a String
+     * 
+     * @return s        Return's each verb as a String, wokka encased for legibility
+     */    
     public String toString()
     {
         Enumeration en = this.messages.keys();
@@ -75,6 +85,12 @@ public class Item
         return s; 
     }
     
+    /**
+     * getWeight
+     * Getter method for item weight
+     * 
+     * @return this.weight      Returns weight as integer
+     */
     public int getWeight()
     {
         return this.weight; 
