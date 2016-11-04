@@ -6,7 +6,7 @@ import java.io.*;
  * Singleton Class
  * 
  * @author      William (Greg) Phillips
- * @version     Bork v1
+ * @version     Zork v1
  */
 class CommandFactory
 {
@@ -39,7 +39,18 @@ class CommandFactory
     }
     
     /**
+     * parse
+     * Parses text from userInput / handed focus from Interpreter Class
      * 
+     * @return move     Returns abstract Command in the form of a MovementCommand object
+     * @return save     Returns abstract Command in the form of a SaveCommand object
+     * @return inv      Returns abstract Command in the form of a InventoryCommand object 
+     * @return q        Returns abstract Command in the form of a QuitCommand object
+     * @return gen      Returns abstract Command in the form of a GeneralCommand object
+     * @return take     Returns abstract Command in the form of a TakeCommand object
+     * @return drop     Returns abstract Command in the form of a DropCommand object
+     * @return spec     Returns abstract Command in the form of a ItemSpecificCommand object
+     * @return unk      Returns abstract Command in the form of a UnknownCommand object
      */
     Command parse(String commandString) throws InterruptedException, FileNotFoundException
     {
