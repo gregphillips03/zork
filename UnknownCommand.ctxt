@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=bogusCommand
 comment0.target=UnknownCommand(java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ Class\ UnknownCommand\r\n\ \r\n\ @param\ bogusCommand\ \ \ \ \ \ String\ input\ from\ CommandFactory\ where\ input\ could\ not\ be\ parsed\ into\ correct\ abstract\ Command\ object\r\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
+comment1.text=\r\n\ execute\r\n\ Default\ message\ to\ System\ out\r\n\ \r\n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n\ @return\ s\ \ \ \ String\ message\ to\ user\ that\ programs\ does\ not\ understand\ the\ input\r\n
 numComments=2

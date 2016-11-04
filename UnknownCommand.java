@@ -2,20 +2,34 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * UnknownCommand 
+ * UnknownCommand is an abstract extension of Command Class
  * 
  * @author      William (Greg) Phillips
- * @version     Bork v3.0
+ * @version     Zork v1
  */
 public class UnknownCommand extends Command
 {
     private String bogusCommand = ""; 
     
+    /**
+     * Constructor for objects of Class UnknownCommand
+     * 
+     * @param bogusCommand      String input from CommandFactory where input could not be parsed into correct abstract Command object
+     */
     UnknownCommand(String bogusCommand)
     {
         this.bogusCommand = bogusCommand; 
     }
     
+    /**
+     * execute
+     * Default message to System out
+     * 
+     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * 
+     * @return s    String message to user that programs does not understand the input
+     */
     String execute() throws InterruptedException, FileNotFoundException
     {
         String s = "This AI does not comprehend '" + bogusCommand + "'."; 
