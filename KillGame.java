@@ -1,12 +1,18 @@
 
 /**
- * KillGame terminates the program after fluff
+ * KillGame terminates the program
  * 
  * @author      William (Greg) Phillips
  * @version     Bork v2
  */
 public class KillGame
 {
+    /**
+     * gameKill
+     * Forces the program to quit with a termination code of 1 (something unexpectedly went wrong)
+     * 
+     * @param s String to be added to System output
+     */
     public static void gameKill(String s) throws InterruptedException
     {   
             //aesthetics
@@ -35,6 +41,11 @@ public class KillGame
             //meat
     }
     
+    /**
+     * endGame
+     * Forces the program to quit with a termination code of 0 (expected termination)
+     * 
+     */    
     public static void endGame() throws InterruptedException
     {
             //aesthetics
