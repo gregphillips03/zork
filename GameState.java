@@ -5,7 +5,7 @@ import java.io.*;
  * GameState Holds the current state of the game
  * 
  * @author      William (Greg) Phillips
- * @version     Bork v3.0
+ * @version     Zork v1
  */
 
 class GameState
@@ -17,6 +17,7 @@ class GameState
     
     /**
      * Constructor for objects of class GameState
+     * Singleton class controls creation
      */
     private GameState()
     {
@@ -24,7 +25,10 @@ class GameState
     }
     
     /**
+     * instance
      * Exists to control object creation
+     * 
+     * @return      returns state of game as in instace of the object
      */
     public static GameState instance()
     {
@@ -32,7 +36,10 @@ class GameState
     }
     
     /**
+     * initialize
+     * Places user in current dungeon and sets their entry room
      * 
+     * @param dungeon       Dungeon object to work with
      */
     public void initialize(Dungeon dungeon)
     {
@@ -41,9 +48,10 @@ class GameState
     }
 
     /**
-     * Returns the player's current Dungeon
+     * getDungeon
+     * Getter method to return the player's current Dungeon
      * 
-     * @return      returns the current Dungeon object.
+     * @return      returns the current dungeon as a Dungeon object.
      */
     public Dungeon getDungeon()
     {
@@ -51,9 +59,10 @@ class GameState
     }
     
     /**
-     * Sets the player's current location
+     * setAdventurersCurrentRoom
+     * Setter method to set the player's current location
      * 
-     * @param room      Room location of current player.
+     * @param room      Room location of current player as a room object
      */
     public void setAdventurersCurrentRoom(Room room)
     {
@@ -61,9 +70,10 @@ class GameState
     }
     
     /**
+     * getAdventurersCurrenRoom
      * Returns the player's current room location
      * 
-     * @return      returns the currentRoom object.
+     * @return      returns the current room as a room object
      */
     public Room getAdventurersCurrentRoom()
     {
@@ -71,7 +81,10 @@ class GameState
     }
     
     /**
-     *
+     * store
+     * Persistence method to write information to save file
+     * 
+     * @param saveName      name file to write to / focus handed from SaveCommand Class
      */
     public void store(String saveName) throws FileNotFoundException
     {
@@ -118,7 +131,10 @@ class GameState
     }    
 
     /**
-     *
+     * restore
+     * Hydration method to restore game state
+     * 
+     * @param filename      name of file to restore from / handed focus from Interpreter Class
      */
     public void restore(String filename) throws FileNotFoundException
     {
@@ -172,15 +188,10 @@ class GameState
     }
     
     /**
-     *
-     */
-    ArrayList<String> getInventoryNames()
-    {
-        return null; 
-    } 
-    
-    /**
-     *
+     * addToInventory
+     * Adds item to user's inventory
+     * 
+     * @param item      Item to add to inventory ArrayList as Item object
      */
     void addToInventory(Item item)
     {
@@ -188,7 +199,10 @@ class GameState
     }
     
     /**
-     *
+     * removeFromInventory
+     * Removes item from user's inventory
+     * 
+     * @param item      Item to remove from user's inventory ArrayList as Item object
      */
     void removeFromInventory(Item item)
     {
@@ -196,7 +210,12 @@ class GameState
     }
     
     /**
-     *
+     * getItemInVicinityNamed
+     * Searches room for item of specified name
+     * 
+     * @param name      Primary name of item to search for
+     * @return item     Returns Item object if item if found in room
+     * @return null     Returns null if Item cannot be found
      */
     Item getItemInVicinityNamed(String name)
     {
@@ -212,7 +231,12 @@ class GameState
     }
     
     /**
-     *
+     * getItemFromInventory
+     * Searches user inventory for item of specified name
+     * 
+     * @param name      Primary name of item to search for
+     * @return item     Returns Item object if item if found in room
+     * @return null     Returns null if Item cannot be found
      */
     Item getItemFromInventory(String name)
     {
