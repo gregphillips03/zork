@@ -2,20 +2,36 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * DropCommand Class
+ * DropCommand Class is an abstract extension of the Command Class
  * 
  * @author      William (Greg) Phillips
- * @version     Bork v3.0
+ * @version     Zork v1
  */
 public class DropCommand extends Command
 {
     private String itemName = ""; 
     
+    /**
+     * Constructor for objects of Class DropCommand
+     * 
+     * @param itemName      String sent from CommandFactory to parse
+     */
     DropCommand(String itemName)
     {
         this.itemName = itemName; 
     }
     
+    /**
+     * execute
+     * Takes String input and splits it. If String array is >1, it calls Cogitate. If not, it asks for more input before calling cogitate
+     * 
+     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * 
+     * @return cogitate(parts)  Returns String message from cogitate method
+     * @return cogitate(pieces) Returns String message from cogitate method
+     * @return ""               Returns empty
+     */
     String execute() throws InterruptedException, FileNotFoundException
     {
         String[] parts = itemName.split(" "); 
@@ -36,6 +52,15 @@ public class DropCommand extends Command
         return "";
     }
    
+    /**
+     * cogitate
+     * Determines if the user is carrying an item, or if it is in the room. If item can be droppped, it's removed from the user's inventory and added to the room. 
+     * 
+     * @param sa    String Array of input split by execute method
+     * @return      String message after successful removal of item
+     * @return      String message that item is already in the room
+     * @return      String message indicating user does not have the item in inventory
+     */
     private static String cogitate(String [] sa)
     {   
         GameState gs = GameState.instance(); 
