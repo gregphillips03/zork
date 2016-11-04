@@ -2,20 +2,32 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * SaveCommand
+ * SaveCommand is an abstract extension of the Command Class
  * 
  * @author      William (Greg) Phillips
- * @version     Bork v3.0
+ * @version     Zork v1
  */
 public class SaveCommand extends Command
 {
     private String saveFileName = ""; 
     
+    /**
+     * Constructor for objects of Class SaveCommand
+     * 
+     * @param f     Filename of save file
+     */
     SaveCommand(String f)
     {
         this.saveFileName = f; 
     }
     
+    /**
+     * execute
+     * Method call to begin persistence sequence / hands focus to GameState Class
+     * 
+     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     */
     String execute() throws InterruptedException, FileNotFoundException
     {
         GameState gs = GameState.instance(); 
