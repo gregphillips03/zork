@@ -21,6 +21,16 @@ public class Denizen
     private boolean isAngered = false; 
     ArrayList<Item> carriedItems = new ArrayList<Item>(); 
     
+    /**
+     * Denizen Constructor
+     * Constructor for Denizen objects
+     * 
+     * @param name  name of NPC
+     * @param desc  description of NPC
+     * @param health    hit points of NPC
+     * @param mobile    whether or not the NPC can move
+     */
+    
     public Denizen(String name, String desc, int health, boolean mobile)
     {
         this.name = name; 
@@ -29,6 +39,14 @@ public class Denizen
         this.isMobile = mobile; 
     }
     
+    /**
+     * Denizen Constructor
+     * Constructor for Denizen object
+     * 
+     * @param s scanner object for hydration
+     * @param d dungeon object for hydration
+     * @param b initialization parameter / tells constructor whether or not to set NPC current room and add object / avoid duplicaton of objects in dungeon
+     */
     public Denizen(Scanner s, Dungeon d, boolean initState)
     {
         String pattern1 = "---"; 
@@ -90,53 +108,110 @@ public class Denizen
         s.nextLine(); //advances token
     }
     
-    // store state needs to go in here
-    
+    /**
+     * getName
+     * Getter method for NPC name
+     * 
+     * @return returns name of NPC as string
+     */
     public String getName()
     {
         return this.name; 
     }
     
+    /**
+     * getDesc
+     * Getter method for NPC description
+     * 
+     * @return returns description of NPC as string
+     */
     public String getDesc()
     {
         return this.desc; 
     }
     
+    /**
+     * getHealth
+     * Getter method for NPC hit points
+     * 
+     * @return returns current hit points of NPC as integer
+     */
     public int getHealth()
     {
         return this.health; 
     }
     
+    /**
+     * getMobility
+     * Getter method for NPC mobility
+     * 
+     * @return returns NPC object's mobility as boolean
+     */
     public boolean getMobility()
     {
         return this.isMobile; 
     }
     
+    /**
+     * getMood
+     * Getter method for NPC mood
+     * 
+     * @return returns NPC object's mood as boolean
+     */
     public boolean getMood()
     {
         return this.isAngered; 
     }
     
+    /**
+     * setHealth
+     * Setter method for NPC hit points
+     * 
+     * @param h hitpoints of NPC object as integer
+     */
     private void setHealth(int h)
     {
         health = h; 
     }
     
+    /**
+     * setRoom
+     * Setter method for NPC current room
+     * 
+     * @param rm room to set the NPC in as Room object
+     */
+
     void setRoom(Room rm)
     {
         currentRoom = rm; 
     }
     
+    /**
+     * add
+     * Adds item to NPC inventory
+     * 
+     * @param item Item object to add to NPC carriedItems ArrayList
+     */
     void add(Item item)
     {
         this.carriedItems.add(item); 
     }
     
+    /**
+     * getNpcRoom
+     * Getter method for NPC currentRoom
+     * 
+     * @return returns the room the NPC is currentlylocated
+     */
     public Room getNpcRoom()
     {
         return this.currentRoom; 
     }
 
+    /**
+     * moveDenizens
+     * Moves denizens through dungeon rooms / method call triggered by successful MoveCommand object
+     */
     public static void moveDenizens()
     {
         GameState gs = GameState.instance(); 
@@ -166,7 +241,11 @@ public class Denizen
     }
 
     /**
+     * randInt
+     * Random number generator / used to randomly pick an exit for the NPC to walk through
      * 
+     * @param min bottom limit for random number / currently only 0 to match bottom of Array index
+     * @param max upper limit fo random number / maxes out at the size of the ArrayList of exits, -1 for 0-based
      */
     static int randInt(int min, int max)
     {
@@ -181,6 +260,8 @@ public class Denizen
      * 
      * @ param room     the room the NPC is currently sitting in
      * @ param npc      the current denizen object to work on
+     * @ return true    successful identification of user in adjacent or same room as NPC
+     * @ return false   unsuccesful identificaiton of user in adjacent or same room as NPC
      */
     static boolean tryFollowUser(Room room, Denizen npc)
     {
@@ -212,6 +293,7 @@ public class Denizen
     /**
      * goToAdjacentRoom
      * This moves the NPC to a random room
+     * 
      * @ param room     the room the NPC is currently sitting in
      * @ param i        random number to index in room's array of exits
      * @ param npc      the current denizen object to work on
@@ -226,6 +308,12 @@ public class Denizen
         System.out.println("goToAdjacentRoom move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "'."); 
     }
     
+    /**
+     * storeState
+     * Persistence method to store NPC states in save file
+     * 
+     * @param pw PrintWriter object handed focus from GameState Class
+     */
     void storeState(PrintWriter pw)
     {
             pw.write(this.name + "\n"); 
@@ -247,6 +335,13 @@ public class Denizen
             }            
     } 
     
+    /**
+     * restoreState
+     * Hydration method to upload NPC states from save file
+     * 
+     * @param s Scanner object handed focus from GameState Class
+     * @param den Denizen object to work on
+     */
     void restoreState(Scanner s, Denizen den)
     {
         String pattern1 = "---"; 
