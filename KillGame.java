@@ -3,7 +3,7 @@
  * KillGame terminates the program
  * 
  * @author      William (Greg) Phillips
- * @version     Bork v2
+ * @version     Zork v1
  */
 public class KillGame
 {
