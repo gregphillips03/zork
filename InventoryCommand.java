@@ -5,7 +5,7 @@ import java.io.*;
  * InventoryCommand is an abstract extension of the Command Class
  * 
  * @author      William (Greg) Phillips
- * @version     Bork v3.0
+ * @version     Zork v1
  */
 public class InventoryCommand extends Command
 {
