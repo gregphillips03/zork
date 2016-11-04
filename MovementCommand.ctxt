@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=dir
 comment0.target=MovementCommand(java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ Class\ MovementCommand\r\n\ \r\n\ @param\ dir\ \ \ Direction\ as\ String\ to\ move\ user\r\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
+comment1.text=\r\n\ execute\r\n\ Attempts\ to\ move\ user\ between\ Room\ objects\r\n\ \r\n\ @return\ \ \ \ \ \ String\ for\ successful\ movement\r\n\ @return\ \ \ \ \ \ String\ for\ unsuccessful\ movement\r\n
 numComments=2
