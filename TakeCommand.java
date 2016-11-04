@@ -2,20 +2,37 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * Write a description of class TakeCommand here.
+ * TakeCommand is an abstract extension of the Command Class. 
+ * It allows the user to take items and add them to their inventory. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author      William (Greg) Phillips
+ * @version     Zork v1
  */
 public class TakeCommand extends Command
 {
     private String itemName = ""; 
     
+    /**
+     * Constructor for objects of Class TakeCommand
+     * 
+     * @param itemName      Name of item as String
+     */
     TakeCommand(String itemName)
     {
         this.itemName = itemName; 
     }
     
+    /**
+     * execute
+     * Takes String input and splits it. If String array is >1, it calls Cogitate. If not, it asks for more input before calling cogitate
+     * 
+     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * 
+     * @return cogitate(parts)  Returns String message from cogitate method
+     * @return cogitate(pieces) Returns String message from cogitate method
+     * @return ""               Returns empty
+     */
     String execute() throws InterruptedException, FileNotFoundException
     {
         String[] parts = itemName.split(" "); 
@@ -36,6 +53,16 @@ public class TakeCommand extends Command
         return "";
     }
     
+    /**
+     * cogitate
+     * Determines if the user can take an item based on whether it's in the room, how heavy it is, and whether or not they already have it. 
+     * 
+     * @param sa    String Array of input split by execute method
+     * @return      String message after successful addition of item to inventory
+     * @return      String message that item is too heavy to take, but user can still interact with it
+     * @return      String message indicating user has the item in inventory
+     * @return      String message indicating the item is not in the room
+     */
     private static String cogitate(String [] sa)
     {   
         GameState gs = GameState.instance(); 
