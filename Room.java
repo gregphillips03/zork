@@ -3,10 +3,10 @@ import java.io.*;
 import java.util.regex.*; 
 
 /**
- * Room Class contains room objects. Each room has a description, and knows if it has been visited or not. 
+ * Room Class contains room objects. Each room has a description, and knows if it has been visited or not. Each room can contain items and NPCs.
  * 
  * @ Author     William (Greg) Phillips
- * @ Version    Bork v3
+ * @ Version    Zork v1
  */
 public class Room
 {
@@ -19,6 +19,8 @@ public class Room
     
     /**
      * Constructor for objects of class Room
+     * 
+     * @param title     Title of the Room object as a String
      */
     public Room(String title)
     {
@@ -27,6 +29,10 @@ public class Room
     
     /**
      * Constructor for objects of class Room
+     * 
+     * @param s          Scanner object to work with / handed focus from Dungeon Class
+     * @param d          Dungeon object to work with
+     * @param initState  Tells room whether to add Items to Room object's ArrayList, or to hold off until hydration from save file
      */
     public Room(Scanner s, Dungeon d, boolean initState)
     {      
@@ -58,9 +64,10 @@ public class Room
     }
     
     /**
-     * Returns room title
-     * Public visibility
-     * @return      returns Room title 
+     * getTitle
+     * Returns room title / Public visibility
+     * 
+     * @return      Returns Room title as a String
      */
     public String getTitle()
     {
@@ -68,8 +75,10 @@ public class Room
     }
     
     /**
-     * Sets the room's description
-     * Public visibility
+     * setDesc
+     * Sets the room's description / Public visibility
+     * 
+     * @param desc      Description of Room object as a String
      */ 
     public void setDesc(String desc)
     {
@@ -77,8 +86,10 @@ public class Room
     }
     
     /**
-     * Gets the room's description / primarily for command objects
-     * Public visibility
+     * getDesc
+     * Gets the room's description / Public visibility
+     * 
+     * @return      Returns Room object's description as a String
      */ 
     public String getDesc()
     {
@@ -86,12 +97,15 @@ public class Room
     }
     
     /**
+     * leaveBy
      * Attempts to move from one room to another room
      * If a direction is found in the room's arraylist of exits, then a Room objet is sent back
      * Else, null is returned
      * Package visibility
      * 
-     * @param dir       direction to attempt to exit. 
+     * @param dir               Direction to attempt to exit
+     * @return exit.getDest     Destination to exit to as a Room object
+     * @return null             Return null if there isn't an exit in the specified direction
      */ 
     Room leaveBy(String dir) throws InterruptedException
     {
@@ -114,10 +128,11 @@ public class Room
     }
     
     /**
-     * Describes the room
-     * Package visibility
+     * describe
+     * Describes the room / Package visibility
      * If room has been visited:
      * @return      this.getTitle() Only room title is printed to screen
+     * 
      * If room has not been visited:
      * @return      this.title +\n+ this.desc both title and description are returned. Current room is marked as visited.
      */ 
@@ -148,10 +163,10 @@ public class Room
     }
     
     /**
-     * Adds an Exit to the current room
-     * Public visibility
+     * addExit
+     * Adds an Exit to the current room / Public visibility
      * 
-     * @param exit      Exit object to be added to current room.
+     * @param exit      Exit object to be added to current room
      */ 
     public void addExit(Exit exit)
     {
@@ -159,10 +174,11 @@ public class Room
     }
     
     /**
-     * Desc
-     * Package visibility
+     * storeState
+     * Persistence method to write to save file / Package visibility
+     * Currently checks if the room has been visited, if there are items in the room, and if there are NPCs in the room
      * 
-     * @param w      PrintWriter Object
+     * @param w      PrintWriter object to work with / handed focus from Dungeon Class
      */ 
     void storeState(PrintWriter w)
     {
@@ -275,10 +291,10 @@ public class Room
     }
     
     /**
-     * Desc
-     * Package visibility
+     * restoreState / Package visibility
+     * Hydration method to restore game from save file 
      * 
-     * @param r      Scanner Object
+     * @param r      scanner Object to work with / handed focus from GameState Class
      */ 
     void restoreState(Scanner r)
     {
@@ -333,7 +349,9 @@ public class Room
     
     /**
      * add
-     * adds an item to the roomItems array list
+     * Adds an item to the roomItems array list
+     * 
+     * @param item      Item object to add to Room's ArrayList as a Item Object
      */
     void add(Item item)
     {
@@ -343,28 +361,21 @@ public class Room
     /**
      * remove
      * removes an item from the roomItems array list
+     * 
+     * @param item      Item object to remove from Room's ArrayList as a Item Object
      */
     void remove(Item item)
     {
         this.roomItems.remove(item); 
     }
-    
+
     /**
+     * containsNpc
+     * Checks to see if there is a NPC object in the room
      * 
+     * @return false    No NPC in the Room's ArrayList
+     * @return true     Found NPC in room
      */
-    Item getItemName(String name)
-    {
-        return null; 
-    }
-    
-    /**
-     * 
-     */
-    ArrayList<Item> getContents()
-    {
-        return null; 
-    }
-    
     public boolean containsNpc()
     {
         if(this.npcHere.isEmpty())
@@ -375,7 +386,10 @@ public class Room
     }
 
     /**
+     * addNpc
+     * Add Denizen object to this Room's ArrayList
      * 
+     * @param npc       Denizen object to add to ArrayList as Denizen object
      */    
     void addNpc(Denizen npc)
     {
@@ -383,7 +397,10 @@ public class Room
     }
 
     /**
+     * removeNpc
+     * Remove Denizen object from this Room's ArrayList
      * 
+     * @param npc       Denizen object to remove from Room's ArrayList as Denizen Object 
      */   
     void removeNpc(Denizen npc)
     {
