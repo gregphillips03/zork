@@ -1,7 +1,7 @@
 import java.util.*; 
 
 /**
- * Exit Class holds onto Rooms and their exit paths
+ * Exit Class holds onto Rooms and their exit paths. 
  * 
  * @author      William (Greg) Phillips
  * @version     Zork v1
@@ -15,9 +15,9 @@ public class Exit
     /**
      * Constructor for objects of class Exit
      * 
-     * @param dir   Direction to move as String
-     * @param src   Room source as Room object
-     * @param dest  Room destination as Room object
+     * @param dir   Direction to move as String.
+     * @param src   Room source as Room object.
+     * @param dest  Room destination as Room object.
      */
     public Exit(String dir, Room src, Room dest)
     {
@@ -27,10 +27,10 @@ public class Exit
     }
     
     /**
-     * Constructor for object of Class Exit
+     * Constructor for object of Class Exit.
      * 
-     * @param s     Scanner object handed focus from Dungeon Class
-     * @param d     Dungeon object to work with
+     * @param s     Scanner object handed focus from Dungeon Class.
+     * @param d     Dungeon object to work with.
      */
     public Exit(Scanner s, Dungeon d)
     {
@@ -49,10 +49,9 @@ public class Exit
     }
 
     /**
-     * describe
-     * Describes the exit / Package visibility
+     * Describes the exit.
      * 
-     * @return     Returns exit description as a String
+     * @return     Exit description as a String.
      */
     String describe()
     {
@@ -61,9 +60,8 @@ public class Exit
     }
     
     /**
-     * getDir
+     * Get the Direction of this exit object.
      * 
-     * Get the Direction of this exit object / Public visibility
      * @return     returns direction to exit as a String
      */
     public String getDir()
@@ -72,10 +70,9 @@ public class Exit
     }
     
     /**
-     * getSrc
-     * Get the Source room FROM which to exit / Public visibility
+     * Get the Source room FROM which to exit.
      * 
-     * @return     returns the FROM room as Room Object
+     * @return     The FROM room as a Room Object.
      */
     public Room getSrc()
     {
@@ -83,10 +80,9 @@ public class Exit
     }
     
     /**
-     * getDest
-     * Get the Destination room TO exit to / Public visibility
+     * Get the Destination room TO exit to. 
      * 
-     * @return     returns the DESTINATION room as Room object
+     * @return     The DESTINATION room as Room object. 
      */
     public Room getDest()
     {

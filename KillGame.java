@@ -1,6 +1,6 @@
 
 /**
- * KillGame terminates the program
+ * KillGame terminates the program.
  * 
  * @author      William (Greg) Phillips
  * @version     Zork v1
@@ -8,7 +8,6 @@
 public class KillGame
 {
     /**
-     * gameKill
      * Forces the program to quit with a termination code of 1 (something unexpectedly went wrong)
      * 
      * @param s String to be added to System output
@@ -42,7 +41,6 @@ public class KillGame
     }
     
     /**
-     * endGame
      * Forces the program to quit with a termination code of 0 (expected termination)
      * 
      */    
