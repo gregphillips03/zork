@@ -30,7 +30,7 @@ class CommandFactory
     /**
      * Exists to control object creation 
      * 
-     * @return commandFactory   returns commandFactory object
+     * @return      Returns instance of commandFactory object
      */
     public static CommandFactory instance() 
     {
