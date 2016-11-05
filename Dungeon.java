@@ -2,8 +2,6 @@ import java.util.*;
 import java.io.*;
 
 /**
- * Dungeon 
- * 
  * Container for rooms that includes a key searchable hashtable. Dungeon knows what items are in it and what NPCs are in it. 
  * 
  * @author      William (Greg) Phillips
@@ -21,8 +19,8 @@ public class Dungeon
     /**
      * Constructor for objects of class Dungeon
      * 
-     * @param entry     Adventurers room entry as a Room object
-     * @param name      Dungeon's name as a String
+     * @param entry     Adventurers room entry as a Room object.
+     * @param name      Dungeon's name as a String.
      */
     public Dungeon(Room entry, String name)
     {
@@ -33,8 +31,8 @@ public class Dungeon
     /**
      * Constructor for objects of class Dungeon
      * 
-     * @param filename      Filename to read dungeon file from
-     * @param initState     Tells the dungeon's subsequent components if they should hydrate at creation or what for informaiton from save file
+     * @param filename      Filename to read dungeon file from.
+     * @param initState     Tells the dungeon's subsequent components if they should hydrate at creation or what for informaiton from save file.
      */
     public Dungeon(String filename, boolean initState) throws FileNotFoundException, InterruptedException
     {
@@ -113,10 +111,9 @@ public class Dungeon
     
 
     /**
-     * getEntry
-     * Getter method for Dungeon's entry room / Public visibility
+     * Getter method for Dungeon's entry room.
      * 
-     * @return this.entry   Returns entry room as a Room object
+     * @return      Entry room as a Room object.
      */
     public Room getEntry()
     {
@@ -124,10 +121,9 @@ public class Dungeon
     }
     
     /**
-     * setEntry
-     * Setter method for Dungeon entry / Public visibility
+     * Setter method for Dungeon entry.
      * 
-     * @param rm    Room object to set as the Dungeon's entry room
+     * @param rm    Room object to set as the Dungeon's entry room.
      */
     public void setEntry(Room rm)
     {
@@ -135,10 +131,9 @@ public class Dungeon
     }    
     
     /**
-     * getName
-     * Getter method for Dungeon name / Public visibility
+     * Getter method for Dungeon name.
      * 
-     * @return this.name    Returns name of the dungeon as a String
+     * @return      Name of the dungeon as a String. 
      */
     public String getName()
     {
@@ -146,12 +141,10 @@ public class Dungeon
     }    
     
     /**
-     * getRoom
      * Searches hashtable by room title as key / Public visibility
      * 
      * @param roomTitle     Title of room to look up in hashtable 
-     * @return collection.get(roomTitle)    Returns Room object if found
-     * @return null                         Returns null if object is not found
+     * @return              Room object if found in hashtable. Null if the room is not in hashtable. 
      */
     public static Room getRoom(String roomTitle)
     {
@@ -167,10 +160,9 @@ public class Dungeon
     }    
     
     /**
-     * add
-     * Adds a Room object to the hashtable / Public visibility
+     * Adds a Room object to the hashtable.
      * 
-     * @param room      Room object to be added to hashtable as Room object
+     * @param room      Room object to be added to hashtable as Room object.
      */
     public static void add(Room room)
     {
@@ -179,10 +171,9 @@ public class Dungeon
     }
     
     /**
-     * storeState
-     * Persistence method to store dungeon information in save file / Package Visibility 
+     * Persistence method to store dungeon information in save file.
      * 
-     * @param w     PrintWriter object handed focus by GameState Class
+     * @param w     PrintWriter object handed focus by GameState Class.
      */
     void storeState(PrintWriter w)
     {
@@ -197,10 +188,9 @@ public class Dungeon
     }
     
     /**
-     * restoreState
-     * Hydration method to read information from save file / Package Visibility 
+     * Hydration method to read information from save file.
      * 
-     * @param r     Scanner object handed focus from Interpreter Class
+     * @param r     Scanner object handed focus from Interpreter Class.
      */
     void restoreState(Scanner r)
     {
@@ -213,12 +203,10 @@ public class Dungeon
     }
     
     /**
-     * getItem
-     * Searches for item in dungeon's known items
+     * Searches for item in dungeon's known items.
      *
-     * @param primaryName                        Primary name of item to search for as key to hashtable
-     * @return itemsInDungeon.get(primaryName)   Returns item as Item object
-     * @return null                              Returns null if item not found in dungeon
+     * @param primaryName   Primary name of item to search for as key to hashtable.
+     * @return              Returns item as Item object. Null if item not found in dungeon.
      */
     public Item getItem(String primaryName)
     {
@@ -231,10 +219,9 @@ public class Dungeon
     }
     
     /**
-     * addItem
-     * Add's item to the dungeon's hashtable
+     * Adds item to the dungeon's hashtable.
      * 
-     * @param item      Item object to add to dungeon
+     * @param item      Item object to add to dungeon.
      */
     public void addItem(Item item)
     {
@@ -243,12 +230,10 @@ public class Dungeon
     }
     
     /**
-     * getNPC
      * Searches for NPC in dungeon's known Denizen objects
      *
-     * @param npcName                        Name of NPC to search for
-     * @return npcInDungeon.get(npcName)     Returns NPC as a Denizen object if found
-     * @return null                          Returns null of NPC is not in dungeon
+     * @param npcName       Name of NPC to search for.
+     * @return              NPC as a Denizen object if found. Null if NPC is not in dungeon
      */    
     public Denizen getNPC(String npcName)
     {
@@ -260,10 +245,9 @@ public class Dungeon
     }
     
     /**
-     * addNpc
-     * Add's NPC as Denizen object to dungeon's hashtable
+     * Adds NPC as Denizen object to dungeon's hashtable. 
      *
-     * @param npc    Denizen object to add to dungeon's hashtable
+     * @param npc    Denizen object to add to dungeon's hashtable. 
      */    
     public void addNpc(Denizen npc)
     {
