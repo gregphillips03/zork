@@ -3,10 +3,7 @@ import java.io.*;
 import java.util.regex.*; 
 
 /**
- * Denizen
- * 
- * The Denizen class relates to the dungeon's NPCs. 
- * It creats the Denizens themselves and moves around according to predefined rules for each NPC 
+ * The Denizen class relates to the dungeon's NPCs. It creates the Denizens themselves and moves around according to predefined rules for each NPC.
  * 
  * @author William (Greg) Phillips
  * @version Zork v1
@@ -22,13 +19,12 @@ public class Denizen
     ArrayList<Item> carriedItems = new ArrayList<Item>(); 
     
     /**
-     * Denizen Constructor
      * Constructor for Denizen objects
      * 
-     * @param name  name of NPC
-     * @param desc  description of NPC
-     * @param health    hit points of NPC
-     * @param mobile    whether or not the NPC can move
+     * @param name      Name of NPC.
+     * @param desc      Description of NPC.
+     * @param health    Hit points of NPC.
+     * @param mobile    Whether or not the NPC can move.
      */
     
     public Denizen(String name, String desc, int health, boolean mobile)
@@ -40,12 +36,11 @@ public class Denizen
     }
     
     /**
-     * Denizen Constructor
-     * Constructor for Denizen object
+     * Constructor for Denizen objects
      * 
-     * @param s scanner object for hydration
-     * @param d dungeon object for hydration
-     * @param b initialization parameter / tells constructor whether or not to set NPC current room and add object / avoid duplicaton of objects in dungeon
+     * @param s     Scanner object for hydration.
+     * @param d     Dungeon object for hydration.
+     * @param b     Initialization parameter. Tells constructor whether or not to set NPC current room and add object or avoid duplicaton of objects in dungeon.
      */
     public Denizen(Scanner s, Dungeon d, boolean initState)
     {
@@ -109,10 +104,9 @@ public class Denizen
     }
     
     /**
-     * getName
      * Getter method for NPC name
      * 
-     * @return returns name of NPC as string
+     * @return       Name of NPC as string.
      */
     public String getName()
     {
@@ -120,10 +114,9 @@ public class Denizen
     }
     
     /**
-     * getDesc
      * Getter method for NPC description
-     * 
-     * @return returns description of NPC as string
+     *  
+     * @return      Description of NPC as string.
      */
     public String getDesc()
     {
@@ -131,10 +124,9 @@ public class Denizen
     }
     
     /**
-     * getHealth
      * Getter method for NPC hit points
      * 
-     * @return returns current hit points of NPC as integer
+     * @return      Current hit points of NPC as integer.
      */
     public int getHealth()
     {
@@ -142,10 +134,9 @@ public class Denizen
     }
     
     /**
-     * getMobility
      * Getter method for NPC mobility
      * 
-     * @return returns NPC object's mobility as boolean
+     * @return      NPC object's mobility as boolean.
      */
     public boolean getMobility()
     {
@@ -153,10 +144,9 @@ public class Denizen
     }
     
     /**
-     * getMood
      * Getter method for NPC mood
      * 
-     * @return returns NPC object's mood as boolean
+     * @return      NPC object's mood as boolean. 
      */
     public boolean getMood()
     {
@@ -164,10 +154,9 @@ public class Denizen
     }
     
     /**
-     * setHealth
      * Setter method for NPC hit points
      * 
-     * @param h hitpoints of NPC object as integer
+     * @param h  Hitpoints of NPC object as integer.
      */
     private void setHealth(int h)
     {
@@ -175,10 +164,9 @@ public class Denizen
     }
     
     /**
-     * setRoom
      * Setter method for NPC current room
      * 
-     * @param rm room to set the NPC in as Room object
+     * @param rm    Room to set the NPC in as Room object.
      */
 
     void setRoom(Room rm)
@@ -187,10 +175,9 @@ public class Denizen
     }
     
     /**
-     * add
      * Adds item to NPC inventory
      * 
-     * @param item Item object to add to NPC carriedItems ArrayList
+     * @param item Item object to add to NPC carriedItems ArrayList. 
      */
     void add(Item item)
     {
@@ -198,10 +185,9 @@ public class Denizen
     }
     
     /**
-     * getNpcRoom
      * Getter method for NPC currentRoom
      * 
-     * @return returns the room the NPC is currentlylocated
+     * @return      The room the NPC is currently located.
      */
     public Room getNpcRoom()
     {
@@ -209,7 +195,6 @@ public class Denizen
     }
 
     /**
-     * moveDenizens
      * Moves denizens through dungeon rooms / method call triggered by successful MoveCommand object
      */
     public static void moveDenizens()
@@ -241,11 +226,10 @@ public class Denizen
     }
 
     /**
-     * randInt
      * Random number generator / used to randomly pick an exit for the NPC to walk through
      * 
-     * @param min bottom limit for random number / currently only 0 to match bottom of Array index
-     * @param max upper limit fo random number / maxes out at the size of the ArrayList of exits, -1 for 0-based
+     * @param min   Bottom limit for random number / currently only 0 to match bottom of Array index.
+     * @param max   Upper limit fo random number / maxes out at the size of the ArrayList of exits, -1 for 0-based.
      */
     static int randInt(int min, int max)
     {
@@ -255,13 +239,11 @@ public class Denizen
     }
     
     /**
-     * tryFollowUser
      * This is called if the NPC is currently pissed off. It attempts to follow the user if it is located in an adjacent room to the user's current room
      * 
-     * @ param room     the room the NPC is currently sitting in
-     * @ param npc      the current denizen object to work on
-     * @ return true    successful identification of user in adjacent or same room as NPC
-     * @ return false   unsuccesful identificaiton of user in adjacent or same room as NPC
+     * @ param room     The room the NPC is currently sitting in
+     * @ param npc      The current denizen object to work on
+     * @ return         Boolean value based on failure or success where user is or isn't located in an adjacent or same room as the NPC.
      */
     static boolean tryFollowUser(Room room, Denizen npc)
     {
@@ -291,12 +273,11 @@ public class Denizen
     }
     
     /**
-     * goToAdjacentRoom
      * This moves the NPC to a random room
      * 
-     * @ param room     the room the NPC is currently sitting in
-     * @ param i        random number to index in room's array of exits
-     * @ param npc      the current denizen object to work on
+     * @ param room     The room the NPC is currently sitting in.
+     * @ param i        Random number to index in room's array of exits.
+     * @ param npc      The current denizen object to work on.
      */
     static void goToAdjacentRoom(Room room, int i, Denizen npc)
     {
@@ -309,10 +290,9 @@ public class Denizen
     }
     
     /**
-     * storeState
      * Persistence method to store NPC states in save file
      * 
-     * @param pw PrintWriter object handed focus from GameState Class
+     * @param pw PrintWriter object handed focus from GameState Class.
      */
     void storeState(PrintWriter pw)
     {
@@ -336,11 +316,10 @@ public class Denizen
     } 
     
     /**
-     * restoreState
-     * Hydration method to upload NPC states from save file
+     * Hydration method to upload NPC states from save file.
      * 
-     * @param s Scanner object handed focus from GameState Class
-     * @param den Denizen object to work on
+     * @param s         Scanner object handed focus from GameState Class.
+     * @param den       Denizen object to work on.
      */
     void restoreState(Scanner s, Denizen den)
     {

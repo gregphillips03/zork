@@ -41,10 +41,9 @@ public class Item
     }
     
     /**
-     * getPrimaryName
      * Returns the item's primary name
      * 
-     * @ return         Returns this objects primary name as a String
+     * @return         Returns this objects primary name as a String
      **/
     public String getPrimaryName()
     {
@@ -52,12 +51,10 @@ public class Item
     }
     
     /**
-     * getMessageForVerb
      * Returns corresponding message string that accompanies a verb
      * 
-     * @param verb                      Verb as String to look for in messages hashtable
-     * @return this.messages.get(verb)  Returns the corresponding message for the verb as a String
-     * @return null                     Returns null if verb is not part of the hashtable key
+     * @param verb      Verb as String to look for in messages hashtable
+     * @return          String message pair for specified verb. 
      */
     public String getMessageForVerb(String verb)
     {
@@ -69,10 +66,9 @@ public class Item
         return null; 
     }
     /**
-     * toString
      * Displays the Item's available verbs as a String
      * 
-     * @return s        Return's each verb as a String, wokka encased for legibility
+     * @return      Returns each verb as a String, wokka encased for legibility. 
      */    
     public String toString()
     {
@@ -86,10 +82,9 @@ public class Item
     }
     
     /**
-     * getWeight
      * Getter method for item weight
      * 
-     * @return this.weight      Returns weight as integer
+     * @return      Item weight as an integer. 
      */
     public int getWeight()
     {
