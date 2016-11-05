@@ -22,13 +22,12 @@ public class UnknownCommand extends Command
     }
     
     /**
-     * execute
      * Default message to System out
      * 
      * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      * 
-     * @return s    String message to user that programs does not understand the input
+     * @return    String message to user that programs does not understand the input
      */
     String execute() throws InterruptedException, FileNotFoundException
     {

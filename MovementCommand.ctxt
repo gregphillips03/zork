@@ -4,5 +4,5 @@ comment0.target=MovementCommand(java.lang.String)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ Class\ MovementCommand\r\n\ \r\n\ @param\ dir\ \ \ Direction\ as\ String\ to\ move\ user\r\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
-comment1.text=\r\n\ execute\r\n\ Attempts\ to\ move\ user\ between\ Room\ objects\r\n\ \r\n\ @return\ \ \ \ \ \ String\ for\ successful\ movement\r\n\ @return\ \ \ \ \ \ String\ for\ unsuccessful\ movement\r\n
+comment1.text=\r\n\ Attempts\ to\ move\ user\ between\ Room\ objects\r\n\ \r\n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n\ @return\ \ \ \ \ \ String\ based\ on\ movement\ success\ or\ fail\r\n
 numComments=2

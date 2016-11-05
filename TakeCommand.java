@@ -23,15 +23,12 @@ public class TakeCommand extends Command
     }
     
     /**
-     * execute
      * Takes String input and splits it. If String array is >1, it calls Cogitate. If not, it asks for more input before calling cogitate
      * 
      * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      * 
-     * @return cogitate(parts)  Returns String message from cogitate method
-     * @return cogitate(pieces) Returns String message from cogitate method
-     * @return ""               Returns empty
+     * @return  String message to user.
      */
     String execute() throws InterruptedException, FileNotFoundException
     {
@@ -54,14 +51,10 @@ public class TakeCommand extends Command
     }
     
     /**
-     * cogitate
      * Determines if the user can take an item based on whether it's in the room, how heavy it is, and whether or not they already have it. 
      * 
      * @param sa    String Array of input split by execute method
-     * @return      String message after successful addition of item to inventory
-     * @return      String message that item is too heavy to take, but user can still interact with it
-     * @return      String message indicating user has the item in inventory
-     * @return      String message indicating the item is not in the room
+     * @return      String message to user based on success of take action. 
      */
     private static String cogitate(String [] sa)
     {   

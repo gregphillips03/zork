@@ -4,5 +4,5 @@ comment0.target=InventoryCommand()
 comment0.text=\r\n\ Constructor\ for\ object\ of\ Class\ InventoryCommand\r\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
-comment1.text=\r\n\ execute\r\n\ Displays\ user's\ items\ in\ inventory\ as\ String\ if\ user\ is\ carrying\ items\r\n\ \r\n\ @return\ \ \ \ \ \ Indicates\ user\ isn't\ carrying\ items\r\n\ @return\ s\ \ \ \ Returns\ items\ in\ user's\ inventory\ as\ String\r\n
+comment1.text=\r\n\ Displays\ user's\ items\ in\ inventory\ as\ String\ if\ user\ is\ carrying\ items\r\n\ \r\n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n\ @return\ s\ \ \ \ Returns\ items\ in\ user's\ inventory\ as\ String\r\n
 numComments=2

@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * InventoryCommand is an abstract extension of the Command Class
+ * InventoryCommand is an abstract extension of the Command Class. It allows the user to view items they are currently carrying. 
  * 
  * @author      William (Greg) Phillips
  * @version     Zork v1
@@ -18,10 +18,11 @@ public class InventoryCommand extends Command
     }
     
     /**
-     * execute
      * Displays user's items in inventory as String if user is carrying items
      * 
-     * @return      Indicates user isn't carrying items
+     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * 
      * @return s    Returns items in user's inventory as String
      */
     String execute() throws InterruptedException, FileNotFoundException

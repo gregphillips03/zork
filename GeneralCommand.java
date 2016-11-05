@@ -2,8 +2,7 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * GeneralCommand is an abstract extension of Command Class
- * Take generalized input from user and determines how to implement. Currently "look" and "exits" input
+ * GeneralCommand is an abstract extension of Command Class. Takes generalized input from user and determines how to implement. Currently "look" and "exits" input.
  * 
  * @author      William (Greg) Phillips
  * @version     Zork v1
@@ -23,13 +22,10 @@ public class GeneralCommand extends Command
     }
     
     /**
-     * execute
      * If "look" displays to user item and npcs in room as well as the rooms description. 
-     * If "exits" displays to user available room exits
+     * If "exits" displays to user available room exits. 
      * 
-     * @return s    Returns String of items, npcs, and room description
-     * @return s    Returns String of available exits
-     * @return ""   Returns empty String
+     * @return String message to user. 
      * 
      * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled

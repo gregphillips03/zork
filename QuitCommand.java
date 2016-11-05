@@ -2,8 +2,7 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * QuitCommand is an abstract extension of the Command Class
- * Qutis the game
+ * QuitCommand is an abstract extension of the Command Class. Quits the game.
  * 
  * @author      William (Greg) Phillips
  * @version     Zork v1
@@ -23,13 +22,12 @@ public class QuitCommand extends Command
     }
     
     /**
-     * exeucte
      * Quits the game and calls KillGame to kill the thread
      * 
      * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      * 
-     * @ return ""      Returns empty string
+     * @return      Returns empty string
      */
     String execute() throws InterruptedException, FileNotFoundException
     {

@@ -22,11 +22,12 @@ public class MovementCommand extends Command
     }
     
     /**
-     * execute
      * Attempts to move user between Room objects
      * 
-     * @return      String for successful movement
-     * @return      String for unsuccessful movement
+     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * 
+     * @return      String based on movement success or fail
      */
     String execute() throws InterruptedException, FileNotFoundException
     {

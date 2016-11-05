@@ -1,6 +1,6 @@
 
 /**
- * ItemSpecificCommand is an abstract extension of the Command Class
+ * ItemSpecificCommand is an abstract extension of the Command Class. It allows the user to perform specific actions with items. 
  * 
  * @author      William (Greg) Phillips
  * @version     Zork v1
@@ -23,13 +23,9 @@ public class ItemSpecificCommand extends Command
     }
     
     /**
-     * execute
      * Searches user's inventory and room for item. If found it attempts to pair it with the corresponding verb.
      * 
-     * @return s    Returns paired message for specified verb / from inventory
-     * @return s    String message indicating user cannot perform indicated verb on said object / from inventory
-     * @return s    Returns paired message for specified verb / from room
-     * @return s    String message indicating user cannot perform indicated verb on said object / from room
+     * @return      String message to user. 
      */
     String execute()
     {
