@@ -2,20 +2,35 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * QuitCommand
+ * QuitCommand is an abstract extension of the Command Class
+ * Qutis the game
  * 
  * @author      William (Greg) Phillips
- * @version     Bork v3.0
+ * @version     Zork v1
  */
 public class QuitCommand extends Command
 {
     private String quit = ""; 
     
+    /**
+     * Constructor for objects of Class QuitCommand
+     * 
+     * @param q     String from CommandFactory indicating to quit game
+     */
     QuitCommand(String q)
     {
         this.quit = q; 
     }
     
+    /**
+     * exeucte
+     * Quits the game and calls KillGame to kill the thread
+     * 
+     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * 
+     * @ return ""      Returns empty string
+     */
     String execute() throws InterruptedException, FileNotFoundException
     {
         if(this.quit.equals("q"))
