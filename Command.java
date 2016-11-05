@@ -2,7 +2,6 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * Command
  * Abstract class for formation of objects based on parsed user input
  * 
  * @author      William (Greg) Phillips

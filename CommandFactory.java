@@ -20,7 +20,7 @@ class CommandFactory
     public static List<String> AVAIL_VERBS = new ArrayList<>(); 
     
     /**
-     * Constructor for objects of class CommandFactory
+     * Constructor for objects of class CommandFactory.
      */
     private CommandFactory()
     {
@@ -28,9 +28,9 @@ class CommandFactory
     }
 
     /**
-     * Exists to control object creation 
+     * Exists to control object creation.
      * 
-     * @return      Returns instance of commandFactory object
+     * @return      Returns instance of commandFactory object.
      */
     public static CommandFactory instance() 
     {
@@ -38,11 +38,10 @@ class CommandFactory
     }
     
     /**
-     * Parses text from userInput.
-     * Handed focus from Interpreter Class
+     * Parses text from userInput. Handed focus from Interpreter Class.
      * 
-     * @param commandString     String input from Interpreter Class as input by end user
-     * @return                  Appropriate abstract Command object
+     * @param commandString     String input from Interpreter Class as input by end user.
+     * @return                  Appropriate abstract Command object.
      */
     Command parse(String commandString) throws InterruptedException, FileNotFoundException
     {
