@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.regex.*; 
 
 /**
- * Interpreter - Contains main function of game. Initializes Dungeon. Prompts User for input. 
+ * Contains main function of game. Initializes Dungeon. Prompts User for input. 
  * 
  * @ Author William (Greg) Phillips
  * @ Version Zork v1
@@ -12,11 +12,7 @@ public class Interpreter
 {
        
     /**
-     * main
-     * Main program to intialize game sequence. 
-     * Creates buffered reader object to manipulate in promptUser() method.
-     * Cycles until it receives the letter q from the promptUser() method. 
-     * Initiates instances of Singleton GameState and CommandFactory objects
+     * Main program to intialize game sequence. Creates buffered reader object to manipulate in promptUser() method. Cycles until it receives the letter q from the promptUser() method. Initiates instances of Singleton GameState and CommandFactory objects
      * 
      * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
@@ -43,11 +39,10 @@ public class Interpreter
     }    
     
     /**
-     * promptUser
      * Gets input from the system user.
      * 
-     * @param commandLine   BufferedReader object handed focus from main 
-     * @return userInput    Returns text that user types into keyboard
+     * @param commandLine   BufferedReader object handed focus from main. 
+     * @return userInput    Text that user types into keyboard.
      */
     static String promptUser(BufferedReader commandLine)
     {
@@ -66,9 +61,7 @@ public class Interpreter
     }
     
     /**
-     * beginGame
-     * Begins game by either starting a new dungeon, or hydrating from save file
-     * Helper method to declutter main
+     * Begins game by either starting a new dungeon, or hydrating from save file. Helper method to declutter main
      * 
      * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
@@ -119,9 +112,7 @@ public class Interpreter
      }  
     
     /** 
-     * introMessage
-     * Welcomes user to the dungeon by the dungeon's name, and provides user with initial description of entry room
-     * Helper method to declutter main
+     * Welcomes user to the dungeon by the dungeon's name, and provides user with initial description of entry room. Helper method to declutter main
      * 
      * @throw InterruptedException      Pushes thread sleep disruptions up the stack
      */
