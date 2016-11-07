@@ -12,6 +12,8 @@ public class Exit
     private Room src; 
     private Room dest; 
     private boolean locked;
+    private String key;
+    private String door;
     /**
      * Constructor for objects of class Exit
      * 
@@ -87,5 +89,14 @@ public class Exit
     public Room getDest()
     {
         return this.dest; 
+    }
+    
+    /**
+     * Changes boolean field "locked" value to true
+     * 
+     */
+    public void unlock()
+    {
+        //will code during next stage of project
     }
 }
