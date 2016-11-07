@@ -385,4 +385,13 @@ public class Room
         this.npcHere.remove(npc); 
     }
     
+    /**
+     * Unlocks the door based on the key given
+     * 
+     * @param key   String name of the item that unlocks the exit
+     */
+    public void unlockExit(String key)
+    {
+        //will write during next step of project
+    }
 }
