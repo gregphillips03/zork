@@ -11,7 +11,7 @@ public class Exit
     private String dir = ""; 
     private Room src; 
     private Room dest; 
-
+    private boolean locked;
     /**
      * Constructor for objects of class Exit
      * 

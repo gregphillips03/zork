@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=InventoryCommand()
-comment0.text=\r\n\ Constructor\ for\ object\ of\ Class\ InventoryCommand\r\n
+comment0.text=\n\ Constructor\ for\ object\ of\ Class\ InventoryCommand\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
-comment1.text=\r\n\ Displays\ user's\ items\ in\ inventory\ as\ String\ if\ user\ is\ carrying\ items\r\n\ \r\n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n\ @return\ s\ \ \ \ Returns\ items\ in\ user's\ inventory\ as\ String\r\n
+comment1.text=\n\ Displays\ user's\ items\ in\ inventory\ as\ String\ if\ user\ is\ carrying\ items\n\ \n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\n\ \n\ @return\ s\ \ \ \ Returns\ items\ in\ user's\ inventory\ as\ String\n
 numComments=2
