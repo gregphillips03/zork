@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=CommandFactory()
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ CommandFactory.\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CommandFactory.\r\n
 comment1.params=
 comment1.target=CommandFactory\ instance()
-comment1.text=\n\ Exists\ to\ control\ object\ creation.\n\ \n\ @return\ \ \ \ \ \ Returns\ instance\ of\ commandFactory\ object.\n
+comment1.text=\r\n\ Exists\ to\ control\ object\ creation.\r\n\ \r\n\ @return\ \ \ \ \ \ Returns\ instance\ of\ commandFactory\ object.\r\n
 comment2.params=commandString
 comment2.target=Command\ parse(java.lang.String)
-comment2.text=\n\ Parses\ text\ from\ userInput.\ Handed\ focus\ from\ Interpreter\ Class.\n\ \n\ @param\ commandString\ \ \ \ \ String\ input\ from\ Interpreter\ Class\ as\ input\ by\ end\ user.\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Appropriate\ abstract\ Command\ object.\n
+comment2.text=\r\n\ Parses\ text\ from\ userInput.\ Handed\ focus\ from\ Interpreter\ Class.\r\n\ \r\n\ @param\ commandString\ \ \ \ \ String\ input\ from\ Interpreter\ Class\ as\ input\ by\ end\ user.\r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Appropriate\ abstract\ Command\ object.\r\n
 numComments=3

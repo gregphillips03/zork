@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=gen
 comment0.target=GeneralCommand(java.lang.String)
-comment0.text=\n\ Constructor\ for\ objects\ of\ Class\ GeneralCommand\n\ \n\ @param\ gen\ \ \ \ \ \ \ String\ "look"\ or\ "exits"\ from\ CommandFactory\ parsed\ input\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ Class\ GeneralCommand\r\n\ \r\n\ @param\ gen\ \ \ \ \ \ \ String\ "look"\ or\ "exits"\ from\ CommandFactory\ parsed\ input\r\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
-comment1.text=\n\ If\ "look"\ displays\ to\ user\ item\ and\ npcs\ in\ room\ as\ well\ as\ the\ rooms\ description.\ \n\ If\ "exits"\ displays\ to\ user\ available\ room\ exits.\ \n\ \n\ @return\ String\ message\ to\ user.\ \n\ \n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\n
+comment1.text=\r\n\ If\ "look"\ displays\ to\ user\ item\ and\ npcs\ in\ room\ as\ well\ as\ the\ rooms\ description.\ \r\n\ If\ "exits"\ displays\ to\ user\ available\ room\ exits.\ \r\n\ \r\n\ @return\ String\ message\ to\ user.\ \r\n\ \r\n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n
 numComments=2
