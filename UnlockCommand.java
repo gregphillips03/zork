@@ -35,5 +35,9 @@ public class UnlockCommand extends Command
     {
         return "test";
     }
-   
+    
+    String test()
+    {
+        return "This is a test class";
+    }
 }
