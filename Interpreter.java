@@ -17,7 +17,7 @@ public class Interpreter
      * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      */
-    public static void main(String[] args) throws InterruptedException, FileNotFoundException
+    public static void main(String args[]) throws InterruptedException, FileNotFoundException
     {
         BufferedReader commandLine = new BufferedReader(new InputStreamReader(System.in));
         String s = "";
