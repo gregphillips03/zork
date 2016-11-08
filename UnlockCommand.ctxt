@@ -5,6 +5,4 @@ comment0.text=\n\ Constructor\ for\ objects\ of\ Class\ UnlockCommand\n\ \n\ @pa
 comment1.params=
 comment1.target=java.lang.String\ execute()
 comment1.text=\n\ Attempts\ to\ unlock\ door\ with\ given\ parameters\n\ \n\ @return\ String\ message\ to\ user\n\ \n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\n\ \n
-comment2.params=
-comment2.target=java.lang.String\ test()
-numComments=3
+numComments=2
