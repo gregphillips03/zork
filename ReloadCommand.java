@@ -27,8 +27,8 @@ public class ReloadCommand extends Command
      * 
      * @return String message to user
      * 
-     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
-     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      * 
      */
     String execute() throws InterruptedException, FileNotFoundException

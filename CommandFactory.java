@@ -40,8 +40,10 @@ class CommandFactory
     /**
      * Parses text from userInput. Handed focus from Interpreter Class.
      * 
-     * @param commandString     String input from Interpreter Class as input by end user.
-     * @return                  Appropriate abstract Command object.
+     * @param commandString              String input from Interpreter Class as input by end user.
+     * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * @return                           Appropriate abstract Command object.
      */
     Command parse(String commandString) throws InterruptedException, FileNotFoundException
     {

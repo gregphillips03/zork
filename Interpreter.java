@@ -14,8 +14,8 @@ public class Interpreter
     /**
      * Main program to intialize game sequence. Creates buffered reader object to manipulate in promptUser() method. Cycles until it receives the letter q from the promptUser() method. Initiates instances of Singleton GameState and CommandFactory objects
      * 
-     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
-     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      */
     public static void main(String[] args) throws InterruptedException, FileNotFoundException
     {
@@ -63,8 +63,8 @@ public class Interpreter
     /**
      * Begins game by either starting a new dungeon, or hydrating from save file. Helper method to declutter main
      * 
-     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
-     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      */
     public static void beginGame() throws InterruptedException, FileNotFoundException
     {

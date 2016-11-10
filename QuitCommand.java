@@ -24,8 +24,8 @@ public class QuitCommand extends Command
     /**
      * Quits the game and calls KillGame to kill the thread
      * 
-     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
-     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      * 
      * @return      Returns empty string
      */

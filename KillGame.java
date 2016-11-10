@@ -11,6 +11,7 @@ public class KillGame
      * Forces the program to quit with a termination code of 1 (something unexpectedly went wrong)
      * 
      * @param s String to be added to System output
+     * @throws Pushes IO exception up the stack
      */
     public static void gameKill(String s) throws InterruptedException
     {   
@@ -42,7 +43,7 @@ public class KillGame
     
     /**
      * Forces the program to quit with a termination code of 0 (expected termination)
-     * 
+     * @throws Pushes IO exception up the stack
      */    
     public static void endGame() throws InterruptedException
     {

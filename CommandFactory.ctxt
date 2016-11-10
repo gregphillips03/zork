@@ -7,5 +7,5 @@ comment1.target=CommandFactory\ instance()
 comment1.text=\r\n\ Exists\ to\ control\ object\ creation.\r\n\ \r\n\ @return\ \ \ \ \ \ Returns\ instance\ of\ commandFactory\ object.\r\n
 comment2.params=commandString
 comment2.target=Command\ parse(java.lang.String)
-comment2.text=\r\n\ Parses\ text\ from\ userInput.\ Handed\ focus\ from\ Interpreter\ Class.\r\n\ \r\n\ @param\ commandString\ \ \ \ \ String\ input\ from\ Interpreter\ Class\ as\ input\ by\ end\ user.\r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Appropriate\ abstract\ Command\ object.\r\n
+comment2.text=\r\n\ Parses\ text\ from\ userInput.\ Handed\ focus\ from\ Interpreter\ Class.\r\n\ \r\n\ @param\ commandString\ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ input\ from\ Interpreter\ Class\ as\ input\ by\ end\ user.\r\n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Appropriate\ abstract\ Command\ object.\r\n
 numComments=3

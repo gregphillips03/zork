@@ -4,5 +4,5 @@ comment0.target=java.lang.String\ RandomEvent(double)
 comment0.text=\r\n\ Constructor\ for\ RandomEvent\ generator\r\n\ \r\n\ @param\ percentage\ is\ the\ base\ percentage\ chance\ that\ a\ random\ event\ occurs\r\n\ @return\ String\ type\ of\ event\ that\ was\ executed\r\n
 comment1.params=event
 comment1.target=void\ initEvents(java.lang.String)
-comment1.text=\r\n\ Attempts\ to\ reload\ the\ game\r\n\ \r\n\ @param\ event\ tells\ the\ function\ initEvents\ \r\n\ \r\n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n
+comment1.text=\r\n\ Attempts\ to\ reload\ the\ game\r\n\ \r\n\ @param\ event\ tells\ the\ function\ initEvents\ \r\n\ \r\n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n
 numComments=2

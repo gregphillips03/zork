@@ -24,8 +24,8 @@ public class MovementCommand extends Command
     /**
      * Attempts to move user between Room objects
      * 
-     * @throw InterruptedException      Pushes thread sleep disruptions up the stack 
-     * @throw FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      * 
      * @return      String based on movement success or fail
      */

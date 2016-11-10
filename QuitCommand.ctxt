@@ -4,5 +4,5 @@ comment0.target=QuitCommand(java.lang.String)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ Class\ QuitCommand\r\n\ \r\n\ @param\ q\ \ \ \ \ String\ from\ CommandFactory\ indicating\ to\ quit\ game\r\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
-comment1.text=\r\n\ Quits\ the\ game\ and\ calls\ KillGame\ to\ kill\ the\ thread\r\n\ \r\n\ @throw\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throw\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n\ @return\ \ \ \ \ \ Returns\ empty\ string\r\n
+comment1.text=\r\n\ Quits\ the\ game\ and\ calls\ KillGame\ to\ kill\ the\ thread\r\n\ \r\n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n\ @return\ \ \ \ \ \ Returns\ empty\ string\r\n
 numComments=2
