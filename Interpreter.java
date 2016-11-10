@@ -5,8 +5,8 @@ import java.util.regex.*;
 /**
  * Contains main function of game. Initializes Dungeon. Prompts User for input. 
  * 
- * @ Author William (Greg) Phillips
- * @ Version Zork v1
+ * @author William (Greg) Phillips
+ * @version Zork v1
  */
 public class Interpreter
 {
@@ -16,6 +16,7 @@ public class Interpreter
      * 
      * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
+     * @param args                       Commandline string arguments
      */
     public static void main(String[] args) throws InterruptedException, FileNotFoundException
     {
@@ -114,7 +115,7 @@ public class Interpreter
     /** 
      * Welcomes user to the dungeon by the dungeon's name, and provides user with initial description of entry room. Helper method to declutter main
      * 
-     * @throw InterruptedException      Pushes thread sleep disruptions up the stack
+     * @throws InterruptedException      Pushes thread sleep disruptions up the stack
      */
     public static void introMessage() throws InterruptedException
     {

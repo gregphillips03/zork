@@ -31,8 +31,10 @@ public class Dungeon
     /**
      * Constructor for objects of class Dungeon
      * 
-     * @param filename      Filename to read dungeon file from.
-     * @param initState     Tells the dungeon's subsequent components if they should hydrate at creation or what for informaiton from save file.
+     * @param filename                   Filename to read dungeon file from.
+     * @param initState                  Tells the dungeon's subsequent components if they should hydrate at creation or what for informaiton from save file.
+     * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
+     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      */
     public Dungeon(String filename, boolean initState) throws FileNotFoundException, InterruptedException
     {

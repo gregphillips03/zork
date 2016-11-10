@@ -26,11 +26,9 @@ public class RandomEvent {
      * 
      * @param event tells the function initEvents 
      * 
-     * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
-     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
-     * 
      */
     public void initEvents(String event) 
     {
+        
     } 
 }

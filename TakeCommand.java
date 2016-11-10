@@ -23,7 +23,7 @@ public class TakeCommand extends Command
     }
     
     /**
-     * Takes String input and splits it. If String array is >1, it calls Cogitate. If not, it asks for more input before calling cogitate
+     * Takes String input and splits it. If String array is less than 1, it calls Cogitate. If not, it asks for more input before calling cogitate
      * 
      * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled

@@ -38,9 +38,9 @@ public class Denizen
     /**
      * Constructor for Denizen objects
      * 
-     * @param s     Scanner object for hydration.
-     * @param d     Dungeon object for hydration.
-     * @param b     Initialization parameter. Tells constructor whether or not to set NPC current room and add object or avoid duplicaton of objects in dungeon.
+     * @param s             Scanner object for hydration.
+     * @param d             Dungeon object for hydration.
+     * @param initState     Initialization parameter. Tells constructor whether or not to set NPC current room and add object or avoid duplicaton of objects in dungeon.
      */
     public Denizen(Scanner s, Dungeon d, boolean initState)
     {
@@ -230,6 +230,7 @@ public class Denizen
      * 
      * @param min   Bottom limit for random number / currently only 0 to match bottom of Array index.
      * @param max   Upper limit fo random number / maxes out at the size of the ArrayList of exits, -1 for 0-based.
+     * @return      randomly generated integer within a range defined by the number of available exits
      */
     static int randInt(int min, int max)
     {

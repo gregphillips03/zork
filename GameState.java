@@ -78,6 +78,7 @@ class GameState
      * Persistence method to write information to save file.
      * 
      * @param saveName      Name file to write to / focus handed from SaveCommand Class.
+     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      */
     public void store(String saveName) throws FileNotFoundException
     {
@@ -127,6 +128,7 @@ class GameState
      * Hydration method to restore game state.
      * 
      * @param filename      Name of file to restore from / handed focus from Interpreter Class.
+     * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
      */
     public void restore(String filename) throws FileNotFoundException
     {
@@ -222,7 +224,7 @@ class GameState
      * Searches user inventory for item of specified name.
      * 
      * @param name      Primary name of item to search for
-     * @return item     Item object if found in room. Null if Item cannot be found.
+     * @return          Item object if found in room. Null if Item cannot be found.
      */
     Item getItemFromInventory(String name)
     {

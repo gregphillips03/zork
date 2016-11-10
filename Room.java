@@ -5,8 +5,8 @@ import java.util.regex.*;
 /**
  * Room Class contains room objects. Each room has a description, and knows if it has been visited or not. Each room can contain items and NPCs.
  * 
- * @ Author     William (Greg) Phillips
- * @ Version    Zork v1
+ * @author     William (Greg) Phillips
+ * @version    Zork v1
  */
 public class Room
 {
@@ -96,8 +96,9 @@ public class Room
     /**
      * Attempts to move from one room to another room. If a direction is found in the room's arraylist of exits, then a Room objet is sent back. Else, null is returned
      * 
-     * @param dir       Direction to attempt to exit
-     * @return          Destination to exit to as a Room object. Null if there isn't an exit in the specified direction
+     * @param dir                       Direction to attempt to exit
+     * @return                          Destination to exit to as a Room object. Null if there isn't an exit in the specified direction
+     * @throws InterruptedException     Pushes IO exception up the stack
      */ 
     Room leaveBy(String dir) throws InterruptedException
     {
