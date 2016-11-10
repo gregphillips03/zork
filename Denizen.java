@@ -241,9 +241,9 @@ public class Denizen
     /**
      * This is called if the NPC is currently pissed off. It attempts to follow the user if it is located in an adjacent room to the user's current room
      * 
-     * @ param room     The room the NPC is currently sitting in
-     * @ param npc      The current denizen object to work on
-     * @ return         Boolean value based on failure or success where user is or isn't located in an adjacent or same room as the NPC.
+     * @param room     The room the NPC is currently sitting in
+     * @param npc      The current denizen object to work on
+     * @return         Boolean value based on failure or success where user is or isn't located in an adjacent or same room as the NPC.
      */
     static boolean tryFollowUser(Room room, Denizen npc)
     {
@@ -275,9 +275,9 @@ public class Denizen
     /**
      * This moves the NPC to a random room
      * 
-     * @ param room     The room the NPC is currently sitting in.
-     * @ param i        Random number to index in room's array of exits.
-     * @ param npc      The current denizen object to work on.
+     * @param room     The room the NPC is currently sitting in.
+     * @param i        Random number to index in room's array of exits.
+     * @param npc      The current denizen object to work on.
      */
     static void goToAdjacentRoom(Room room, int i, Denizen npc)
     {
