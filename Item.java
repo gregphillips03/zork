@@ -29,13 +29,24 @@ public class Item
         {
             String sub = s.nextLine(); 
             String[] parts = sub.split(":"); 
-            // need to account for the brackets
-            String verb = parts[0]; 
-            String message = parts[1]; 
-            CommandFactory cf = CommandFactory.instance(); 
-            cf.AVAIL_VERBS.add(verb); 
-            this.messages.put(verb, message); 
-            //System.out.println("Added the verb '" + verb + "', with the message, '" + message + "'."); 
+            if(!parts[0].contains("["))
+            {
+                String verb = parts[0]; 
+                String message = parts[1]; 
+                CommandFactory cf = CommandFactory.instance(); 
+                cf.AVAIL_VERBS.add(verb); 
+                this.messages.put(verb, message); 
+                //System.out.println("Added the verb '" + verb + "', with the message, '" + message + "'."); 
+            }else
+            {
+                String x = parts[0]; 
+                String[] pieces = x.split("["); 
+                String verb = pieces[0];
+                String evnt = pieces[1]; 
+                String xx = evnt.substring(evnt.indexOf("[")+1, evnt.lastIndexOf("]"));
+                //pick up here 
+                String[] events = xx.split(","); 
+            }
         }
         s.nextLine(); 
     }
@@ -65,6 +76,7 @@ public class Item
         //System.out.println(verb + " not found.\n"); 
         return null; 
     }
+    
     /**
      * Displays the Item's available verbs as a String
      * 
@@ -90,4 +102,5 @@ public class Item
     {
         return this.weight; 
     }
+    
 }

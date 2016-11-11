@@ -41,6 +41,7 @@ public class ItemSpecificCommand extends Command
                 s = item.getMessageForVerb(verb); 
                 if(s != null)
                 {
+                    //possible area to check for event and verb combo
                     return s; 
                 }
                 else
@@ -59,6 +60,7 @@ public class ItemSpecificCommand extends Command
                 s = item.getMessageForVerb(verb); 
                 if(s != null)
                 {
+                    //possible area to check for event and verb combo                
                     return s; 
                 }
                 else
