@@ -12,7 +12,8 @@ public class Item
     private String primaryName = ""; 
     private int weight = 0; 
     private Hashtable<String, String> messages = new Hashtable<String, String>(); 
-    private Hashtable<String, Event> itemEvent = new Hashtable<String, Event>(); 
+    private Hashtable<String, ArrayList<Event>> itemEvents = new Hashtable<String, ArrayList<Event>>(); 
+    //private ArrayList<Event> events = new ArrayList<Event>();
     
     /**
      * Constructor for objects of class Item
@@ -40,6 +41,7 @@ public class Item
                 //System.out.println("Added the verb '" + verb + "', with the message, '" + message + "'."); 
             }else
             {
+                ArrayList<Event> events = new ArrayList<Event>();
                 String x = parts[0]; 
                 String message = parts[1]; 
                 CommandFactory cf = CommandFactory.instance();
@@ -51,11 +53,12 @@ public class Item
                 String evnt = pieces[1]; 
                 String xx = evnt.substring(evnt.indexOf("[")+1, evnt.lastIndexOf("]"));
                 //pick up here 
-                String[] events = xx.split(","); 
-                for(String event : events)
+                String[] eventString = xx.split(","); 
+                for(String event : eventString)
                 {
                     Event e = new Event(event); 
-                    this.itemEvent.put(verb, e); 
+                    events.add(e); 
+                    this.itemEvents.put(verb, events); 
                 }
             }
         }
