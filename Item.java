@@ -5,7 +5,7 @@ import java.io.*;
  * Item class contains Item objects that are stored in rooms, with the user, or with a NPC
  * 
  * @author William (Greg) Phillips
- * @version Zork v1
+ * @version Zork v1.2
  */
 public class Item
 {
@@ -13,7 +13,6 @@ public class Item
     private int weight = 0; 
     private Hashtable<String, String> messages = new Hashtable<String, String>(); 
     private Hashtable<String, ArrayList<Event>> itemEvents = new Hashtable<String, ArrayList<Event>>(); 
-    //private ArrayList<Event> events = new ArrayList<Event>();
     
     /**
      * Constructor for objects of class Item
@@ -38,7 +37,7 @@ public class Item
                 CommandFactory cf = CommandFactory.instance(); 
                 cf.AVAIL_VERBS.add(verb); 
                 this.messages.put(verb, message); 
-                //System.out.println("Added the verb '" + verb + "', with the message, '" + message + "'."); 
+                //System.out.println("Added the verb '" + verb + "', with the message, '" + message + "'."); //debugging
             }else
             {
                 ArrayList<Event> events = new ArrayList<Event>();
@@ -46,18 +45,17 @@ public class Item
                 String message = parts[1]; 
                 CommandFactory cf = CommandFactory.instance();
                 
-                String[] pieces = x.split("["); 
+                String[] pieces = x.split("\\["); 
                 String verb = pieces[0];
                 cf.AVAIL_VERBS.add(verb);
                 this.messages.put(verb, message); 
-                String evnt = pieces[1]; 
-                String xx = evnt.substring(evnt.indexOf("[")+1, evnt.lastIndexOf("]"));
-                //pick up here 
+                String xx = getBracketContent(pieces[1]); 
                 String[] eventString = xx.split(","); 
                 for(String event : eventString)
                 {
                     Event e = new Event(event); 
                     events.add(e); 
+                    System.out.println("Added '" + e.getEventType() + "' to Array List for Item '" +this.getPrimaryName() +"'."); //debugging
                     this.itemEvents.put(verb, events); 
                 }
             }
@@ -116,5 +114,16 @@ public class Item
     {
         return this.weight; 
     }
+    
+    /**
+     * Strips out the content between brackets.
+     * 
+     * @param s     Value to be parsed
+     * @return      String value with brackets stripped out
+     */
+    private String getBracketContent(String s)
+    {
+        return s.substring(s.indexOf('[')+1, s.indexOf(']')); 
+    }  
     
 }

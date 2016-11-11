@@ -54,7 +54,17 @@ public class Event
     private String getParenthesesContent(String s)
     {
         return s.substring(s.indexOf('(')+1, s.indexOf(')')); 
-    }    
+    } 
+    
+    /**
+     * Getter method for Event type
+     * 
+     * @return      String value of Event's type
+     */
+    public String getEventType()
+    {
+        return this.type; 
+    }
     
     /**
      * Handles events that are wound actions.

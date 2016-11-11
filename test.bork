@@ -1,0 +1,351 @@
+Forward Unto Dawn
+Bork v3.0
+===
+Items:
+boltpistol 5
+fire[Score(2)]:+++A round is fired from the chamber+++
+brandish:+++You wave the pistol in the air+++
+---
+chainsword 5
+swing:++++vrrrrr! vrrrrr!+++
+---
+dataslate 1
+read[Score(1),Teleport]:++++Contents Locked - Enter Authorization Code++++
+unlock[Transform(unlockedDataslate)]:+++Enter Authorization Code++++
+---
+unlockedDataslate 1
+---
+powerpack 10
+activate:++++The powerpack softly hums++++
+deactivate:++++The powerpack turns off++++
+---
+datacoil 5
+---
+servoskull1 0
+activate:++++The eyes flash three times++++
+---
+servoskull2 0
+activate:++++The eyes flash three times, then two++++
+---
+holoplinth 99999
+activate:++++The holoplinth's machine spirit awakens++++
+---
+purityseal1 0
+wear[Score(5),Disappear]:++++For The Emperor!++++
+---
+smallbag 0
+---
+orkglyph 5
+---
+rokkitlauncher 15
+---
+squigbomb 0
+---
+orkglyph2 0
+break[Wound(2)]:++++It oozes an acrid sludge++++
+---
+orkglyph3 0
+---
+===
+Rooms:
+Engine Control
+Contents: dataslate,holoplinth
+This room controls the ships reactor.
+The engine hums low, its power contained by arcane forces.
+Control lecturns occupy the vast majority of the room.
+---
+Corridor Alpha Eng
+Contents: chainsword
+A corridor with stark, gray walls.
+---
+Corridor Bravo Eng
+Contents: boltpistol
+The lighting is dim here.
+Plasteel and ceramite line the walls.
+---
+Intersection Gamma Eng
+A common intersection among starship corridors.
+Steel grating lines the floor. 
+---
+Corridor Delta Eng (N)
+A corridor common among starships.
+The diamondplate floor has been scuffed by many years of service.
+---
+Corridor Delta Eng (S)
+A corridor common among starships.
+---
+Intersection Epsilon Eng
+Contents: powerpack
+A common intersection among starship corridors.
+The diamondplate tread is dull and matte.
+---
+Equipment Locker
+Contents: datacoil,servoskull1
+Radiation suits hang hooks on the wall.
+Various equipment litters the benches, once used to enter the ship's reactor room.
+---
+Corridor Theta Eng (N)
+A corridor common among starships.
+A sign on the West wall reads "To Eng Ctrl <-"
+---
+Corridor Theta Eng (S)
+A corridor common among starships.
+A sign on the West wall reads "To Eng Ctrl ->"
+---
+Decon Primus
+Primary decontamination chamber for reactor room.
+A large, ceramite door leads to ship's reactor room.
+---
+Decon Secundus
+Secondary decontamination chamber for reactor room.
+A large, ceramite door leads to ship's reactor room.
+---
+Reactor Entrance West
+Contents: servoskull2
+Reactor Room's West entrance.
+---
+Reactor Entrance East
+Reactor Room's East entrance.
+---
+Reactor Room NW Corner
+Northwest corner of reactor room.
+A dim, sodium lamp provides meager illumination.
+---
+Reactor Room NE Corner
+Northeast corner of reactor room.
+The wall's metal shows sign of neutron embrittlement.
+Was there a containment breach in the past?
+---
+Nozzle Array
+A myriad of pipes feeding into the reactor core.
+---
+Reactor Floor
+The main floor of the reactor room.
+There are railings to the east and west, separating you from the space below.
+A caged ladder leads to the containment area below.
+---
+Aft Propellant Plenum Exchange
+Contents: purityseal1
+This ship employs an anti-matter pion torch reactor.
+The plenum exchange feeds propellant to the aft engines at a 20:1 mass ratio, 
+where it is then expelled by the engines.
+---
+Port Heat Exchange
+Western side of room.
+Heat exchangers for reactor. 
+---
+Starboard Heat Exchange
+Eastern side of room.
+Heat exchangers for reactor. 
+---
+Containment Pool Gantry
+This area surrounds the containment pool for the ship's reactor.
+A blue glow emanates from the deep water.
+A ladder leads to the pool floor, submerged by the particle heavy water.
+---
+===
+Exits:
+Engine Control
+w
+Corridor Alpha Eng
+---
+Corridor Alpha Eng
+e
+Engine Control
+---
+Engine Control
+e
+Corridor Bravo Eng
+---
+Corridor Bravo Eng
+w
+Engine Control
+---
+Corridor Bravo Eng
+e
+Intersection Gamma Eng
+---
+Intersection Gamma Eng
+w
+Corridor Bravo Eng
+---
+Intersection Gamma Eng
+n
+Corridor Delta Eng (N)
+---
+Corridor Delta Eng (N)
+s
+Intersection Gamma Eng
+---
+Intersection Gamma Eng
+s
+Corridor Delta Eng (S)
+---
+Corridor Delta Eng (S)
+n
+Intersection Gamma Eng
+---
+Corridor Alpha Eng
+w
+Intersection Epsilon Eng
+---
+Intersection Epsilon Eng
+e
+Corridor Alpha Eng
+---
+Intersection Gamma Eng
+e
+Equipment Locker
+---
+Equipment Locker
+w
+Intersection Gamma Eng
+---
+Intersection Epsilon Eng
+n
+Corridor Theta Eng (N)
+---
+Corridor Theta Eng (N)
+s
+Intersection Epsilon Eng
+---
+Corridor Theta Eng (S)
+n
+Intersection Epsilon Eng
+---
+Intersection Epsilon Eng
+s
+Corridor Theta Eng (S)
+---
+Corridor Theta Eng (S)
+s
+Decon Secundus
+---
+Decon Secundus
+n
+Corridor Theta Eng (S)
+---
+Corridor Delta Eng (S)
+s
+Decon Primus
+---
+Decon Primus
+n
+Corridor Delta Eng (S)
+---
+Decon Secundus
+e
+Reactor Entrance West
+---
+Reactor Entrance West
+w
+Decon Secundus
+---
+Decon Primus
+w
+Reactor Entrance East
+---
+Reactor Entrance East
+e
+Decon Primus
+---
+Reactor Entrance West
+n
+Reactor Room NW Corner
+---
+Reactor Room NW Corner
+s
+Reactor Entrance West
+---
+Reactor Entrance East
+n
+Reactor Room NE Corner
+---
+Reactor Room NE Corner
+s
+Reactor Entrance East
+---
+Reactor Room NW Corner
+e
+Nozzle Array
+---
+Nozzle Array
+w
+Reactor Room NW Corner
+---
+Reactor Room NE Corner
+w
+Nozzle Array
+---
+Nozzle Array
+e
+Reactor Room NE Corner
+---
+Nozzle Array
+s
+Reactor Floor
+---
+Reactor Floor
+n
+Nozzle Array
+---
+Reactor Floor
+s
+Aft Propellant Plenum Exchange
+---
+Aft Propellant Plenum Exchange
+n
+Reactor Floor
+---
+Aft Propellant Plenum Exchange
+w
+Port Heat Exchange
+---
+Port Heat Exchange
+e
+Aft Propellant Plenum Exchange
+---
+Starboard Heat Exchange
+w
+Aft Propellant Plenum Exchange
+---
+Aft Propellant Plenum Exchange
+e
+Starboard Heat Exchange
+---
+Reactor Floor
+d
+Containment Pool Gantry
+---
+Containment Pool Gantry
+u
+Reactor Floor
+---
+===
+NPC:
+OrkBoy
+Engine Control
+20
+mobile
+calm
+Carries: smallbag,orkglyph
+A standard ork boy, armed with an axe
+---
+Squig
+Equipment Locker
+5
+mobile
+angry
+Carries: squigbomb
+A small squig
+---
+OrkNob
+Decon Secundus
+100
+mobile
+angry
+Carries: rokkitlauncher
+A hulking beast of an Ork
+This is a warrior of warriors, tested through many battles
+---
+===
