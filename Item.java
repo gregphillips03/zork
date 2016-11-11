@@ -12,6 +12,7 @@ public class Item
     private String primaryName = ""; 
     private int weight = 0; 
     private Hashtable<String, String> messages = new Hashtable<String, String>(); 
+    private Hashtable<String, Event> itemEvent = new Hashtable<String, Event>(); 
     
     /**
      * Constructor for objects of class Item
@@ -29,7 +30,7 @@ public class Item
         {
             String sub = s.nextLine(); 
             String[] parts = sub.split(":"); 
-            if(!parts[0].contains("["))
+            if(!parts[0].contains("[")) //checks to see if there are events associated with the verb
             {
                 String verb = parts[0]; 
                 String message = parts[1]; 
@@ -40,12 +41,22 @@ public class Item
             }else
             {
                 String x = parts[0]; 
+                String message = parts[1]; 
+                CommandFactory cf = CommandFactory.instance();
+                
                 String[] pieces = x.split("["); 
                 String verb = pieces[0];
+                cf.AVAIL_VERBS.add(verb);
+                this.messages.put(verb, message); 
                 String evnt = pieces[1]; 
                 String xx = evnt.substring(evnt.indexOf("[")+1, evnt.lastIndexOf("]"));
                 //pick up here 
                 String[] events = xx.split(","); 
+                for(String event : events)
+                {
+                    Event e = new Event(event); 
+                    this.itemEvent.put(verb, e); 
+                }
             }
         }
         s.nextLine(); 
