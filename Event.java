@@ -21,94 +21,28 @@ public class Event
     {
         if(action.contains("Wound"))
         {
-            wound(action); 
+            String[] parts = action.split("\\(");
+            this.type = parts[0]; 
+            this.health = Integer.parseInt(getParenthesesContent(action)); 
         }
-        else if(action.contains("Die")) 
+        else if(action.contains("Die") |
+                action.contains("Teleport") |
+                action.contains("Disappear")) 
         {
-            die(action); 
+            this.type = action; 
         }
         else if(action.contains("Transform"))
         {
-            transform(action); 
+            String[] parts = action.split("\\(");
+            this.type = parts[0];    
+            this.xfrm = getParenthesesContent(action); 
         }
         else if(action.contains("Score"))
         {
-            score(action); 
+            String[] parts = action.split("\\(");
+            this.type = parts[0];    
+            this.score = Integer.parseInt(getParenthesesContent(action)); 
         }
-        else if(action.contains("Teleport"))
-        {
-            teleport(action); 
-        }
-        else if(action.contains("Disappear"))
-        {
-            disappear(action); 
-        }
-    }
-    
-    /**
-     * Handles events that are wound actions.
-     * 
-     * @param s     Action to be parsed
-     */
-    private void wound(String s)
-    {
-        String[] parts = s.split("\\(");
-        this.type = parts[0]; 
-        this.health = Integer.parseInt(getParenthesesContent(s)); 
-    }
-    
-    /**
-     * Handles events that are die actions.
-     * 
-     * @param s     Action to be parsed
-     */
-    private void die(String s)
-    {
-        this.type = s; 
-    }
-    
-    /**
-     * Handles events that are transform actions.
-     * 
-     * @param s     Action to be parsed
-     */
-    private void transform(String s)
-    {
-        String[] parts = s.split("\\(");
-        this.type = parts[0];    
-        this.xfrm = getParenthesesContent(s); 
-    }
-    
-    /**
-     * Handles events that are score actions.
-     * 
-     * @param s     Action to be parsed
-     */
-    private void score(String s)
-    {
-        String[] parts = s.split("\\(");
-        this.type = parts[0];    
-        this.score = Integer.parseInt(getParenthesesContent(s)); 
-    }
-    
-    /**
-     * Handles events that are teleport actions.
-     * 
-     * @param s     Action to be parsed
-     */
-    private void teleport(String s)
-    {
-        this.type = s; 
-    }
-    
-    /**
-     * Handles events that are disappear actions. 
-     * 
-     * @param s     Action to be parsed
-     */
-    private void disappear(String s)
-    {
-        this.type = s; 
     }
     
     /**
@@ -120,5 +54,65 @@ public class Event
     private String getParenthesesContent(String s)
     {
         return s.substring(s.indexOf('(')+1, s.indexOf(')')); 
+    }    
+    
+    /**
+     * Handles events that are wound actions.
+     * 
+     * @param s     Action to be parsed
+     */
+    private void wound(String s)
+    {
+
+    }
+    
+    /**
+     * Handles events that are die actions.
+     * 
+     * @param s     Action to be parsed
+     */
+    private void die(String s)
+    {
+
+    }
+    
+    /**
+     * Handles events that are transform actions.
+     * 
+     * @param s     Action to be parsed
+     */
+    private void transform(String s)
+    {
+
+    }
+    
+    /**
+     * Handles events that are score actions.
+     * 
+     * @param s     Action to be parsed
+     */
+    private void score(String s)
+    {
+
+    }
+    
+    /**
+     * Handles events that are teleport actions.
+     * 
+     * @param s     Action to be parsed
+     */
+    private void teleport(String s)
+    {
+
+    }
+    
+    /**
+     * Handles events that are disappear actions. 
+     * 
+     * @param s     Action to be parsed
+     */
+    private void disappear(String s)
+    {
+
     }
 }
