@@ -4,5 +4,5 @@ comment0.target=ItemSpecificCommand(java.lang.String,\ java.lang.String)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ Class\ ItemSpecificCommand\r\n\ \r\n\ @param\ verb\ \ \ \ \ \ Item's\ action\ verb\ as\ a\ String\r\n\ @param\ noun\ \ \ \ \ \ Item's\ pairing\ message\ sent\ from\ CommandFactory\ as\ complete\ input\r\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
-comment1.text=\r\n\ Searches\ user's\ inventory\ and\ room\ for\ item.\ If\ found\ it\ attempts\ to\ pair\ it\ with\ the\ corresponding\ verb.\r\n\ \r\n\ @return\ \ \ \ \ \ String\ message\ to\ user.\ \r\n
+comment1.text=\r\n\ Searches\ user's\ inventory\ and\ room\ for\ item.\ If\ found\ it\ attempts\ to\ pair\ it\ with\ the\ corresponding\ verb.\r\n\ \r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ message\ to\ user.\ \r\n\ @throws\ InterruptedException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\r\n
 numComments=2

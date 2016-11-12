@@ -1,9 +1,13 @@
+import java.util.*; 
+import java.io.*; 
 
 /**
  * ItemSpecificCommand is an abstract extension of the Command Class. It allows the user to perform specific actions with items. 
+ * It looks at the item's verb to see if there is a corresponding action with that verb. 
+ * If found, it calls the appropriate action for the item verb. 
  * 
  * @author      William (Greg) Phillips
- * @version     Zork v1
+ * @version     Zork v1.2
  */
 public class ItemSpecificCommand extends Command
 {
@@ -25,9 +29,10 @@ public class ItemSpecificCommand extends Command
     /**
      * Searches user's inventory and room for item. If found it attempts to pair it with the corresponding verb.
      * 
-     * @return      String message to user. 
+     * @return                          String message to user. 
+     * @throws InterruptedException     Pushes IO exception up the stack
      */
-    String execute()
+    String execute() throws InterruptedException
     {
         String [] parts = noun.split(" "); 
         GameState gs = GameState.instance(); 
@@ -41,8 +46,15 @@ public class ItemSpecificCommand extends Command
                 s = item.getMessageForVerb(verb); 
                 if(s != null)
                 {
-                    //possible area to check for event and verb combo
-                    return s; 
+                    ArrayList<Event> al = item.getEventsForVerb(verb);     
+                    if(al != null)
+                    {
+                        for(Event e : al)
+                        {
+                            s = s + e.generateEvent(); 
+                        }
+                        return s; 
+                    } 
                 }
                 else
                 {
@@ -60,7 +72,14 @@ public class ItemSpecificCommand extends Command
                 s = item.getMessageForVerb(verb); 
                 if(s != null)
                 {
-                    //possible area to check for event and verb combo                
+                    ArrayList<Event> al = item.getEventsForVerb(verb);
+                    if(al != null)
+                    {
+                        for(Event e : al)
+                        {
+                            s = s + e.generateEvent(); 
+                        }  
+                    }
                     return s; 
                 }
                 else

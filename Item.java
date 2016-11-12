@@ -90,6 +90,22 @@ public class Item
     }
     
     /**
+     * Access the hashtable that contains the verb and event arraylist combination
+     * 
+     * @param verb      Verb as String to look for in itemEvents hashtable
+     * @return          Arraylist of verbs available actions
+     */
+    public ArrayList getEventsForVerb(String verb)
+    {
+        if(this.itemEvents.containsKey(verb))
+        {
+            return this.itemEvents.get(verb); 
+        }
+        //System.out.println(verb + " not found.\n"); 
+        return null;         
+    }
+    
+    /**
      * Displays the Item's available verbs as a String
      * 
      * @return      Returns each verb as a String, wokka encased for legibility. 

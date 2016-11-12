@@ -3,15 +3,17 @@ Bork v3.0
 ===
 Items:
 boltpistol 5
-fire:+++A round is fired from the chamber+++
+fire[Score(2)]:+++A round is fired from the chamber+++
 brandish:+++You wave the pistol in the air+++
 ---
 chainsword 5
 swing:++++vrrrrr! vrrrrr!+++
 ---
 dataslate 1
-read:++++Contents Locked - Enter Authorization Code++++
-unlock:++++Enter Authorization Code++++
+read[Score(1),Teleport]:++++Contents Locked - Enter Authorization Code++++
+unlock[Transform(unlockedDataslate)]:+++Enter Authorization Code++++
+---
+unlockedDataslate 1
 ---
 powerpack 10
 activate:++++The powerpack softly hums++++
@@ -29,6 +31,7 @@ holoplinth 99999
 activate:++++The holoplinth's machine spirit awakens++++
 ---
 purityseal1 0
+wear[Score(5),Disappear]:++++For The Emperor!++++
 ---
 smallbag 0
 ---
@@ -39,13 +42,14 @@ rokkitlauncher 15
 squigbomb 0
 ---
 orkglyph2 0
+break[Wound(2),Disappear]:++++It oozes an acrid sludge++++
 ---
 orkglyph3 0
 ---
 ===
 Rooms:
 Engine Control
-Contents: dataslate,holoplinth
+Contents: dataslate,holoplinth,orkglyph2
 This room controls the ships reactor.
 The engine hums low, its power contained by arcane forces.
 Control lecturns occupy the vast majority of the room.

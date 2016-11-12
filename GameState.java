@@ -10,6 +10,8 @@ import java.io.*;
 
 class GameState
 {
+    static int playerHealth = 0; 
+    static int playerScore = 0; 
     static Room currentRoom; 
     static Dungeon currentDungeon; 
     static GameState gameState = new GameState(); 
@@ -199,6 +201,46 @@ class GameState
     void removeFromInventory(Item item)
     {
         carriedItems.remove(item); 
+    }
+    
+    /**
+     * Getter method for player's score
+     * 
+     * @return      Player's score as integer
+     */
+    int getScore()
+    {
+        return playerScore; 
+    }
+    
+    /**
+     * Setter method for player's score
+     * 
+     * @param i     Integer to add to score
+     */
+    void setScore(int i)
+    {
+        playerScore = playerScore + i; 
+    }
+    
+    /**
+     * Getter method for player's health
+     * 
+     * @return      Player's health as integer
+     */    
+    int getHealth()
+    {
+        return playerHealth; 
+    }
+    
+    /**
+     * Setter method for player's health
+     * 
+     * @param i     Integer to subtract from health (is positive) or add to health (if negative)
+     */
+    void setHealth(int i)
+    {
+        playerHealth = playerHealth - i;
     }
     
     /**
