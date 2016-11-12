@@ -51,10 +51,10 @@ public class ItemSpecificCommand extends Command
                     {
                         for(Event e : al)
                         {
-                            s = s + e.generateEvent(); 
+                            s = e.generateEvent(); 
                         }
-                        return s; 
                     } 
+                    return s; 
                 }
                 else
                 {
@@ -77,7 +77,7 @@ public class ItemSpecificCommand extends Command
                     {
                         for(Event e : al)
                         {
-                            s = s + e.generateEvent(); 
+                            s = e.generateEvent(); 
                         }  
                     }
                     return s; 
