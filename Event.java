@@ -12,13 +12,14 @@ public class Event
 {
     public static List<String> POSITIVE_MESSAGES = Arrays.asList("That felt good.", "That hit the spot.", "Oh yeah!", "Hell yeah!"); 
     public static List<String> NEGATIVE_MESSAGES = Arrays.asList("That's no good.", "That sucks.", "Ouch!", "Arggggghhh!"); 
-    public static List<String> DEATH_MESSAGES    = Arrays.asList("Such a frail and feeble mind.", 
+    public static List<String> DEATH_MESSAGES    = Arrays.asList("Such a frail and feeble mind./nDeath is but mercy.", 
                                                                  "Only in death, does duty end.",
                                                                  "For every battlefield honor, a thousand heroes die, unsung - unremembered.", 
-                                                                 "What is the fear of Death? \n To die, knowing our task is undone."); 
+                                                                 "What is the fear of Death?\nTo die, knowing our task is undone."); 
     
     private String type = ""; 
     private String xfrm = ""; 
+    private String nativeItem = ""; 
     private int health = 0; 
     private int score = 0; 
     
@@ -26,14 +27,16 @@ public class Event
      * Constructor for Objects of Class Event
      * 
      * @param action        String parsed from item verb
+     * @param nativeItem    String primary name of item that holds the action
      */
-    public Event(String action)
+    public Event(String action, String nativeItem)
     {
         if(action.contains("Wound"))
         {
             String[] parts = action.split("\\(");
             this.type = parts[0]; 
             this.health = Integer.parseInt(getParenthesesContent(action)); 
+            this.nativeItem = nativeItem; 
         }
         else if(action.contains("Die") |
                 action.contains("Teleport") |
@@ -41,18 +44,25 @@ public class Event
                 action.contains("Win")) 
         {
             this.type = action; 
+            this.nativeItem = nativeItem; 
         }
         else if(action.contains("Transform"))
         {
             String[] parts = action.split("\\(");
             this.type = parts[0];    
             this.xfrm = getParenthesesContent(action); 
+            this.nativeItem = nativeItem; 
         }
         else if(action.contains("Score"))
         {
             String[] parts = action.split("\\(");
             this.type = parts[0];    
             this.score = Integer.parseInt(getParenthesesContent(action)); 
+            this.nativeItem = nativeItem; 
+        }else if(action.contains("Unlock"))
+        {
+            this.type = action; 
+            this.nativeItem = nativeItem; 
         }
     }
     
@@ -93,6 +103,8 @@ public class Event
                                 break; 
             case "Score":       s = this.score(); 
                                 break; 
+            case "Unlock":      s = this.unlock(); 
+                                break; 
         }
         return s; 
     }
@@ -108,11 +120,11 @@ public class Event
     }
     
     /**
-     * Random number generator / used to randomly pick a String message
+     * Random number generator used to randomly pick a String message
      * 
      * @param min   Bottom limit for random number 
      * @param max   Upper limit fo random number 
-     * @return      randomly generated integer 
+     * @return      Randomly generated integer 
      */
     static int randInt(int min, int max)
     {
@@ -122,7 +134,7 @@ public class Event
     }    
     
     /**
-     * Handles events that are wound actions.
+     * Handles item events that are wound actions. Adds or subtracts health accordingly.
      * 
      * @return                          String message to display to user 
      * @throws InterruptedException     Pushes IO exception up the stack
@@ -148,9 +160,9 @@ public class Event
     }
     
     /**
-     * Handles events that are die actions.
+     * Handles item events that are die actions. Kills the thread and ends the game. 
      * 
-     * @return                          String message to display to user 
+     * @return                          Random death message to display to user
      * @throws InterruptedException     Pushes IO exception up the stack
      */
     private String die() throws InterruptedException
@@ -163,17 +175,19 @@ public class Event
     }
     
     /**
-     * Handles events that are transform actions.
+     * Handles item events that are transform actions.
      * 
      * @return      String message to display to user 
      */
     private String transform()
     {
+        //this needs to be written
+        //Remove from Dungeon and/or Room + from user's inventory. Add to room or user's inventory
         return "\nTest for Transform\n"; 
     }
     
     /**
-     * Handles events that are score actions.
+     * Handles item events that are score actions. Adjusts user's score. 
      * 
      * @return      String message to display to user 
      */
@@ -185,32 +199,66 @@ public class Event
     }
     
     /**
-     * Handles events that are teleport actions.
+     * Handles item events that are teleport actions. Teleports user to random room within dungeon. 
      * 
      * @return      String message to display to user 
      */
     private String teleport()
     {
-        return "\nTest for Teleport\n"; 
+        GameState gs = GameState.instance();
+        Dungeon d = gs.getDungeon(); 
+        List<String> keys = new ArrayList<String>(d.collection.keySet()); 
+        int i = randInt(0, d.collection.size() - 1); 
+        String randomKey = keys.get(i); 
+        Room room = d.getRoom(randomKey);
+        if(room != null)
+        {
+            gs.setAdventurersCurrentRoom(room); 
+            return "\nTeleported to '" +room.getTitle()+ "'."; 
+        }
+        return "\nTeleportation Malfunction\n"; 
     }
     
     /**
-     * Handles events that are disappear actions. 
+     * Handles item events that are disappear actions. 
      * 
      * @return      String message to display to user 
      */
     private String disappear()
     {
+        //this needs to be written
+        //Needs to remove from Dungeon and/or Room and/or User's Inventory and/or NPC's Inventory
         return "\nTest for Disappear\n"; 
     }
     
     /**
-     * Handles events that are win actions.
+     * Handles item events that are win actions.
      * 
      * @return      String message to display to user 
      */
     private String win()
     {
+        //this needs to be written
         return "\nTest for Win\n"; 
+    }
+    
+    /**
+     * Handles item events that are unlock actions. Currently, this only relates to the dataslate and holoplinth. 
+     * 
+     * @return      String message to display to user
+     */
+    private String unlock()
+    {
+        String s = "";
+        switch(this.nativeItem)
+        {
+            case "dataslate":   DataSlate ds = DataSlate.instance(); 
+                                s = ds.unlock(); 
+                                break; 
+            case "holoplinth":  HoloPlinth hs = HoloPlinth.instance(); 
+                                s = hs.unlock(); 
+                                break; 
+        }
+        return "\n" + s + "\n"; 
     }
 }
