@@ -256,7 +256,7 @@ public class Denizen
              npc.setRoom(tempRoom); 
              room.removeNpc(npc); 
              tempRoom.addNpc(npc);
-             System.out.println("tryFollowUser move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "', from " + room.getTitle() +"."); 
+             //System.out.println("tryFollowUser move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "', from " + room.getTitle() +"."); 
              return true;              
          }
          for(Exit exit : tempRoom.exitPath)
@@ -266,7 +266,7 @@ public class Denizen
                  npc.setRoom(tempRoom); 
                  room.removeNpc(npc); 
                  tempRoom.addNpc(npc);
-                 System.out.println("tryFollowUser move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "', from " + room.getTitle() +"."); 
+                 //System.out.println("tryFollowUser move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "', from " + room.getTitle() +"."); 
                  return true; 
              }
          }
