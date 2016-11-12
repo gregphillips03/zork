@@ -1,19 +1,17 @@
-Forward Unto Dawn
+Space Hulk
 Bork v3.0
 ===
 Items:
 boltpistol 5
-fire[Score(2)]:+++A round is fired from the chamber+++
+fire:++++A round is fired from the chamber++++
 brandish:+++You wave the pistol in the air+++
 ---
 chainsword 5
 swing:++++vrrrrr! vrrrrr!+++
 ---
 dataslate 1
-read[Score(1),Teleport]:++++Contents Locked - Enter Authorization Code++++
-unlock[Transform(unlockedDataslate)]:+++Enter Authorization Code++++
----
-unlockedDataslate 1
+read:++++Contents Locked - Enter Authorization Code++++
+unlock[Unlock]:++++Enter Authorization Code++++
 ---
 powerpack 10
 activate:++++The powerpack softly hums++++
@@ -22,29 +20,39 @@ deactivate:++++The powerpack turns off++++
 datacoil 5
 ---
 servoskull1 0
-activate:++++The eyes flash three times++++
+activate[Score(5),Disappear]:++++The eyes flash three times++++
 ---
 servoskull2 0
-activate:++++The eyes flash three times, then two++++
+activate[Score(5),Disappear]:++++The eyes flash three times, then two++++
+---
+servoskull3 0
+activate[Score(5),Disappear]:++++The eyes flash four times++++
 ---
 holoplinth 99999
-activate:++++The holoplinth's machine spirit awakens++++
+activate[Unlock]:++++The holoplinth's machine spirit awakens++++
 ---
 purityseal1 0
-wear[Score(5),Disappear]:++++For The Emperor!++++
+wear[Score(5),Wound(-2),Disappear]:++++For The Emperor!++++
 ---
 smallbag 0
 ---
 orkglyph 5
+break[Wound(2),Disappear]:++++The Orks are crafty indeed++++
+read:++++The text "gol....." is all that can be deciphered++++
 ---
 rokkitlauncher 15
 ---
 squigbomb 0
+detonate[Die]:++++The squigbomb explodes in a visceral spray of flames, meat, and bones++++
+kick[Die]:++++Fire, flames, and death++++
 ---
 orkglyph2 0
 break[Wound(2),Disappear]:++++It oozes an acrid sludge++++
+read:++++The text "...go..." is all that remains legibile++++
 ---
 orkglyph3 0
+break[Wound(10),Disappear]:++++Booby Trapped++++
+read:++++The text ".....tha" is all that remains++++
 ---
 ===
 Rooms:
