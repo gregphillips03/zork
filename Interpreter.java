@@ -6,13 +6,15 @@ import java.util.regex.*;
  * Contains main function of game. Initializes Dungeon. Prompts User for input. 
  * 
  * @author William (Greg) Phillips
- * @version Zork v1
+ * @version Zork v1.2
  */
 public class Interpreter
 {
        
     /**
-     * Main program to intialize game sequence. Creates buffered reader object to manipulate in promptUser() method. Cycles until it receives the letter q from the promptUser() method. Initiates instances of Singleton GameState and CommandFactory objects
+     * Main program to intialize game sequence. Creates buffered reader object to manipulate in promptUser() method. 
+     * Cycles until it receives the letter q from the promptUser() method. 
+     * Initiates instances of Singleton GameState and CommandFactory objects
      * 
      * @throws InterruptedException      Pushes thread sleep disruptions up the stack 
      * @throws FileNotFoundException     Pushes IO exception up the stack where not explicitly handled
@@ -125,8 +127,6 @@ public class Interpreter
                                     "+++Incoming Transmission+++ \n\n" +
                                     "Battle Brother, your assistance is needed!\n" +
                                     "You have teleported to '" + gs.getDungeon().getName() + "'.\n" +
-                                    "You notice the text '" + gs.getAdventurersCurrentRoom().getTitle()+ "' scrawled into the wall...\n" +
-                                    "...the remnants of bloody nails linger in cermamite and plasteel...\n" +
                                     gs.getAdventurersCurrentRoom().describe()+ "\n" + 
                                     "The Emperor Protects!\n\n" +
                                     "+++Transmission End+++\n"

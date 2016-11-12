@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=args
 comment0.target=void\ main(java.lang.String[])
-comment0.text=\r\n\ Main\ program\ to\ intialize\ game\ sequence.\ Creates\ buffered\ reader\ object\ to\ manipulate\ in\ promptUser()\ method.\ Cycles\ until\ it\ receives\ the\ letter\ q\ from\ the\ promptUser()\ method.\ Initiates\ instances\ of\ Singleton\ GameState\ and\ CommandFactory\ objects\r\n\ \r\n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ @param\ args\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Commandline\ string\ arguments\r\n
+comment0.text=\r\n\ Main\ program\ to\ intialize\ game\ sequence.\ Creates\ buffered\ reader\ object\ to\ manipulate\ in\ promptUser()\ method.\ \r\n\ Cycles\ until\ it\ receives\ the\ letter\ q\ from\ the\ promptUser()\ method.\ \r\n\ Initiates\ instances\ of\ Singleton\ GameState\ and\ CommandFactory\ objects\r\n\ \r\n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ @param\ args\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Commandline\ string\ arguments\r\n
 comment1.params=commandLine
 comment1.target=java.lang.String\ promptUser(java.io.BufferedReader)
 comment1.text=\r\n\ Gets\ input\ from\ the\ system\ user.\r\n\ \r\n\ @param\ commandLine\ \ \ BufferedReader\ object\ handed\ focus\ from\ main.\ \r\n\ @return\ userInput\ \ \ \ Text\ that\ user\ types\ into\ keyboard.\r\n
