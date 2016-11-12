@@ -42,7 +42,7 @@ public class Dungeon
         boolean b = initState; 
         String pattern1 = "---"; 
         String pattern2 = "==="; 
-        String pattern3 = "Bork v3.0"; 
+        String pattern3 = "Group Bork v1.0"; 
         
         try
         {

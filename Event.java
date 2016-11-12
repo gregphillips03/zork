@@ -6,7 +6,7 @@ import java.util.regex.*;
  * Events are actions tied to specific verbs. When triggered, they have an affect on the gamed. 
  * 
  * @author William (Greg) Phillips
- * @version Zork v1.1
+ * @version Zork v1.2
  */
 public class Event
 {
@@ -144,15 +144,18 @@ public class Event
         String s = ""; 
         GameState gs = GameState.instance(); 
         gs.setHealth(this.health);
+        
         if(gs.getHealth() < 1)
         {
             die(); 
         }
         
-        if(this.health >0)
+        if(this.health > 0)
         {
             int i = randInt(0, NEGATIVE_MESSAGES.size() - 1); 
+            //s = "\n" + NEGATIVE_MESSAGES.get(i) + "\n"; 
             return "\n" + (s = NEGATIVE_MESSAGES.get(i)) + "\n"; 
+            //return s; 
         }
         
         int i = randInt(0, POSITIVE_MESSAGES.size() - 1); 
@@ -195,7 +198,14 @@ public class Event
     {
         GameState gs = GameState.instance(); 
         gs.setScore(this.score); 
-        return "\nAdded '" + this.score + "' XP."; 
+        if(this.score >0)
+        {
+            return "\nAdded '" + this.score + "' xp."; 
+        }
+        else
+        {
+            return "\nRemoved '" +(this.score * -1)+ "' xp."; 
+        }
     }
     
     /**
@@ -228,6 +238,7 @@ public class Event
     {
         //this needs to be written
         //Needs to remove from Dungeon and/or Room and/or User's Inventory and/or NPC's Inventory
+        //Dungeon needs to remember what items have disappeared and not restore them when restoring from save file, etc
         return "\nTest for Disappear\n"; 
     }
     

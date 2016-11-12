@@ -1,5 +1,5 @@
 Space Hulk
-Bork v3.0
+Group Bork v1.0
 ===
 Items:
 boltpistol 5
@@ -18,6 +18,15 @@ activate:++++The powerpack softly hums++++
 deactivate:++++The powerpack turns off++++
 ---
 datacoil 5
+---
+combatdrugs 1
+inject[Wound(-10),Score(-1),Transform(emptyneedle)]:++++You inject the syringe++++
+---
+emptyneedle 0
+read:++++Dispose after use++++
+---
+battlestims 2
+inject[Wound(-15),Score(-2),Disappear]:++++You swallow the pills++++
 ---
 servoskull1 0
 activate[Score(5),Disappear]:++++The eyes flash three times++++
@@ -57,7 +66,7 @@ read:++++The text ".....tha" is all that remains++++
 ===
 Rooms:
 Engine Control
-Contents: dataslate,holoplinth,orkglyph2
+Contents: dataslate,holoplinth,orkglyph2,combatdrugs
 This room controls the ships reactor.
 The engine hums low, its power contained by arcane forces.
 Control lecturns occupy the vast majority of the room.
@@ -88,7 +97,7 @@ A common intersection among starship corridors.
 The diamondplate tread is dull and matte.
 ---
 Equipment Locker
-Contents: datacoil,servoskull1
+Contents: datacoil,servoskull1,battlestims
 Radiation suits hang hooks on the wall.
 Various equipment litters the benches, once used to enter the ship's reactor room.
 ---

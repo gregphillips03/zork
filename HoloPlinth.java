@@ -48,7 +48,7 @@ public class HoloPlinth
             return s; 
         }
         System.out.println("Enter passphrase: "); 
-        String userCode = scan.nextLine(); 
+        String userCode = scan.nextLine().toLowerCase(); 
         if(userCode.equals(passPhrase))
         {
             isLocked = false; 

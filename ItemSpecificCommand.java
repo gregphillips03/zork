@@ -46,12 +46,12 @@ public class ItemSpecificCommand extends Command
                 s = item.getMessageForVerb(verb); 
                 if(s != null)
                 {
-                    ArrayList<Event> al = item.getEventsForVerb(verb);     
+                    ArrayList<Event> al = item.getEventsForVerb(verb);  
                     if(al != null)
                     {
                         for(Event e : al)
                         {
-                            s = e.generateEvent(); 
+                           s = s + e.generateEvent(); 
                         }
                     } 
                     return s; 
@@ -77,7 +77,7 @@ public class ItemSpecificCommand extends Command
                     {
                         for(Event e : al)
                         {
-                            s = e.generateEvent(); 
+                            s = s + e.generateEvent(); 
                         }  
                     }
                     return s; 
