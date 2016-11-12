@@ -53,9 +53,9 @@ public class Item
                 String[] eventString = xx.split(","); 
                 for(String event : eventString)
                 {
-                    Event e = new Event(event); 
+                    Event e = new Event(event, this.primaryName); 
                     events.add(e); 
-                    System.out.println("Added '" + e.getEventType() + "' to Array List for Item '" +this.getPrimaryName() +"'."); //debugging
+                    //System.out.println("Added '" + e.getEventType() + "' to Array List for Item '" +this.getPrimaryName() +"'."); //debugging
                     this.itemEvents.put(verb, events); 
                 }
             }
