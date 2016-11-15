@@ -75,7 +75,7 @@ public class Interpreter
         String userFile = ""; 
         String pattern1 = ".+bork$"; 
         String pattern2 = ".+sav$";
-        String pattern3 = "Bork v3.0 save data"; 
+        String pattern3 = "Group Bork v1.0 save data"; 
         GameState gs = GameState.instance(); 
         Dungeon d;
         

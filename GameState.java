@@ -123,6 +123,10 @@ class GameState
             }
         }   
         pw.write("===\n"); 
+        pw.write("Holoplinth State:\n"); 
+        HoloPlinth hp = HoloPlinth.instance(); 
+        hp.storeState(pw); 
+        pw.write("===\n");
         pw.close(); 
     }    
 
@@ -181,6 +185,13 @@ class GameState
             Denizen den = gs.getDungeon().getNPC(s); 
             den.restoreState(scan, den); 
         }
+        scan.nextLine(); 
+        while(!scan.nextLine().equals("Holoplinth State:"))
+        {
+            scan.nextLine(); 
+        }
+        HoloPlinth hp = HoloPlinth.instance(); 
+        hp.restoreState(scan);         
     }
     
     /**

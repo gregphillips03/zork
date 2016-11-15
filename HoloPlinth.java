@@ -66,7 +66,11 @@ public class HoloPlinth
      */
     public String access()
     {
-        String s = "Test String for Access Method";
+        String s = "|-------------------------|\n" +
+                   "|+++Available Functions+++|\n" +
+                   "| <BioScan>    <Teleport> |\n" +
+                   "|-------------------------|\n";
+        //need to write
         return s; 
     }
     
@@ -90,7 +94,7 @@ public class HoloPlinth
         Item plinth = new Item("holoplinth", 99999); 
         
         //add verb message combo, ensure it's within the program's known verbs
-        plinth.addVerbMessage("access", "++++Holoplinth Iterface++++"); 
+        plinth.addVerbMessage("access", "++++Holoplinth Interface+++"); 
         cf.AVAIL_VERBS.add("access"); 
         
         //create access event add to item's array of events
@@ -103,5 +107,36 @@ public class HoloPlinth
         d.itemsInDungeon.put(plinth.getPrimaryName(), plinth); 
         room.roomItems.add(plinth);       
         
+    }
+    
+    /**
+     * Persistence method to write to save file
+     * 
+     * @param pw        PrintWriter object to work with / handed focus from GameState Class
+     */
+    void storeState(PrintWriter pw)
+    {
+        if(isLocked)
+        {
+            pw.write("isLocked=true\n"); 
+        }
+        else
+        {
+            pw.write("isLocked=false\n"); 
+        }
+    }
+    
+    /**
+     * Hydration method to read from save file
+     * 
+     * @param scan      Scanner object to work with / handed focus from? 
+     */
+    void restoreState(Scanner scan)
+    {
+        if(!scan.nextLine().equals("isLocked=true"))
+        {
+            isLocked = false; 
+            updatePlinth(); 
+        }
     }
 }
