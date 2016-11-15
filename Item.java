@@ -64,6 +64,18 @@ public class Item
     }
     
     /**
+     * Constructor for objects of Class Item
+     * 
+     * @param name      Name of item as String
+     * @param weight    Weight of item as integer
+     */
+    public Item(String name, int weight)
+    {
+        this.primaryName = name; 
+        this.weight = weight; 
+    }
+    
+    /**
      * Returns the item's primary name
      * 
      * @return         Returns this objects primary name as a String
@@ -140,6 +152,24 @@ public class Item
     private String getBracketContent(String s)
     {
         return s.substring(s.indexOf('[')+1, s.indexOf(']')); 
-    }  
+    } 
     
+    /**
+     * Add message to item verb
+     * 
+     * @param verb      Verb to pair with message as String
+     * @param message   Message to display to user with verb combo
+     */
+    public void addVerbMessage(String verb, String message)
+    {
+        this.messages.put(verb, message); 
+    }
+    
+    /**
+     * 
+     */
+    public void addEvent(String key, ArrayList al)
+    {
+        this.itemEvents.put(key, al); 
+    }
 }

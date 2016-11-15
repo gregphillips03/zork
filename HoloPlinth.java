@@ -52,9 +52,56 @@ public class HoloPlinth
         if(userCode.equals(passPhrase))
         {
             isLocked = false; 
-            gs.setScore(25); 
+            gs.setScore(25);
+            updatePlinth(); 
             s = "Input Accepted...\nHoloplinth unlocked."; 
         }
         return s; 
+    }
+    
+    /**
+     * Interaction with user to access HoloPlinth. Allows user to explore various funcitons of plinth interface. 
+     * 
+     * @return      String message to user
+     */
+    public String access()
+    {
+        String s = "Test String for Access Method";
+        return s; 
+    }
+    
+    /**
+     * Updates the holoplinth so the user no longer sees the unlock event. Adds in the access functionality instead.
+     * Physically removes the object from the dungeon and room and then replaces with like object including differing functionality.
+     */
+    private void updatePlinth()
+    {
+        GameState gs = GameState.instance(); 
+        CommandFactory cf = CommandFactory.instance(); 
+        Dungeon d = gs.getDungeon();
+        Item item = d.getItem("holoplinth"); 
+        Room room = d.getRoom("Engine Control");
+        
+        //remove from dungeon and room
+        d.itemsInDungeon.remove(item.getPrimaryName()); 
+        room.roomItems.remove(item);  
+        
+        //create new holoplinth item
+        Item plinth = new Item("holoplinth", 99999); 
+        
+        //add verb message combo, ensure it's within the program's known verbs
+        plinth.addVerbMessage("access", "++++Holoplinth Iterface++++"); 
+        cf.AVAIL_VERBS.add("access"); 
+        
+        //create access event add to item's array of events
+        Event e = new Event("Access", "holoplinth"); 
+        ArrayList<Event> al = new ArrayList<Event>(); 
+        al.add(e); 
+        plinth.addEvent("access", al); 
+        
+        //add item to dungeon and room
+        d.itemsInDungeon.put(plinth.getPrimaryName(), plinth); 
+        room.roomItems.add(plinth);       
+        
     }
 }

@@ -59,7 +59,8 @@ public class Event
             this.type = parts[0];    
             this.score = Integer.parseInt(getParenthesesContent(action)); 
             this.nativeItem = nativeItem; 
-        }else if(action.contains("Unlock"))
+        }else if(action.contains("Unlock") |
+                 action.contains("Access"))
         {
             this.type = action; 
             this.nativeItem = nativeItem; 
@@ -105,6 +106,8 @@ public class Event
                                 break; 
             case "Unlock":      s = this.unlock(); 
                                 break; 
+            case "Access":      s = this.access(); 
+                                break; 
         }
         return s; 
     }
@@ -117,6 +120,14 @@ public class Event
     public String getEventType()
     {
         return this.type; 
+    }
+    
+    /**
+     * Setter method for Event type
+     */
+    public void setEventType(String s)
+    {
+        this.type = s;
     }
     
     /**
@@ -270,6 +281,23 @@ public class Event
                                 s = hs.unlock(); 
                                 break; 
         }
+        return "\n" + s + "\n"; 
+    }
+    
+    /**
+     * Handles item events that are access actions. Currently this only relates to the holoplinth. 
+     * 
+     * @return      String message to display to user
+     */
+    private String access()
+    {
+        String s = ""; 
+        switch(this.nativeItem)
+        {
+            case "holoplinth":  HoloPlinth hs = HoloPlinth.instance(); 
+                                s = hs.access(); 
+                                break; 
+        }    
         return "\n" + s + "\n"; 
     }
 }
