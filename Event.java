@@ -41,7 +41,9 @@ public class Event
         else if(action.contains("Die") |
                 action.contains("Teleport") |
                 action.contains("Disappear") |
-                action.contains("Win")) 
+                action.contains("Win") |
+                action.contains("Unlock") |
+                action.contains("Access"))
         {
             this.type = action; 
             this.nativeItem = nativeItem; 
@@ -58,11 +60,6 @@ public class Event
             String[] parts = action.split("\\(");
             this.type = parts[0];    
             this.score = Integer.parseInt(getParenthesesContent(action)); 
-            this.nativeItem = nativeItem; 
-        }else if(action.contains("Unlock") |
-                 action.contains("Access"))
-        {
-            this.type = action; 
             this.nativeItem = nativeItem; 
         }
     }
