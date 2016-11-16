@@ -218,12 +218,31 @@ dependency74.type=UsesDependency
 dependency75.from=HoloPlinth
 dependency75.to=GameState
 dependency75.type=UsesDependency
+dependency76.from=HoloPlinth
+dependency76.to=Item
+dependency76.type=UsesDependency
+dependency77.from=HoloPlinth
+dependency77.to=Dungeon
+dependency77.type=UsesDependency
+dependency78.from=HoloPlinth
+dependency78.to=Room
+dependency78.type=UsesDependency
+dependency79.from=HoloPlinth
+dependency79.to=CommandFactory
+dependency79.type=UsesDependency
 dependency8.from=GameState
 dependency8.to=Dungeon
 dependency8.type=UsesDependency
+dependency80.from=HoloPlinth
+dependency80.to=Event
+dependency80.type=UsesDependency
+dependency81.from=GameState
+dependency81.to=HoloPlinth
+dependency81.type=UsesDependency
 dependency9.from=GameState
 dependency9.to=Room
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 objectbench.height=76
 objectbench.width=1345
 package.editor.height=684
@@ -231,13 +250,26 @@ package.editor.width=1237
 package.editor.x=337
 package.editor.y=93
 package.numDependencies=75
+=======
+objectbench.height=153
+objectbench.width=1355
+package.editor.height=807
+package.editor.width=1562
+package.editor.x=1671
+package.editor.y=-9
+package.numDependencies=81
+>>>>>>> 8567b40e7d952fbede577cec5d00d9d0399971ae
 package.numTargets=26
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
 target1.editor.height=1068
 target1.editor.width=1698
+<<<<<<< HEAD
 target1.editor.x=1360
+=======
+target1.editor.x=1600
+>>>>>>> 8567b40e7d952fbede577cec5d00d9d0399971ae
 target1.editor.y=-9
 target1.height=50
 target1.name=Denizen
@@ -248,9 +280,9 @@ target1.typeParameters=
 target1.width=80
 target1.x=740
 target1.y=680
-target10.editor.height=1020
+target10.editor.height=1068
 target10.editor.width=1698
-target10.editor.x=-9
+target10.editor.x=1671
 target10.editor.y=-9
 target10.height=50
 target10.name=Room
@@ -328,7 +360,11 @@ target15.x=1010
 target15.y=400
 target16.editor.height=1068
 target16.editor.width=1698
+<<<<<<< HEAD
 target16.editor.x=1360
+=======
+target16.editor.x=1600
+>>>>>>> 8567b40e7d952fbede577cec5d00d9d0399971ae
 target16.editor.y=-9
 target16.height=50
 target16.name=MovementCommand
@@ -354,7 +390,11 @@ target17.x=1350
 target17.y=630
 target18.editor.height=1068
 target18.editor.width=1698
+<<<<<<< HEAD
 target18.editor.x=1360
+=======
+target18.editor.x=1600
+>>>>>>> 8567b40e7d952fbede577cec5d00d9d0399971ae
 target18.editor.y=-9
 target18.height=50
 target18.name=DataSlate
@@ -367,7 +407,11 @@ target18.x=300
 target18.y=630
 target19.editor.height=1068
 target19.editor.width=1698
+<<<<<<< HEAD
 target19.editor.x=1360
+=======
+target19.editor.x=1600
+>>>>>>> 8567b40e7d952fbede577cec5d00d9d0399971ae
 target19.editor.y=-9
 target19.height=50
 target19.name=ItemSpecificCommand
@@ -417,9 +461,9 @@ target21.typeParameters=
 target21.width=80
 target21.x=1120
 target21.y=600
-target22.editor.height=1020
+target22.editor.height=1068
 target22.editor.width=1698
-target22.editor.x=-9
+target22.editor.x=1671
 target22.editor.y=-9
 target22.height=50
 target22.name=Event

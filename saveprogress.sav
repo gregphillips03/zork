@@ -1,9 +1,13 @@
-Bork v3.0 save data
-Dungeon file: /forward.bork
+Group Bork v1.0 save data
+Dungeon file: /spacehulk.bork
 Room states:
+Decon Secundus:
+beenHere=false
+NPCs: OrkNob
+---
 Engine Control:
 beenHere=true
-Contents: dataslate,holoplinth
+Contents: dataslate,orkglyph2,combatdrugs,holoplinth
 NPCs: OrkBoy
 ---
 Aft Propellant Plenum Exchange:
@@ -16,23 +20,16 @@ Contents: chainsword
 ---
 Equipment Locker:
 beenHere=false
-Contents: datacoil,servoskull1
----
-Intersection Gamma Eng:
-beenHere=true
+Contents: datacoil,servoskull1,battlestims
 NPCs: Squig
 ---
 Corridor Bravo Eng:
-beenHere=true
+beenHere=false
 Contents: boltpistol
 ---
 Intersection Epsilon Eng:
 beenHere=false
 Contents: powerpack
----
-Reactor Room NW Corner:
-beenHere=false
-NPCs: OrkNob
 ---
 Reactor Entrance West:
 beenHere=false
@@ -40,9 +37,15 @@ Contents: servoskull2
 ---
 ===
 Adventurer:
-Current room: Intersection Gamma Eng
+Current room: Engine Control
 ===
 NPC States:
+OrkNob
+100
+isMobile=true
+isAngered=true
+Carries: rokkitlauncher
+---
 OrkBoy
 20
 isMobile=true
@@ -55,10 +58,7 @@ isMobile=true
 isAngered=true
 Carries: squigbomb
 ---
-OrkNob
-100
-isMobile=true
-isAngered=true
-Carries: rokkitlauncher
----
+===
+Holoplinth State:
+isLocked=false
 ===
