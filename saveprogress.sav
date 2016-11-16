@@ -7,7 +7,7 @@ NPCs: OrkNob
 ---
 Engine Control:
 beenHere=true
-Contents: dataslate,orkglyph2,combatdrugs,holoplinth
+Contents: holoplinth,orkglyph2,combatdrugs
 NPCs: OrkBoy
 ---
 Aft Propellant Plenum Exchange:
@@ -38,6 +38,7 @@ Contents: servoskull2
 ===
 Adventurer:
 Current room: Engine Control
+Inventory: dataslate
 ===
 NPC States:
 OrkNob
@@ -60,5 +61,8 @@ Carries: squigbomb
 ---
 ===
 Holoplinth State:
+isLocked=true
+===
+DataSlate State:
 isLocked=false
 ===

@@ -19,5 +19,5 @@ comment5.target=void\ storeState(java.io.PrintWriter)
 comment5.text=\r\n\ Persistence\ method\ to\ write\ to\ save\ file\r\n\ \r\n\ @param\ pw\ \ \ \ \ \ \ \ PrintWriter\ object\ to\ work\ with\ /\ handed\ focus\ from\ GameState\ Class\r\n
 comment6.params=scan
 comment6.target=void\ restoreState(java.util.Scanner)
-comment6.text=\r\n\ Hydration\ method\ to\ read\ from\ save\ file\r\n\ \r\n\ @param\ scan\ \ \ \ \ \ Scanner\ object\ to\ work\ with\ /\ handed\ focus\ from?\ \r\n
+comment6.text=\r\n\ Hydration\ method\ to\ read\ from\ save\ file\r\n\ \r\n\ @param\ scan\ \ \ \ \ \ Scanner\ object\ to\ work\ with\ /\ handed\ focus\ from\ GameState\ Class\r\n
 numComments=7

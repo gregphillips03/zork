@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.regex.*; 
 
 /**
- * Events are actions tied to specific verbs. When triggered, they have an affect on the gamed. 
+ * Events are actions tied to specific verbs. When triggered, they have an affect on the game. 
  * 
  * @author William (Greg) Phillips
  * @version Zork v1.2
@@ -121,6 +121,8 @@ public class Event
     
     /**
      * Setter method for Event type
+     * 
+     * @param s     Value to set the Event as String
      */
     public void setEventType(String s)
     {
@@ -293,6 +295,9 @@ public class Event
         {
             case "holoplinth":  HoloPlinth hs = HoloPlinth.instance(); 
                                 s = hs.access(); 
+                                break;
+            case "dataslate":   DataSlate ds = DataSlate.instance(); 
+                                s = ds.access(); 
                                 break; 
         }    
         return "\n" + s + "\n"; 

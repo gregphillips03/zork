@@ -97,7 +97,7 @@ public class HoloPlinth
         plinth.addVerbMessage("access", "++++Holoplinth Interface+++"); 
         cf.AVAIL_VERBS.add("access"); 
         
-        //create access event add to item's array of events
+        //create access event and add to item's array of events
         Event e = new Event("Access", "holoplinth"); 
         ArrayList<Event> al = new ArrayList<Event>(); 
         al.add(e); 
@@ -129,7 +129,7 @@ public class HoloPlinth
     /**
      * Hydration method to read from save file
      * 
-     * @param scan      Scanner object to work with / handed focus from? 
+     * @param scan      Scanner object to work with / handed focus from GameState Class
      */
     void restoreState(Scanner scan)
     {

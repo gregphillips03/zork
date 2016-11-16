@@ -84,7 +84,7 @@ class GameState
      */
     public void store(String saveName) throws FileNotFoundException
     {
-        String pattern3 = "Bork v3.0 save data"; 
+        String pattern3 = "Group Bork v1.0 save data"; 
         GameState gs = GameState.instance(); 
         PrintWriter pw = new PrintWriter(saveName); 
         
@@ -127,6 +127,10 @@ class GameState
         HoloPlinth hp = HoloPlinth.instance(); 
         hp.storeState(pw); 
         pw.write("===\n");
+        pw.write("DataSlate State:\n"); 
+        DataSlate ds = DataSlate.instance(); 
+        ds.storeState(pw); 
+        pw.write("===\n"); 
         pw.close(); 
     }    
 
@@ -191,7 +195,14 @@ class GameState
             scan.nextLine(); 
         }
         HoloPlinth hp = HoloPlinth.instance(); 
-        hp.restoreState(scan);         
+        hp.restoreState(scan); 
+        scan.nextLine(); 
+        while(!scan.nextLine().equals("DataSlate State:"))
+        {
+            scan.nextLine(); 
+        }
+        DataSlate ds = DataSlate.instance(); 
+        ds.restoreState(scan); 
     }
     
     /**
