@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=DataSlate()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ DataSlate.\ Singleton\ class\ controls\ creation.\ \r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ DataSlate.\ Singleton\ class\ controls\ creation.\ \n
 comment1.params=
 comment1.target=DataSlate\ instance()
-comment1.text=\r\n\ Exists\ to\ control\ object\ creation.\r\n\ \r\n\ @return\ \ \ \ \ \ DataSlate\ object\ to\ work\ with.\ \r\n
+comment1.text=\n\ Exists\ to\ control\ object\ creation.\n\ \n\ @return\ \ \ \ \ \ DataSlate\ object\ to\ work\ with.\ \n
 comment2.params=
 comment2.target=java.lang.String\ unlock()
-comment2.text=\r\n\ Interaction\ with\ user\ to\ unlock\ Dataslate.\ Prompts\ user\ for\ four\ digit\ code\ and\ unlocks\ the\ dataslate\ if\ guessed\ correctly.\ \r\n\ \r\n\ @return\ \ \ \ \ \ String\ message\ to\ user\r\n
+comment2.text=\n\ Interaction\ with\ user\ to\ unlock\ Dataslate.\ Prompts\ user\ for\ four\ digit\ code\ and\ unlocks\ the\ dataslate\ if\ guessed\ correctly.\ \n\ \n\ @return\ \ \ \ \ \ String\ message\ to\ user\n
 numComments=3
