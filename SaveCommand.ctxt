@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=f
 comment0.target=SaveCommand(java.lang.String)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ Class\ SaveCommand\r\n\ \r\n\ @param\ f\ \ \ \ \ Filename\ of\ save\ file\r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ Class\ SaveCommand\n\ \n\ @param\ f\ \ \ \ \ Filename\ of\ save\ file\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
-comment1.text=\r\n\ Method\ call\ to\ begin\ persistence\ sequence\ /\ hands\ focus\ to\ GameState\ Class\r\n\ \r\n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n\ @return\ \ Returns\ string\ message\ to\ user\ "+++Actions\ Saved+++"\r\n
+comment1.text=\n\ Method\ call\ to\ begin\ persistence\ sequence\ /\ hands\ focus\ to\ GameState\ Class\n\ \n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\n\ \n\ @return\ \ Returns\ string\ message\ to\ user\ "+++Actions\ Saved+++"\n
 numComments=2

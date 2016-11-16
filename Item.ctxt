@@ -1,6 +1,28 @@
 #BlueJ class context
 comment0.params=s
 comment0.target=Item(java.util.Scanner)
+<<<<<<< HEAD
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Item\n\ \n\ @param\ s\ \ \ \ \ Scanner\ object\ handed\ focus\ by\ Dungeon\ Class\n
+comment1.params=
+comment1.target=java.lang.String\ getPrimaryName()
+comment1.text=\n\ Returns\ the\ item's\ primary\ name\n\ \n\ @return\ \ \ \ \ \ \ \ \ Returns\ this\ objects\ primary\ name\ as\ a\ String\n
+comment2.params=verb
+comment2.target=java.lang.String\ getMessageForVerb(java.lang.String)
+comment2.text=\n\ Returns\ corresponding\ message\ string\ that\ accompanies\ a\ verb\n\ \n\ @param\ verb\ \ \ \ \ \ Verb\ as\ String\ to\ look\ for\ in\ messages\ hashtable\n\ @return\ \ \ \ \ \ \ \ \ \ String\ message\ pair\ for\ specified\ verb.\ \n
+comment3.params=verb
+comment3.target=java.util.ArrayList\ getEventsForVerb(java.lang.String)
+comment3.text=\n\ Access\ the\ hashtable\ that\ contains\ the\ verb\ and\ event\ arraylist\ combination\n\ \n\ @param\ verb\ \ \ \ \ \ Verb\ as\ String\ to\ look\ for\ in\ itemEvents\ hashtable\n\ @return\ \ \ \ \ \ \ \ \ \ Arraylist\ of\ verbs\ available\ actions\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\n\ Displays\ the\ Item's\ available\ verbs\ as\ a\ String\n\ \n\ @return\ \ \ \ \ \ Returns\ each\ verb\ as\ a\ String,\ wokka\ encased\ for\ legibility.\ \n
+comment5.params=
+comment5.target=int\ getWeight()
+comment5.text=\n\ Getter\ method\ for\ item\ weight\n\ \n\ @return\ \ \ \ \ \ Item\ weight\ as\ an\ integer.\ \n
+comment6.params=s
+comment6.target=java.lang.String\ getBracketContent(java.lang.String)
+comment6.text=\n\ Strips\ out\ the\ content\ between\ brackets.\n\ \n\ @param\ s\ \ \ \ \ Value\ to\ be\ parsed\n\ @return\ \ \ \ \ \ String\ value\ with\ brackets\ stripped\ out\n
+numComments=7
+=======
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Item\r\n\ \r\n\ @param\ s\ \ \ \ \ Scanner\ object\ handed\ focus\ by\ Dungeon\ Class\r\n
 comment1.params=name\ weight
 comment1.target=Item(java.lang.String,\ int)
@@ -30,3 +52,4 @@ comment9.params=key\ al
 comment9.target=void\ addEvent(java.lang.String,\ java.util.ArrayList)
 comment9.text=\r\n\ \r\n
 numComments=10
+>>>>>>> 8567b40e7d952fbede577cec5d00d9d0399971ae
