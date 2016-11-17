@@ -10,7 +10,7 @@ import java.io.*;
 
 class GameState
 {
-    static int playerHealth = 0; 
+    static int playerHealth = 25; 
     static int playerScore = 0; 
     static Room currentRoom; 
     static Dungeon currentDungeon; 

@@ -18,6 +18,7 @@ class CommandFactory
     public static List<String> GENERAL_COMMANDS = Arrays.asList("exits", "look");
     public static List<String> INV_COMMANDS = Arrays.asList("i", "inventory"); 
     public static List<String> SCORE_COMMANDS = Arrays.asList("score", "Score", "SCORE");
+    public static List<String> HEALTH_COMMANDS = Arrays.asList("health", "Health", "HEALTH");
     public static List<String> AVAIL_VERBS = new ArrayList<>(); 
     
     /**
@@ -90,6 +91,11 @@ class CommandFactory
             {
                 ScoreCommand score = new ScoreCommand();
                 return score;
+            }
+            else if(HEALTH_COMMANDS.contains(string))
+            {
+                HealthCommand health = new HealthCommand();
+                return health;
             }
             else if(AVAIL_VERBS.contains(string))
             {

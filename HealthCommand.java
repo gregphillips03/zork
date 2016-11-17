@@ -8,16 +8,12 @@ import java.io.*;
  */
 public class HealthCommand extends Command
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
     /**
      * Constructor for objects of class HealthCommand
      */
     public HealthCommand()
     {
-        // initialise instance variables
-        x = 0;
+    
     }
 
     /**
@@ -31,6 +27,11 @@ public class HealthCommand extends Command
      */
     String execute() throws InterruptedException, FileNotFoundException
     {
-        return "test";
+        GameState gs = GameState.instance();
+        String s = "";
+        
+        s += gs.getHealth();
+        
+        return s;
     }
 }
