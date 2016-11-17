@@ -29,6 +29,8 @@ public class Interpreter
         CommandFactory cf = CommandFactory.instance(); 
         GameState gs = GameState.instance(); 
         introMessage(); 
+        
+        gs.setScore(25);
 
         do
         {

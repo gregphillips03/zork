@@ -27,6 +27,11 @@ public class ScoreCommand extends Command
      */
     String execute() throws InterruptedException, FileNotFoundException
     {
-        return "test";
+        GameState gs = GameState.instance();
+        String s = "";
+        
+        s += gs.getScore();
+        
+        return s;
     }
 }

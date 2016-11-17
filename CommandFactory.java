@@ -17,6 +17,7 @@ class CommandFactory
     public static List<String> QUIT_COMMANDS = Arrays.asList("q", "quit"); 
     public static List<String> GENERAL_COMMANDS = Arrays.asList("exits", "look");
     public static List<String> INV_COMMANDS = Arrays.asList("i", "inventory"); 
+    public static List<String> SCORE_COMMANDS = Arrays.asList("score", "Score", "SCORE");
     public static List<String> AVAIL_VERBS = new ArrayList<>(); 
     
     /**
@@ -84,6 +85,11 @@ class CommandFactory
             {
                 DropCommand drop = new DropCommand(commandString); 
                 return drop; 
+            }
+            else if(SCORE_COMMANDS.contains(string))
+            {
+                ScoreCommand score = new ScoreCommand();
+                return score;
             }
             else if(AVAIL_VERBS.contains(string))
             {
