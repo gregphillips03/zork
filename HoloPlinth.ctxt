@@ -7,22 +7,17 @@ comment1.target=HoloPlinth\ instance()
 comment1.text=\n\ Exists\ to\ control\ object\ creation.\n\ \n\ @return\ \ \ \ \ \ HoloPlinth\ object\ to\ work\ with.\ \n
 comment2.params=
 comment2.target=java.lang.String\ unlock()
-<<<<<<< HEAD
 comment2.text=\n\ Interaction\ with\ user\ to\ unlock\ Holoplinth.\ Prompts\ user\ for\ passphrase\ and\ unlocks\ the\ holoplinth\ if\ guessed\ correctly.\ \n\ \n\ @return\ \ \ \ \ \ String\ message\ to\ user\n
-numComments=3
-=======
-comment2.text=\r\n\ Interaction\ with\ user\ to\ unlock\ Holoplinth.\ Prompts\ user\ for\ passphrase\ and\ unlocks\ the\ holoplinth\ if\ guessed\ correctly.\ \r\n\ \r\n\ @return\ \ \ \ \ \ String\ message\ to\ user\r\n
 comment3.params=
 comment3.target=java.lang.String\ access()
-comment3.text=\r\n\ Interaction\ with\ user\ to\ access\ HoloPlinth.\ Allows\ user\ to\ explore\ various\ funcitons\ of\ plinth\ interface.\ \r\n\ \r\n\ @return\ \ \ \ \ \ String\ message\ to\ user\r\n
+comment3.text=\n\ Interaction\ with\ user\ to\ access\ HoloPlinth.\ Allows\ user\ to\ explore\ various\ funcitons\ of\ plinth\ interface.\ \n\ \n\ @return\ \ \ \ \ \ String\ message\ to\ user\n
 comment4.params=
 comment4.target=void\ updatePlinth()
-comment4.text=\r\n\ Updates\ the\ holoplinth\ so\ the\ user\ no\ longer\ sees\ the\ unlock\ event.\ Adds\ in\ the\ access\ functionality\ instead.\r\n\ Physically\ removes\ the\ object\ from\ the\ dungeon\ and\ room\ and\ then\ replaces\ with\ like\ object\ including\ differing\ functionality.\r\n
+comment4.text=\n\ Updates\ the\ holoplinth\ so\ the\ user\ no\ longer\ sees\ the\ unlock\ event.\ Adds\ in\ the\ access\ functionality\ instead.\n\ Physically\ removes\ the\ object\ from\ the\ dungeon\ and\ room\ and\ then\ replaces\ with\ like\ object\ including\ differing\ functionality.\n
 comment5.params=pw
 comment5.target=void\ storeState(java.io.PrintWriter)
-comment5.text=\r\n\ Persistence\ method\ to\ write\ to\ save\ file\r\n\ \r\n\ @param\ pw\ \ \ \ \ \ \ \ PrintWriter\ object\ to\ work\ with\ /\ handed\ focus\ from\ GameState\ Class\r\n
+comment5.text=\n\ Persistence\ method\ to\ write\ to\ save\ file\n\ \n\ @param\ pw\ \ \ \ \ \ \ \ PrintWriter\ object\ to\ work\ with\ /\ handed\ focus\ from\ GameState\ Class\n
 comment6.params=scan
 comment6.target=void\ restoreState(java.util.Scanner)
-comment6.text=\r\n\ Hydration\ method\ to\ read\ from\ save\ file\r\n\ \r\n\ @param\ scan\ \ \ \ \ \ Scanner\ object\ to\ work\ with\ /\ handed\ focus\ from\ GameState\ Class\r\n
+comment6.text=\n\ Hydration\ method\ to\ read\ from\ save\ file\n\ \n\ @param\ scan\ \ \ \ \ \ Scanner\ object\ to\ work\ with\ /\ handed\ focus\ from\ GameState\ Class\n
 numComments=7
->>>>>>> 8567b40e7d952fbede577cec5d00d9d0399971ae
