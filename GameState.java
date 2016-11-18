@@ -93,7 +93,9 @@ class GameState
         // all that follows if after the pw comes back from writing dungeon and room stuff
         pw.write("===\n"); 
         pw.write("Adventurer:\n"); 
-        pw.write("Current room: " + gs.getAdventurersCurrentRoom().getTitle());
+        pw.write("Current room: " + gs.getAdventurersCurrentRoom().getTitle() + "\n");
+        pw.write("Health: " + gs.getHealth() + "\n"); 
+        pw.write("Score: " + gs.getScore()); 
         if(!carriedItems.isEmpty())
         {
             String s = ""; 
