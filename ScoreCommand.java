@@ -13,7 +13,7 @@ public class ScoreCommand extends Command
      */
     public ScoreCommand()
     {
-       
+
     }
 
     /**
@@ -28,10 +28,36 @@ public class ScoreCommand extends Command
     String execute() throws InterruptedException, FileNotFoundException
     {
         GameState gs = GameState.instance();
-        String s = "";
-        
-        s += gs.getScore();
-        
-        return s;
+        int score = 0;
+        String message = "";
+
+        score += gs.getScore();
+
+        if(score == 0)
+        {
+            message = "Explore the dungeon and acquire some points!";
+            return score + " " + message;
+        }
+        else if(score > 0 && score <= 5)
+        {
+            message = "Good start. Keep going!";
+            return score + " " + message;
+        }
+        else if(score > 5 && score <= 10)
+        {
+            message = "Good job! You've reached rank I.";
+            return score + " " + message;
+        }
+        else if(score > 10 && score <= 15)
+        {
+            message = "Wow! You've reached rank II.";
+            return score + " " + message;
+        }
+        else
+        {
+            message = "This is a test case";
+            return score + " " + message;
+        }
     }
 }
+        
