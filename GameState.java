@@ -10,7 +10,7 @@ import java.io.*;
 
 class GameState
 {
-    static int playerHealth = 25; 
+    static double playerHealth = 25; 
     static int playerScore = 0; 
     static Room currentRoom; 
     static Dungeon currentDungeon; 
@@ -250,7 +250,7 @@ class GameState
      * 
      * @return      Player's health as integer
      */    
-    int getHealth()
+    double getHealth()
     {
         return playerHealth; 
     }
@@ -260,7 +260,7 @@ class GameState
      * 
      * @param i     Integer to subtract from health (is positive) or add to health (if negative)
      */
-    void setHealth(int i)
+    void setHealth(double i)
     {
         playerHealth = playerHealth - i;
     }

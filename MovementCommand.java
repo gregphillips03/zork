@@ -37,6 +37,8 @@ public class MovementCommand extends Command
         {
             gs.setAdventurersCurrentRoom(room);
             Denizen.moveDenizens(); 
+            
+            gs.setHealth(0.125);
             return "Movement Complete"; 
         }
         return "You can't go '" + this.dir + "' from " + gs.getAdventurersCurrentRoom().getTitle() + "."; 

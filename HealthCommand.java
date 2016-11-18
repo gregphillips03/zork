@@ -28,7 +28,7 @@ public class HealthCommand extends Command
     String execute() throws InterruptedException, FileNotFoundException
     {
         GameState gs = GameState.instance();
-        int hp = 0;
+        double hp = 0;
         
         hp += gs.getHealth();
         
@@ -48,7 +48,7 @@ public class HealthCommand extends Command
         {
             return "You are beginning to feel bogged down.";
         }
-        else if(hp > 20 && hp <= 24)
+        else if(hp > 20 && hp < 25)
         {
             return "You are feeling nearly perfect! There may however be a rock in your shoe.!";
         }
@@ -58,7 +58,7 @@ public class HealthCommand extends Command
         }
         else
         {
-            return "This is a test case";
+            return hp + "This is a test case";
         }
     }
 }
