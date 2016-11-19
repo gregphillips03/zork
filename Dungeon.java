@@ -198,19 +198,27 @@ public class Dungeon
     {
         GameState gs = GameState.instance(); 
         String cr = r.nextLine();
-        //toke is now sitting in front of "health: 35.0"
+        String health = r.nextLine();
+        String score = r.nextLine();       
         
-        
+        //Get index of ":"
         int index = cr.lastIndexOf(":"); 
+        int hpIndex = health.lastIndexOf(":");
+        int xpIndex = score.lastIndexOf(":");
+        
+        //Get substring of room, score, health based on where the ":" is
         String currentRoom = cr.substring(index +2);
+        String hpSubstring = health.substring(hpIndex + 2);
+        String xpSubstring = score.substring(xpIndex + 2);
+        
+        //convert substring to corresponding data type
+        double hp = Double.parseDouble(hpSubstring);
+        int xp = Integer.parseInt(xpSubstring);
+        
         Room tempRoom = getRoom(currentRoom);
         gs.setAdventurersCurrentRoom(tempRoom); 
-        
-        //you can scan at this point to pull in the current health, possibly by parsing the whole line into an String array,
-        //by splitting it at the white space. Take the [1] (second slot) of the array and cast it as a double to set the health. 
-        
-        //you can do the same thing here for the score, but casting as an integer from a string instead. 
-        //once this method hands back to gamestate, the token should be sitting at the front of "inventory: combatdrugs"
+        gs.setHealth(25.0 - hp);
+        gs.setScore(xp);
     }
     
     /**

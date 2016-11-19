@@ -168,11 +168,7 @@ class GameState
         }
         
         
-        
-        
-        
-        
-        gs.getDungeon().restoreState(scan); // token is now sitting in front of "current room"    
+        gs.getDungeon().restoreState(scan);   
         if(!scan.hasNext(pattern2))
         {
             String sub = scan.nextLine(); 
@@ -272,6 +268,7 @@ class GameState
     {
         playerHealth = playerHealth - i;
     }
+    
     
     /**
      * Searches room for item of specified name.
