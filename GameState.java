@@ -166,7 +166,13 @@ class GameState
         {
             scan.nextLine(); 
         }
-        gs.getDungeon().restoreState(scan); 
+        
+        
+        
+        
+        
+        
+        gs.getDungeon().restoreState(scan); // token is now sitting in front of "current room"    
         if(!scan.hasNext(pattern2))
         {
             String sub = scan.nextLine(); 
