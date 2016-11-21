@@ -33,7 +33,7 @@ public class ScoreCommand extends Command
 
         score += gs.getScore();
 
-        if(score == 0)
+        if(score <= 0)
         {
             message = "Explore the dungeon and acquire some points!";
             return score + " " + message;
@@ -45,17 +45,22 @@ public class ScoreCommand extends Command
         }
         else if(score > 5 && score <= 10)
         {
-            message = "Good job! You've reached rank I.";
+            message = "Good job! You are rank I.";
             return score + " " + message;
         }
         else if(score > 10 && score <= 15)
         {
-            message = "Wow! You've reached rank II.";
+            message = "Wow! You are rank II.";
+            return score + " " + message;
+        }
+        else if (score > 15 && score <=25)
+        {
+            message = "Amazing! You are rank III.";
             return score + " " + message;
         }
         else
         {
-            message = "This is a test case";
+            message = "Unbelievable! You are rank IV.";
             return score + " " + message;
         }
     }

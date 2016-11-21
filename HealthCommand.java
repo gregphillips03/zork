@@ -50,15 +50,11 @@ public class HealthCommand extends Command
         }
         else if(hp > 20 && hp < 25)
         {
-            return "You are feeling nearly perfect! There may however be a rock in your shoe.!";
-        }
-        else if(hp == 25)
-        {
-            return "You are feeling perfect!";
+            return "You are feeling nearly perfect! There may however be a rock in your shoe!";
         }
         else
         {
-            return hp + "This is a test case";
+            return "You are feeling perfect!";
         }
     }
 }
