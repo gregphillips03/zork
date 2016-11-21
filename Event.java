@@ -22,6 +22,7 @@ public class Event
     private String nativeItem = ""; 
     private int health = 0; 
     private int score = 0; 
+    GameState gs = GameState.instance();
     
     /**
      * Constructor for Objects of Class Event
@@ -241,7 +242,6 @@ public class Event
     
     /**
      * Handles item events that are disappear actions. 
-     * 
      * @return      String message to display to user 
      */
     private String disappear()
@@ -249,6 +249,18 @@ public class Event
         //this needs to be written
         //Needs to remove from Dungeon and/or Room and/or User's Inventory and/or NPC's Inventory
         //Dungeon needs to remember what items have disappeared and not restore them when restoring from save file, etc
+        Dungeon theDungeon = gs.getDungeon();
+        Item theItem = theDungeon.getItem(this.nativeItem);
+        if (theItem != null) {
+            theDungeon.itemsInDungeon.remove(this.nativeItem);
+        }
+        Set<String> keys = theDungeon.collection.keySet();
+        for(String key : keys){
+            Room theRoom = theDungeon.collection.get(key);
+            if(theRoom.roomItems.contains(theItem)) {
+                theRoom.roomItems.remove(theItem);
+            }
+        }
         return "\nTest for Disappear\n"; 
     }
     

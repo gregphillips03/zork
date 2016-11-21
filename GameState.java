@@ -15,7 +15,8 @@ class GameState
     static Room currentRoom; 
     static Dungeon currentDungeon; 
     static GameState gameState = new GameState(); 
-    static ArrayList<Item> carriedItems = new ArrayList<Item>(); 
+    static ArrayList<Item> carriedItems = new ArrayList<Item>();
+    static String gameType = "";
     
     /**
      * Constructor for objects of class GameState. Singleton class controls creation.

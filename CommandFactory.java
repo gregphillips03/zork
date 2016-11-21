@@ -20,7 +20,7 @@ class CommandFactory
     public static List<String> SCORE_COMMANDS = Arrays.asList("score", "Score", "SCORE");
     public static List<String> HEALTH_COMMANDS = Arrays.asList("health", "Health", "HEALTH");
     public static List<String> AVAIL_VERBS = new ArrayList<>(); 
-    
+    GameState gs = GameState.instance(); 
     /**
      * Constructor for objects of class CommandFactory.
      */
@@ -87,12 +87,12 @@ class CommandFactory
                 DropCommand drop = new DropCommand(commandString); 
                 return drop; 
             }
-            else if(SCORE_COMMANDS.contains(string))
+            else if(SCORE_COMMANDS.contains(string) && gs.gameType.equals("new"))
             {
                 ScoreCommand score = new ScoreCommand();
                 return score;
             }
-            else if(HEALTH_COMMANDS.contains(string))
+            else if(HEALTH_COMMANDS.contains(string) && gs.gameType.equals("new"))
             {
                 HealthCommand health = new HealthCommand();
                 return health;

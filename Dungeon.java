@@ -15,7 +15,7 @@ public class Dungeon
     static Hashtable<String, Room> collection = new Hashtable<String, Room>();
     static Hashtable<String, Item> itemsInDungeon = new Hashtable<String, Item>(); 
     static Hashtable<String, Denizen> npcInDungeon = new Hashtable<String, Denizen>(); 
-    
+    GameState gs = GameState.instance();
     /**
      * Constructor for objects of class Dungeon
      * 
@@ -43,65 +43,107 @@ public class Dungeon
         String pattern1 = "---"; 
         String pattern2 = "==="; 
         String pattern3 = "Group Bork v1.0"; 
+        String pattern4 = "Bork v3.0";
         
         try
         {
             Scanner scan = new Scanner(new File(filename)); 
             this.name = scan.nextLine();
-            if(!scan.nextLine().equals(pattern3))
+            String version = scan.nextLine();
+            if(!version.equals(pattern3) && !version.equals(pattern4))
             {
                 String s = "+++This data file is incompatible with the current version of Bork+++"; 
                 KillGame.gameKill(s); 
-            } 
-            do
-            {
-                scan.nextLine(); 
             }
-            while(!scan.nextLine().equals("Items:")); 
-            while(!scan.hasNext(pattern2))
-            {
-                Item item = new Item(scan); 
-                this.addItem(item); 
-            }           
-            do
-            {
-                scan.nextLine(); 
+            if(version.equals(pattern3)){
+                gs.gameType = "new";
+                do
+                {
+                    scan.nextLine(); 
+                }
+                while(!scan.nextLine().equals("Items:")); 
+                while(!scan.hasNext(pattern2))
+                {
+                    Item item = new Item(scan); 
+                    this.addItem(item); 
+                }           
+                do
+                {
+                    scan.nextLine(); 
+                }
+                while(!scan.nextLine().equals("Rooms:"));  
+                Room r = new Room(scan, this, b);  
+                this.add(r); 
+                this.setEntry(r);         
+                while(!scan.hasNext(pattern2))
+                {
+                    Room rm = new Room(scan, this, b); 
+                    this.add(rm); 
+                }
+                
+                do
+                {
+                    scan.nextLine(); 
+                }
+                while(!scan.nextLine().equals("Exits:")); 
+                
+                while(!scan.hasNext(pattern2))
+                {
+                    Exit xt = new Exit(scan, this); 
+                }
+                
+                do
+                {
+                    scan.nextLine(); 
+                }
+                while(!scan.nextLine().equals("NPC:")); 
+                
+                while(!scan.hasNext(pattern2))
+                {
+                    Denizen npc = new Denizen(scan, this, b); 
+                    this.addNpc(npc); 
+                    //System.out.println("Added '" + npc.getName() + "' to dungeon list."); 
+                }
             }
-            while(!scan.nextLine().equals("Rooms:"));  
-            Room r = new Room(scan, this, b);  
-            this.add(r); 
-            this.setEntry(r);         
-            while(!scan.hasNext(pattern2))
-            {
-                Room rm = new Room(scan, this, b); 
-                this.add(rm); 
+            if(version.equals(pattern4)) {
+                gs.gameType = "old";
+                System.out.println("WARNING, you have chosen to play an older version of the game therefore you will not be able to use some of the newer features!");
+                do
+                {
+                    scan.nextLine(); 
+                }
+                while(!scan.nextLine().equals("Items:")); 
+                while(!scan.hasNext(pattern2))
+                {
+                    Item item = new Item(scan); 
+                    this.addItem(item); 
+                }           
+                do
+                {
+                    scan.nextLine(); 
+                }
+                while(!scan.nextLine().equals("Rooms:"));  
+                Room r = new Room(scan, this, b);  
+                this.add(r); 
+                this.setEntry(r);         
+                while(!scan.hasNext(pattern2))
+                {
+                    Room rm = new Room(scan, this, b); 
+                    this.add(rm); 
+                }
+                
+                do
+                {
+                    scan.nextLine(); 
+                }
+                while(!scan.nextLine().equals("Exits:")); 
+                
+                while(!scan.hasNext(pattern2))
+                {
+                    Exit xt = new Exit(scan, this); 
+                }
             }
-            
-            do
-            {
-                scan.nextLine(); 
-            }
-            while(!scan.nextLine().equals("Exits:")); 
-            
-            while(!scan.hasNext(pattern2))
-            {
-                Exit xt = new Exit(scan, this); 
-            }
-            
-            do
-            {
-                scan.nextLine(); 
-            }
-            while(!scan.nextLine().equals("NPC:")); 
-            
-            while(!scan.hasNext(pattern2))
-            {
-                Denizen npc = new Denizen(scan, this, b); 
-                this.addNpc(npc); 
-                //System.out.println("Added '" + npc.getName() + "' to dungeon list."); 
-            }
-
-         }
+        }
         catch(FileNotFoundException e)
         {
             System.out.println("+++Caught FileNotFoundException+++"); 
