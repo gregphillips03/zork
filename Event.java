@@ -259,6 +259,7 @@ public class Event
             Room theRoom = theDungeon.collection.get(key);
             if(theRoom.roomItems.contains(theItem)) {
                 theRoom.roomItems.remove(theItem);
+                return "Removed '" +theItem.getPrimaryName() + "' from '" +theRoom.getTitle()+ "'."; 
             }
         }
         return "\nTest for Disappear\n"; 
