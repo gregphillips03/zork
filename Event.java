@@ -15,10 +15,14 @@ public class Event
     public static List<String> DEATH_MESSAGES    = Arrays.asList("Such a frail and feeble mind./nDeath is but mercy.", 
                                                                  "Only in death, does duty end.",
                                                                  "For every battlefield honor, a thousand heroes die, unsung - unremembered.", 
-                                                                 "What is the fear of Death?\nTo die, knowing our task is undone."); 
+                                                                 "What is the fear of Death?\nTo die, knowing our task is undone.");
+    public static List<String> WIN_MESSAGES = Arrays.asList("Congratulations, you've won!",
+                                                            "You have reached the end and emerged victorious. Your story will be sung for centuries.",
+                                                            "Peace has reached the world at last, with you as its herald. You have won.",
+                                                            "The world will know of your greatness, for you have won the game.");                                                             
     
     private String type = ""; 
-    private String xfrm = ""; 
+    private String xfrm = "";  //Item transformed to
     private String nativeItem = ""; 
     private int health = 0; 
     private int score = 0; 
@@ -63,6 +67,7 @@ public class Event
             this.score = Integer.parseInt(getParenthesesContent(action)); 
             this.nativeItem = nativeItem; 
         }
+        
     }
     
     /**
@@ -195,7 +200,19 @@ public class Event
      */
     private String transform()
     {
-        //this needs to be written
+        GameState gs = GameState.instance();
+        Dungeon theDungeon = gs.getDungeon();
+        Item theItem = theDungeon.getItem(this.nativeItem);
+        Item otherItem = theDungeon.getItem(this.xfrm);
+        Set<String> keys = theDungeon.collection.keySet();
+        for(String key : keys){
+            Room theRoom = theDungeon.collection.get(key);
+            if(theRoom.roomItems.contains(theItem)) {
+                theRoom.roomItems.remove(theItem);
+                theRoom.roomItems.add(otherItem);
+                return theItem.getPrimaryName() + " Removed, " + otherItem.getPrimaryName() + " Placed.";
+            }
+        }
         //Remove from Dungeon and/or Room + from user's inventory. Add to room or user's inventory
         return "\nTest for Transform\n"; 
     }
@@ -270,10 +287,13 @@ public class Event
      * 
      * @return      String message to display to user 
      */
-    private String win()
+    private String win() throws InterruptedException
     {
-        //this needs to be written
-        return "\nTest for Win\n"; 
+        String s = ""; 
+        int i = randInt(0, WIN_MESSAGES.size() -1); 
+        s = "\n" + (s = WIN_MESSAGES.get(i)) + "\n"; 
+        KillGame.gameKill(s); 
+        return null;
     }
     
     /**
