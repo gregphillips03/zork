@@ -204,6 +204,10 @@ public class Event
         Dungeon theDungeon = gs.getDungeon();
         Item theItem = theDungeon.getItem(this.nativeItem);
         Item otherItem = theDungeon.getItem(this.xfrm);
+        if(gs.carriedItems.contains(theItem)){
+            gs.carriedItems.remove(theItem);
+            gs.carriedItems.add(otherItem);
+        }
         Set<String> keys = theDungeon.collection.keySet();
         for(String key : keys){
             Room theRoom = theDungeon.collection.get(key);
