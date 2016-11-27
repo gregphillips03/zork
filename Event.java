@@ -323,9 +323,10 @@ public class Event
     /**
      * Handles item events that are access actions. Currently this only relates to the holoplinth. 
      * 
+     * @throws InterruptedException     Pushes IO exception up the stack
      * @return      String message to display to user
      */
-    private String access()
+    private String access() throws InterruptedException
     {
         String s = ""; 
         switch(this.nativeItem)

@@ -62,16 +62,31 @@ public class HoloPlinth
     /**
      * Interaction with user to access HoloPlinth. Allows user to explore various funcitons of plinth interface. 
      * 
+     * @throws InterruptedException     Pushes IO exception up the stack
      * @return      String message to user
      */
-    public String access()
+    public String access() throws InterruptedException
     {
+        Scanner scan = new Scanner(System.in);  
+        String user = ""; 
         String s = "|-------------------------|\n" +
                    "|+++Available Functions+++|\n" +
                    "| <BioScan>    <Teleport> |\n" +
-                   "|-------------------------|\n";
-        //need to write
-        return s; 
+                   "|-------------------------|\n" +
+                   "\n" +
+                   "Choose a function:\n";
+        System.out.println(s); 
+        user = scan.nextLine().toLowerCase(); 
+        
+        switch(user)
+        {
+            case "bioscan":     s = getBio();
+                                break; 
+            case "teleport":    s = doTeleport(); 
+                                break; 
+        }
+               
+        return s + "+++Disconnected from Holoplinth+++"; 
     }
     
     /**
@@ -138,5 +153,57 @@ public class HoloPlinth
             isLocked = false; 
             updatePlinth(); 
         }
+    }
+    
+    /**
+     * Scans the dungeon and returns the locations of where NPCs are located
+     * 
+     * @throws InterruptedException         Pushes thread sleep disruptions up the stack 
+     * @return                              Location of NPCs as String
+     */
+    private String getBio() throws InterruptedException
+    {
+        String s = "";
+        GameState gs = GameState.instance(); 
+        
+        System.out.println("Initiating Scan Sequence"); 
+        Thread.sleep(200);
+        System.out.print("."); 
+        Thread.sleep(200);
+        System.out.print("."); 
+        Thread.sleep(200);
+        System.out.print(".\n"); 
+        
+        for(String key: gs.getDungeon().collection.keySet())
+        {
+            Room rm = gs.getDungeon().getRoom(key); 
+            if(!rm.npcHere.isEmpty())
+            {
+                for(Denizen npc : rm.npcHere)
+                {
+                    s = s + "Room '" + rm.getTitle() + "' contains a '" + npc.getName() + "'.\n"; 
+                    System.out.println("++++BIOFORM DETECTED++++"); 
+                }
+            }
+            System.out.print("Scanning " + rm.getTitle()); 
+            Thread.sleep(150);
+            System.out.print("."); 
+            Thread.sleep(150);
+            System.out.print("."); 
+            Thread.sleep(150);
+            System.out.print(".\n"); 
+        }        
+        return s; 
+    }
+    
+    /**
+     * Teleports the user to a room
+     * 
+     * @return      String message to user
+     */
+    private String doTeleport()
+    {
+        String s = ""; 
+        return s; 
     }
 }

@@ -76,7 +76,8 @@ public class TakeCommand extends Command
             {
                 String r = "You can't take the '" + item.getPrimaryName() + "' with you.\n" +
                            "It's too heavy.\n" +
-                           "You can interact with it instead."; 
+                           "You can interact with it instead.\n";
+                r = r + "You can " + item.toString() + "the '" + item.getPrimaryName() + "'."; 
                 return r; 
             }
             else if(carr != null)
