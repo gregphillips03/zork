@@ -55,7 +55,7 @@ the NPC will follow the user through the dungeon. If they are not angry, they wi
 This is difficult to test, as the NPCs do move on their own. However, a "Squig" starts in the "Equipment Locker"
 room, and a "Ork Nob" starts out in the "Decon Secundus" room. Both are angry and will follow you if you come 
 close enough. You can verify their movement by unlocking the holoplinth, accessing it, and bioscanning. After your 
-first scan, move out of the room and back into it. The bioscan again. The NPCs will have changed locations. 
+first scan, move out of the room and back into it. Then bioscan again. The NPCs will have changed locations. 
 
 NPCs can also carry items. 
 
