@@ -199,11 +199,72 @@ public class HoloPlinth
     /**
      * Teleports the user to a room
      * 
-     * @return      String message to user
+     * @throws InterruptedException         Pushes thread sleep disruptions up the stack  
+     * @return                              String message to user
      */
-    private String doTeleport()
+    private String doTeleport() throws InterruptedException
     {
-        String s = ""; 
-        return s; 
+        String s = "Teleportation Malfunction"; 
+        String user = ""; 
+        Scanner scan = new Scanner(System.in); 
+        GameState gs = GameState.instance();        
+        Item item = gs.getItemFromInventory("powerpack"); 
+        ArrayList<String> availRooms; 
+        
+        if(item != null)
+        {
+            System.out.println("To teleport, please insert powerpack.");
+            System.out.println("It will be consumed during the process."); 
+            System.out.println("Insert now? (Y / N): "); 
+            user = scan.next().toLowerCase(); 
+            if(user.equals("y"))
+            {
+                gs.removeFromInventory(item); 
+                System.out.println("++++Powerpack accepted++++"); 
+                Thread.sleep(350); 
+                System.out.println("++++Powering Tessaract Coils++++"); 
+                System.out.print("."); 
+                Thread.sleep(250);
+                System.out.print("."); 
+                Thread.sleep(250);
+                System.out.print(".\n");
+                Thread.sleep(250); 
+                System.out.println("++++Coils Hot++++"); 
+                Thread.sleep(500); 
+                
+                availRooms = availRooms(); 
+                
+                s = "Tested and found not null\n"; 
+                return s; 
+            }
+            else
+            {
+                s = "Sequence Aborted.\nDisconnected from Holoplinth.\n"; 
+                return s; 
+            }
+        }
+        else
+        {
+            s = "You need additional power to teleport.\n" +
+                "Please try again with power pack.\n"; 
+            return s; 
+        }
+    }
+    
+    /**
+     * Gets the available rooms within the Dungeon
+     * 
+     * @return      ArrayList populated with the room titles within the dungeon
+     */
+    private ArrayList<String> availRooms()
+    {
+        ArrayList<String> sa = new ArrayList<String>(); 
+        GameState gs = GameState.instance(); 
+        
+        for(String key: gs.getDungeon().collection.keySet())
+        {
+            sa.add(key); 
+        }
+        return sa; 
     }
 }

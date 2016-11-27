@@ -23,11 +23,15 @@ is specific to that item. The program is also smart enough to remember if each i
 save time. 
 
 The holoplinth has a passphrase ("golgotha"); the dataslate has a code ("3324"). These are harcoded in to the
-program. After each item has had the correct code/passphrase entered into it, a new itemm is replaced that is 
+program. After each item has the correct code/passphrase entered into it, a new item is replaced that is 
 functional. In the game sense, you unlocked access to the holoplinth's programs, or the dataslate's functions. 
 The holoplinth allows you to scan the dungeon for the location of NPCs and to teleport to a desired room. 
 "Access" the holoplinth after unlocking it and choose "BioScan". The plinth will actively search the dungeon 
-for bioforms and return their locations to the user. 
+for bioforms and return their locations.
+
+In order to teleport, you must possess the powerpack in your inventory. If you do not have the pack, the plinth
+will inform you you're unable to teleport. It is initially located in room "Intersection Epsilong Eng". Once you 
+take the powerpack, access the holoplinth and attempt to teleport. 
 
 The dataslate DOES NOT HAVE ANY FUNCTION AT THE TIME OF THIS WRITING. 
 
