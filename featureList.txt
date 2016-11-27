@@ -1,0 +1,53 @@
+Static Objects (Greg)
+
+Some objects are too large, heavy, or unwieldy for an adventruer to pick up and take with them. 
+As such, these items are not allowed to be taken from the room. Instead, the user can interact with them.
+Think of these as item an adventurer SHOULDN'T be allowed to take; i.e., levers on walls, computer consoles, 
+filing cabinets, etc. As the dungeon file is read in, the item weight is consulted; items with "99999" as 
+they item weight are tagged as items that canot be taken. 
+
+You can test this out from the intial room, "Engine Control". There is a "holoplinth" in the room. Think
+of it as a futuristic computer terminal, with a holographic GUI. Try to "take holoplinth"; you will see that
+it cannot be taken. Instead, you are provided with a message that informs you that you can interact with it
+instead. 
+
+---
+
+Interactive Objects (Greg)
+
+Items are rather boring if you can't do much with them. As such, our dungeon includes interactive objects. 
+These are "special objects" that allow the user to do alot more with them than the standard construct allows. 
+The "holoplinth" and "dataslate" are two such items. Each item has an "unlock" event associated with a verb 
+pair. You can "activate" the holoplinth and "unlock" the dataslate. Each verb triggers the "unlock" event that
+is specific to that item. The program is also smart enough to remember if each item is locked or unlocked at
+save time. 
+
+The holoplinth has a passphrase ("golgotha"); the dataslate has a code ("3324"). These are harcoded in to the
+program. After each item has had the correct code/passphrase entered into it, a new itemm is replaced that is 
+functional. In the game sense, you unlocked access to the holoplinth's programs, or the dataslate's functions. 
+The holoplinth allows you to scan the dungeon for the location of NPCs and to teleport to a desired room. 
+"Access" the holoplinth after unlocking it and choose "BioScan". The plinth will actively search the dungeon 
+for bioforms and return their locations to the user. 
+
+The dataslate DOES NOT HAVE ANY FUNCTION AT THE TIME OF THIS WRITING. 
+
+---
+
+NPCs (Greg)
+
+Our dungeon includes NPCs. In order to really draw a defining line between the NPCs and other items just laying
+around, these NPCs have a bit of logic built into them. NPCs have two important attributes; the ability to move,
+and their current mood. Naturally, if they are mobile, they can move. However, if they are mobile and angry, 
+they will attempt to follow the user through the dungeon. The original thought for this logic attempted to 
+account for cowardly users who would attempt to run from a fight. 
+
+Each time the player moves within the dungeon, the NPCs move as well. Each NPC will scan room's adjacent to
+themselves, and the room they are currently in. If the player is within one of those rooms, and the NPC is angry
+the NPC will follow the user through the dungeon. If they are not angry, they will move to a random ADJACENT room.
+
+This is difficult to test, as the NPCs do move on their own. However, a "Squig" starts in the "Equipment Locker"
+room, and a "Ork Nob" starts out in the "Decon Secundus" room. Both are angry and will follow you if you come 
+close enough. 
+
+NPCs can also carry items. 
+
