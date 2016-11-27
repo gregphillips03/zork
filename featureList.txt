@@ -33,7 +33,8 @@ In order to teleport, you must possess the powerpack in your inventory. If you d
 will inform you you're unable to teleport. It is initially located in room "Intersection Epsilong Eng", which is
 (w, w) from engine control. Once you take the powerpack, access the holoplinth and choose the teleport function. 
 The holoplinth will inform you that the powerpack will be consumed during the process (it is removed from inventory).
-Insert the powerpack into the plinth. 
+Insert the powerpack into the plinth, by responding "Y" to the prompt. The holoplinth will return the available rooms
+to teleport to. Choose a location by entering the associated numeric location.   
 
 The dataslate DOES NOT HAVE ANY FUNCTION AT THE TIME OF THIS WRITING. 
 
@@ -47,7 +48,7 @@ and their current mood. Naturally, if they are mobile, they can move. However, i
 they will attempt to follow the user through the dungeon. The original thought for this logic attempted to 
 account for cowardly users who would attempt to run from a fight. 
 
-Each time the player moves within the dungeon, the NPCs move as well. Each NPC will scan room's adjacent to
+Each time the player moves within the dungeon, the NPCs move as well. Each NPC will scan rooms adjacent to
 themselves, and the room they are currently in. If the player is within one of those rooms, and the NPC is angry
 the NPC will follow the user through the dungeon. If they are not angry, they will move to a random ADJACENT room.
 

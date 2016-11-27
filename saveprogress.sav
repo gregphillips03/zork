@@ -7,7 +7,7 @@ NPCs: OrkNob
 ---
 Engine Control:
 beenHere=true
-Contents: dataslate,holoplinth,orkglyph2
+Contents: dataslate,orkglyph2,combatdrugs,holoplinth
 NPCs: OrkBoy
 ---
 Aft Propellant Plenum Exchange:
@@ -15,21 +15,20 @@ beenHere=false
 Contents: purityseal1
 ---
 Corridor Alpha Eng:
-beenHere=false
+beenHere=true
 Contents: chainsword
 ---
 Equipment Locker:
 beenHere=false
 Contents: datacoil,servoskull1,battlestims
-NPCs: Squig
 ---
 Corridor Bravo Eng:
 beenHere=false
 Contents: boltpistol
+NPCs: Squig
 ---
 Intersection Epsilon Eng:
-beenHere=false
-Contents: powerpack
+beenHere=true
 ---
 Reactor Entrance West:
 beenHere=false
@@ -38,9 +37,9 @@ Contents: servoskull2
 ===
 Adventurer:
 Current room: Engine Control
-Health: 35.0
-Score: -1
-Inventory: combatdrugs
+Health: 24.5
+Score: 25
+Inventory: powerpack
 ===
 NPC States:
 OrkNob
@@ -63,7 +62,7 @@ Carries: squigbomb
 ---
 ===
 Holoplinth State:
-isLocked=true
+isLocked=false
 ===
 DataSlate State:
 isLocked=true

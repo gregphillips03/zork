@@ -63,7 +63,7 @@ public class HoloPlinth
      * Interaction with user to access HoloPlinth. Allows user to explore various funcitons of plinth interface. 
      * 
      * @throws InterruptedException     Pushes IO exception up the stack
-     * @return      String message to user
+     * @return                          String message to user
      */
     public String access() throws InterruptedException
     {
@@ -73,7 +73,6 @@ public class HoloPlinth
                    "|+++Available Functions+++|\n" +
                    "| <BioScan>    <Teleport> |\n" +
                    "|-------------------------|\n" +
-                   "\n" +
                    "Choose a function:\n";
         System.out.println(s); 
         user = scan.nextLine().toLowerCase(); 
@@ -173,7 +172,12 @@ public class HoloPlinth
         Thread.sleep(200);
         System.out.print("."); 
         Thread.sleep(200);
-        System.out.print(".\n"); 
+        System.out.print("."); 
+        Thread.sleep(200);
+        System.out.print("."); 
+        Thread.sleep(200);        
+        System.out.print(".\n");
+        Thread.sleep(200);   
         
         for(String key: gs.getDungeon().collection.keySet())
         {
@@ -195,7 +199,7 @@ public class HoloPlinth
             System.out.print(".\n"); 
             count ++; 
         }        
-        return "++++" + count + " Areas Scanned++++\n" + s; 
+        return "++++" + count + " AREAS SCANNED++++\n" + s; 
     } 
     
     /**
@@ -208,6 +212,7 @@ public class HoloPlinth
     {
         String s = "Teleportation Malfunction"; 
         String user = ""; 
+        int userint = 0; 
         Scanner scan = new Scanner(System.in); 
         GameState gs = GameState.instance();        
         Item item = gs.getItemFromInventory("powerpack"); 
@@ -234,9 +239,23 @@ public class HoloPlinth
                 System.out.println("++++Coils Hot++++"); 
                 Thread.sleep(500); 
                 
-                availRooms = availRooms(); 
-                //need teleport logic                               
-                s = "Tested and found not null\n"; 
+                System.out.println(s = formatRooms(availRooms = availRooms())); 
+                System.out.println("Choose Teleport Location"); 
+                System.out.print("Enter numeric identifier: ");
+                userint = scan.nextInt(); 
+                Room room = teleportLocation(userint, availRooms); 
+                if(room == null)
+                {
+                    s = "Teleport Malfunction @ Room Location";
+                    return s; 
+                }
+                
+                //encase this in the malfunction logic
+                gs.setAdventurersCurrentRoom(room); 
+                teleportFluff(); 
+                //encase this in the malfunction logic
+                
+                s = "Teleported to '" + room.getTitle() + "'.\n"; 
                 return s; 
             }
             else
@@ -268,5 +287,163 @@ public class HoloPlinth
             sa.add(key); 
         }
         return sa; 
+    }
+    
+    /**
+     * Formats the available rooms for output to the user
+     * 
+     * @param al        ArrayList of room titles as String
+     * @return          Formatted string for display to user
+     */
+    private String formatRooms(ArrayList<String> al)
+    {
+        String s = "";
+        int i = 1; 
+        
+        for(String room : al)
+        {
+            s = s + room + " " + "<" + i + ">" + "\n"; 
+            i ++; 
+        }
+        return s; 
+    }
+    
+    /**
+     * Parses the the user's input to determine which room to teleport to
+     * 
+     * @param i     Integer value as taken from the user / paired with the desired room
+     * @param al    ArrayList of room titles
+     * @return      Room to teleport to
+     */
+    private Room teleportLocation(int i, ArrayList<String> al)
+    {
+        GameState gs = GameState.instance(); 
+        Dungeon d = gs.getDungeon(); 
+        
+        Room room = d.getRoom(al.get(i -1)); 
+        return room; 
+    }
+    
+    /**
+     * Fluff for teleportation sequence
+     * 
+     * @throws InterruptedException         Pushes thread sleep disruptions up the stack  
+     */
+    private void teleportFluff() throws InterruptedException
+    {
+        System.out.println("++++Sequence Initiated++++");
+        Thread.sleep(250);
+        for(int i = 0; i < 4; i++)
+        {
+            System.out.print("."); 
+            Thread.sleep(250); 
+        }
+        System.out.print(".\n");
+        Thread.sleep(250); 
+        System.out.println("++++Discharging Coil Energy++++"); 
+        Thread.sleep(200); 
+        
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("."); 
+            Thread.sleep(200); 
+        }        
+        System.out.print(".\n");
+        Thread.sleep(100);
+
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("."); 
+            Thread.sleep(100); 
+        }         
+        System.out.print(".\n");
+        Thread.sleep(50); 
+        
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("."); 
+            Thread.sleep(50); 
+        }         
+        System.out.print(".\n");
+        Thread.sleep(20); 
+
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("."); 
+            Thread.sleep(20); 
+        }         
+        System.out.print(".\n");
+        Thread.sleep(10); 
+        
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("."); 
+            Thread.sleep(10); 
+        }         
+        System.out.print(".\n");        
+        Thread.sleep(10); 
+
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("."); 
+            Thread.sleep(10); 
+        }           
+        System.out.print(".\n"); 
+        Thread.sleep(50); 
+        
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("."); 
+            Thread.sleep(10); 
+        }           
+        System.out.print(".\n"); 
+        Thread.sleep(50); 
+        
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("."); 
+            Thread.sleep(10); 
+        }           
+        System.out.print(".\n"); 
+        Thread.sleep(50);         
+        
+        System.out.println("+++++++++++++++++++");
+        Thread.sleep(50);         
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("+"); 
+            Thread.sleep(10); 
+        } 
+        System.out.print("\n"); 
+        
+        System.out.println("+++++++++++++++++++");
+        Thread.sleep(50);
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("+"); 
+            Thread.sleep(10); 
+        } 
+        System.out.print("\n"); 
+        
+        System.out.println("+++++++++++++++++++");
+        Thread.sleep(50); 
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("+"); 
+            Thread.sleep(10); 
+        } 
+        System.out.print("\n"); 
+        
+        System.out.println("+++++++++++++++++++"); 
+        Thread.sleep(50); 
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.print("+"); 
+            Thread.sleep(10); 
+        }  
+        System.out.print("\n"); 
+        
+        Thread.sleep(1000); 
+        System.out.println("++++Sequence Complete++++"); 
     }
 }
