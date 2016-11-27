@@ -287,7 +287,7 @@ public class Denizen
         npc.setRoom(tempRoom); 
         room.removeNpc(npc); 
         tempRoom.addNpc(npc); 
-        System.out.println("goToAdjacentRoom move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "'."); 
+        //System.out.println("goToAdjacentRoom move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "'."); 
     }
     
     /**

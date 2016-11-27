@@ -30,8 +30,10 @@ The holoplinth allows you to scan the dungeon for the location of NPCs and to te
 for bioforms and return their locations.
 
 In order to teleport, you must possess the powerpack in your inventory. If you do not have the pack, the plinth
-will inform you you're unable to teleport. It is initially located in room "Intersection Epsilong Eng". Once you 
-take the powerpack, access the holoplinth and attempt to teleport. 
+will inform you you're unable to teleport. It is initially located in room "Intersection Epsilong Eng", which is
+(w, w) from engine control. Once you take the powerpack, access the holoplinth and choose the teleport function. 
+The holoplinth will inform you that the powerpack will be consumed during the process (it is removed from inventory).
+Insert the powerpack into the plinth. 
 
 The dataslate DOES NOT HAVE ANY FUNCTION AT THE TIME OF THIS WRITING. 
 

@@ -164,6 +164,7 @@ public class HoloPlinth
     private String getBio() throws InterruptedException
     {
         String s = "";
+        int count = 0; 
         GameState gs = GameState.instance(); 
         
         System.out.println("Initiating Scan Sequence"); 
@@ -192,9 +193,10 @@ public class HoloPlinth
             System.out.print("."); 
             Thread.sleep(150);
             System.out.print(".\n"); 
+            count ++; 
         }        
-        return s; 
-    }
+        return "++++" + count + " Areas Scanned++++\n" + s; 
+    } 
     
     /**
      * Teleports the user to a room
@@ -233,7 +235,7 @@ public class HoloPlinth
                 Thread.sleep(500); 
                 
                 availRooms = availRooms(); 
-                
+                //need teleport logic                               
                 s = "Tested and found not null\n"; 
                 return s; 
             }
