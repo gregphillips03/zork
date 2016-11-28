@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DungeonGraph()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ DungeonGraph.\ Singleton\ class\ controls\ creation.\ \r\n
+comment1.params=
+comment1.target=DungeonGraph\ instance()
+comment1.text=\r\n\ Exists\ to\ control\ object\ creation.\ \r\n\ \r\n\ @return\ \ \ \ \ \ DungeonGraph\ object.\ \r\n
+comment2.params=
+comment2.target=void\ makeNodes()
+comment2.text=\r\n\ Creates\ the\ nodes\ (rooms)\ for\ dungeon\ representation\ as\ graph.\ \r\n
+comment3.params=
+comment3.target=void\ makeEdges()
+comment3.text=\r\n\ Creates\ edges\ (exits)\ between\ nodes\ (rooms)\ for\ representation\ as\ a\ graph.\r\n
+comment4.params=from\ to
+comment4.target=int\ getEdge(int,\ int)
+comment4.text=\r\n\ Used\ for\ testing\r\n\ \r\n\ @param\ to\ \ \ \ \ \ \ \ Destination\ node\r\n\ @param\ from\ \ \ \ \ \ Origin\ node\r\n
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+comment5.text=\r\n\ Used\ for\ testing\r\n
+numComments=6
