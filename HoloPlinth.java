@@ -212,7 +212,8 @@ public class HoloPlinth
     {
         String s = "Teleportation Malfunction"; 
         String user = ""; 
-        int userint = 0; 
+        int userint = 0;
+        int random = 0; 
         Scanner scan = new Scanner(System.in); 
         GameState gs = GameState.instance();        
         Item item = gs.getItemFromInventory("powerpack"); 
@@ -250,10 +251,15 @@ public class HoloPlinth
                     return s; 
                 }
                 
-                //encase this in the malfunction logic
-                gs.setAdventurersCurrentRoom(room); 
+                if((random = randInt(0, 10)) < 4)
+                {
+                    s = teleportMalfunction(random, room); 
+                    return s; 
+                }
+                
+                gs.setAdventurersCurrentRoom(room);
+                gs.setScore(random*5); 
                 teleportFluff(); 
-                //encase this in the malfunction logic
                 
                 s = "Teleported to '" + room.getTitle() + "'.\n"; 
                 return s; 
@@ -323,6 +329,74 @@ public class HoloPlinth
         Room room = d.getRoom(al.get(i -1)); 
         return room; 
     }
+    
+    /**
+     * Logic for teleportation malfunctioning
+     * 
+     * @throws InterruptedException     Pushes IO exception up the stack
+     * 
+     * @param room                      Target location for teleportation sequence. 
+     * @param i                         Randomly generated number from teleportation initiation
+     * @return                          String message to user
+     * 
+     */
+    String teleportMalfunction(int i, Room room) throws InterruptedException
+    {
+        String s = "";
+        GameState gs = GameState.instance(); 
+        Room rm = gs.getAdventurersCurrentRoom();         
+        Dungeon d = gs.getDungeon(); 
+        double j = gs.getHealth();
+        
+        switch(i)
+        {
+            case 0:     gs.setHealth(j);
+                        s = "++++Teleportation ripped you apart++++\n"; 
+                        System.out.println(s); 
+                        KillGame.endGame(); 
+                        break; 
+                        
+            case 1:     gs.setHealth(j/2); 
+                        s = "++++Teleportation Malfunction++++\n++++Check Your Health!++++\n";
+                        teleportFluff(); 
+                        gs.setAdventurersCurrentRoom(room); 
+                        break;
+                        
+            case 2:     s = "++++Teleportation Malfunction++++\n++++Holoplinth has Teleported Instead!++++\n";
+                        teleportFluff(); 
+                        rm.remove(d.getItem("holoplinth"));
+                        room.add(d.getItem("holoplinth")); 
+                        break;
+            
+            case 3:     s = "++++Teleportation Malfunction++++\n++++Unable to Transport Your Equipment++++\n";
+                        teleportFluff(); 
+                        if(!gs.carriedItems.isEmpty())
+                        {
+                            for(Item item : gs.carriedItems)
+                            {
+                                gs.removeFromInventory(item); 
+                                rm.add(item); 
+                            }
+                        }
+                        gs.setAdventurersCurrentRoom(room); 
+                        break; 
+        }
+        return s; 
+    }
+    
+    /**
+     * Random number generator / used to determine teleportation malfunction
+     * 
+     * @param min   Bottom limit for random number
+     * @param max   Upper limit fo random number
+     * @return      randomly generated integer
+     */
+    static int randInt(int min, int max)
+    {
+        Random rand = new Random(); 
+        int randomNum = rand.nextInt((max - min) + 1) + min; 
+        return randomNum; 
+    }    
     
     /**
      * Fluff for teleportation sequence
