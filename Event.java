@@ -218,7 +218,7 @@ public class Event
             }
         }
         //Remove from Dungeon and/or Room + from user's inventory. Add to room or user's inventory
-        return "\nTest for Transform\n"; 
+        return theItem.getPrimaryName() + " Removed, " + otherItem.getPrimaryName() + " Placed.";
     }
     
     /**
