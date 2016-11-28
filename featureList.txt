@@ -44,11 +44,12 @@ making any teleportation journey perilous to the user. A random number is genera
 0-3 are dangerous. 
 
 0: The teleportation rips you apart and kills you. Game over. 
-1: The teleportation reassembles you, but not correctly.  Lose 50% health.
-2: The teleportation sequence rips the holoplinth from the room and transports it instead of the user. 
-3: The teleportation does not contain enough energy (faulty coil?) and cannot transport the user's inventory. 
+1: The teleportation reassembles you, but not correctly.  Lose 50% health. -20 points.
+2: The teleportation sequence rips the holoplinth from the room and transports it instead of the user. -15 points.
+3: The teleportation does not contain enough energy (faulty coil?) and cannot transport the user's inventory. -10 points.
 
-The dataslate DOES NOT HAVE ANY FUNCTION AT THE TIME OF THIS WRITING. 
+The dataslate allows the user to perform a local scan for NPCs. It will actively scan adjacent rooms from the user's 
+location and return the NPCs location. Since it's portable, it is less powerful than the holoplinth. 
 
 ---
 
@@ -69,5 +70,5 @@ room, and a "Ork Nob" starts out in the "Decon Secundus" room. Both are angry an
 close enough. You can verify their movement by unlocking the holoplinth, accessing it, and bioscanning. After your 
 first scan, move out of the room and back into it. Then bioscan again. The NPCs will have changed locations. 
 
-NPCs can also carry items. 
+NPCs can also carry items. //need to finish writing the "steal" command. 
 

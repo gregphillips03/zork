@@ -62,16 +62,30 @@ public class DataSlate
     /**
      * Interaction with user to access Dataslate. Allows user to explore various funcitons of dataslate interface. 
      * 
+     * @throws InterruptedException         Pushes thread sleep disruptions up the stack 
      * @return      String message to user
      */
-    public String access()
+    public String access() throws InterruptedException
     {
+        Scanner scan = new Scanner(System.in);
+        String user = ""; 
         String s = "|-------------------------|\n" +
                    "|+++Available Functions+++|\n" +
-                   "|+ No Available Function +|\n" +
-                   "|-------------------------|\n";
-        //need to write
-        return s; 
+                   "|  <BioScan>              |\n" +
+                   "|-------------------------|\n" +
+                   "Choose a function:\n";
+        System.out.println(s); 
+        user = scan.nextLine().toLowerCase();
+        
+        switch(user)
+        {
+            case "bioscan":     s = getBio();
+                                break; 
+                                
+            default:            s = "This AI does not comprehend '" + user + "'.\n"; 
+        }
+               
+        return s + "+++Disconnected from DataSlate+++"; 
     }
     
     /**
@@ -125,6 +139,72 @@ public class DataSlate
             d.itemsInDungeon.put(slate.getPrimaryName(), slate); 
             gs.addToInventory(slate); 
         }
+    }
+    
+    /**
+     * Scans adjacent rooms and returns the locations of where NPCs are located
+     * 
+     * @throws InterruptedException         Pushes thread sleep disruptions up the stack 
+     * @return                              Location of NPCs as String
+     */
+    private String getBio() throws InterruptedException
+    {
+        String s = ""; 
+        int count = 1; 
+        GameState gs = GameState.instance();
+        Room room = gs.getAdventurersCurrentRoom(); 
+        
+        System.out.println("Initiating Local Scan"); 
+        Thread.sleep(200);
+        System.out.print("."); 
+        Thread.sleep(200);
+        System.out.print("."); 
+        Thread.sleep(200);
+        System.out.print("."); 
+        Thread.sleep(200);
+        System.out.print("."); 
+        Thread.sleep(200);        
+        System.out.print(".\n");
+        Thread.sleep(200);
+        
+        System.out.print("Scanning " + room.getTitle());
+        Thread.sleep(150);
+        System.out.print("."); 
+        Thread.sleep(150);
+        System.out.print("."); 
+        Thread.sleep(150);
+        System.out.print(".\n"); 
+        if(!room.npcHere.isEmpty())
+        {
+            for(Denizen npc : room.npcHere)
+            {
+                s = s + "Room '" + room.getTitle() + "' contains a '" + npc.getName() + "'.\n"; 
+                System.out.println("++++BIOFORM DETECTED++++"); 
+            }
+        }
+        
+        for(Exit exit : room.exitPath)
+        {
+            Room tempRoom = exit.getDest();
+            System.out.print("Scanning " + tempRoom.getTitle()); 
+            Thread.sleep(150);
+            System.out.print("."); 
+            Thread.sleep(150);
+            System.out.print("."); 
+            Thread.sleep(150);
+            System.out.print(".\n"); 
+            if(!tempRoom.npcHere.isEmpty())
+            {
+                for(Denizen npc : tempRoom.npcHere)
+                {
+                    s = s + "Room '" + tempRoom.getTitle() + "' contains a '" + npc.getName() + "'.\n"; 
+                    System.out.println("++++BIOFORM DETECTED++++"); 
+                }
+            }
+            count ++; 
+        }
+        
+        return "++++" + count + " AREAS SCANNED++++\n" + s;         
     }
     
     /**

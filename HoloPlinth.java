@@ -82,7 +82,8 @@ public class HoloPlinth
             case "bioscan":     s = getBio();
                                 break; 
             case "teleport":    s = doTeleport(); 
-                                break; 
+                                break;
+            default:            s = "This AI does not comprehend '" + user + "'.\n"; 
         }
                
         return s + "+++Disconnected from Holoplinth+++"; 
@@ -182,6 +183,13 @@ public class HoloPlinth
         for(String key: gs.getDungeon().collection.keySet())
         {
             Room rm = gs.getDungeon().getRoom(key); 
+            System.out.print("Scanning " + rm.getTitle()); 
+            Thread.sleep(150);
+            System.out.print("."); 
+            Thread.sleep(150);
+            System.out.print("."); 
+            Thread.sleep(150);
+            System.out.print(".\n"); 
             if(!rm.npcHere.isEmpty())
             {
                 for(Denizen npc : rm.npcHere)
@@ -190,13 +198,6 @@ public class HoloPlinth
                     System.out.println("++++BIOFORM DETECTED++++"); 
                 }
             }
-            System.out.print("Scanning " + rm.getTitle()); 
-            Thread.sleep(150);
-            System.out.print("."); 
-            Thread.sleep(150);
-            System.out.print("."); 
-            Thread.sleep(150);
-            System.out.print(".\n"); 
             count ++; 
         }        
         return "++++" + count + " AREAS SCANNED++++\n" + s; 
@@ -358,18 +359,21 @@ public class HoloPlinth
                         
             case 1:     gs.setHealth(j/2); 
                         s = "++++Teleportation Malfunction++++\n++++Check Your Health!++++\n";
-                        teleportFluff(); 
+                        teleportFluff();
+                        gs.setScore(-20); 
                         gs.setAdventurersCurrentRoom(room); 
                         break;
                         
             case 2:     s = "++++Teleportation Malfunction++++\n++++Holoplinth has Teleported Instead!++++\n";
                         teleportFluff(); 
+                        gs.setScore(-15); 
                         rm.remove(d.getItem("holoplinth"));
                         room.add(d.getItem("holoplinth")); 
                         break;
             
             case 3:     s = "++++Teleportation Malfunction++++\n++++Unable to Transport Your Equipment++++\n";
                         teleportFluff(); 
+                        gs.setScore(-10); 
                         if(!gs.carriedItems.isEmpty())
                         {
                             for(Item item : gs.carriedItems)
@@ -481,36 +485,36 @@ public class HoloPlinth
         System.out.print(".\n"); 
         Thread.sleep(50);         
         
-        System.out.println("+++++++++++++++++++");
+        System.out.println("++++++++++++++++++++");
         Thread.sleep(50);         
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 20; i++)
         {
             System.out.print("+"); 
             Thread.sleep(10); 
         } 
         System.out.print("\n"); 
         
-        System.out.println("+++++++++++++++++++");
+        System.out.println("++++++++++++++++++++");
         Thread.sleep(50);
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 20; i++)
         {
             System.out.print("+"); 
             Thread.sleep(10); 
         } 
         System.out.print("\n"); 
         
-        System.out.println("+++++++++++++++++++");
+        System.out.println("++++++++++++++++++++");
         Thread.sleep(50); 
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 20; i++)
         {
             System.out.print("+"); 
             Thread.sleep(10); 
         } 
         System.out.print("\n"); 
         
-        System.out.println("+++++++++++++++++++"); 
+        System.out.println("++++++++++++++++++++"); 
         Thread.sleep(50); 
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 20; i++)
         {
             System.out.print("+"); 
             Thread.sleep(10); 
