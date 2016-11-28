@@ -39,7 +39,7 @@ to teleport to. Choose a location by entering the associated numeric location.
 
 Teleporation is inherently cantankerous, as any sci fi fan is aware. As such, it will often malfunction, 
 making any teleportation journey perilous to the user. A random number is generated prior to teleportation. 
-4-10 are safe, with no ill effects. The user's score appended as the random number * 5.
+4-10 are safe, with no ill effects. The user's score is appended as the random number * 5.
 
 0-3 are dangerous. 
 
