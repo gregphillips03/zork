@@ -72,16 +72,16 @@ first scan, move out of the room and back into it. Then bioscan again. The NPCs 
 
 As the NPCs move through the Dungeon, they'll randomly pick up items and add them to their inventory. You're not
 the only one looking for things to take. Each time an Ork enters a room, they'll attempt to pick up each item in 
-it provided they are not chasing the user through the dungeon. While Orks are greedy, they'd much rather blugeon
+it provided they are not chasing the user through the dungeon. While Orks are greedy, they'd much rather bludgeon
 you than steal things from rooms. They have a 50% chance to pick up each item in the room. To ensure the Orks don't
 soak up all the items in the dungeon, they will drop a random item from their inventory, when they have too much in it. 
 (>3). After all, Orks will drop something to pick up something that's shinier. 
 
-NPCs can also carry items. These items can be stolen from the NPC by use of the "steal" command. However, stealing
-items from an angry Ork is no easy task. If there is an Ork in the room you're located in, you can try to steal from it
-Type "Steal from (the name of the Ork)". The interpreter will attempt to verify there is an Ork in the room and 
-determine if you're calling out a correct Ork to steal from. If you don't specify an Ork, the game will prompt you to specify
-one. If the room is empty, the game will inform you as such - and you'll lose points for being an idiot. 
+These items can be stolen from the NPC by use of the "steal" command. However, stealing items from an angry Ork is no easy task. 
+If there is an Ork in the room you're located in, you can try to steal from it. Type "Steal from (the name of the Ork)". 
+The interpreter will attempt to verify there is an Ork in the room and determine if you're calling out a correct Ork to steal from. 
+If you don't specify an Ork, the game will prompt you to specifyone. If the room is empty, the game will inform you as such - and 
+you'll lose points for being an idiot. 
 
 After you try to steal, and the game verifies there is someone to steal from, it's all a roll of the dice. You're
 trying to steal from Orks, which are inherently greedy. Orks will try to hold onto what they have, making them less able to 
