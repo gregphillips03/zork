@@ -75,7 +75,7 @@ the only one looking for things to take. Each time an Ork enters a room, they'll
 it provided they are not chasing the user through the dungeon. While Orks are greedy, they'd much rather blugeon
 you than steal things from rooms. They have a 50% chance to pick up each item in the room. To ensure the Orks don't
 soak up all the items in the dungeon, they will drop a random item from their inventory, when they have too much in it. 
-(>3). After all, Orks will drop something to pick up something that' shinier. 
+(>3). After all, Orks will drop something to pick up something that's shinier. 
 
 NPCs can also carry items. These items can be stolen from the NPC by use of the "steal" command. However, stealing
 items from an angry Ork is no easy task. If there is an Ork in the room you're located in, you can try to steal from it
@@ -129,4 +129,6 @@ All take away 20 points.
 7-8:	You steal an item from the Ork. Gain 40 points as well. 
 9:  You steal all items from the Ork. Kill the Ork. Get 60 points. And walk out a veritable bad ass.
 
-Thought for the day: Don't try to pick pocket Orks, unless your willing to pay the price.  
+Thought for the day: Don't try to pick pocket Orks, unless your willing to pay the price. 
+
+--- 
