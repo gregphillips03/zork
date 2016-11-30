@@ -8,7 +8,7 @@ their item weight are tagged as items that canot be taken.
 
 You can test this out from the intial room, "Engine Control". There is a "holoplinth" in the room. Think
 of it as a futuristic computer terminal, with a holographic GUI. Try to "take holoplinth"; you will see that
-it cannot be taken. Instead, you are provided with a message that informs you that you can interact with it
+it stuck to the floor. Instead, you are provided with a message that informs you that you can interact with it
 instead. 
 
 ---
