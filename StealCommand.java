@@ -244,7 +244,7 @@ public class StealCommand extends Command
                                             gs.setHealth(gs.getHealth()*-.5);
                                             gs.setScore(50);
                                             ArrayList<Item> al = epicSteal(npc); 
-                                            s = "Attempt to steal from '" + npc.getName() + "' successful!.!\n";
+                                            s = "Attempt to steal from '" + npc.getName() + "' successful!\n";
                                             s = s + "You drive your combat blade through the Ork's throat, killing it with a straight prejudice.\n"; 
                                             s = s + "The Emperor smiles upon you with his beneficient glory, restoring your health.\n";
                                             for(Item item3 : al)

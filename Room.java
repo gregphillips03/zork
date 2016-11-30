@@ -351,6 +351,14 @@ public class Room
     {
         this.roomItems.remove(item); 
     }
+    
+    /**
+     * 
+     */
+    public ArrayList<Item> getRoomItems()
+    {
+        return this.roomItems; 
+    }
 
     /**
      * Checks to see if there is a NPC object in the room.

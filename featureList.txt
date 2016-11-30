@@ -111,7 +111,7 @@ All take away 20 points.
 2-4:	Makes ork mad. Lose 10 points. 
 5-7:	Successful steal. Get 20 points and an item. 
 8:	Successful steal. Break the orks legs (no longer mobile). Get 30 points and an item. 
-9:	Successful steal. You're so crafty you slit the Ork's throat in the process. Kill the Ork, get all item, and 50 points.
+9:	Successful steal. You're so crafty you slit the Ork's throat in the process. Kill the Ork, get all items, and 50 points.
 	You gain 50% health. 
 
 ++++Ork IS carrying items, and IS angry:
