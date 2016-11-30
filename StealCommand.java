@@ -87,7 +87,7 @@ public class StealCommand extends Command
         {
             for(String string : sa)
             {
-                if(sa.equals(npc.getName()))
+                if(string.equals(npc.getName().toLowerCase()))
                 {
                     s = tryStealFromNPC(npc); 
                 }
@@ -226,7 +226,7 @@ public class StealCommand extends Command
                                             gs.setScore(20);
                                             Item item = stealItem(npc);
                                             gs.addToInventory(item); 
-                                            s = s + "You stole a '" + item.getPrimaryName() + "' from the '" + npc.getName() + "'."; 
+                                            s = s + "You stole a '" + item.getPrimaryName() + "' from the '" + npc.getName() + "'.\n"; 
                                             break;
                 
                 case 8:                     npc.setMood(true);
@@ -235,8 +235,8 @@ public class StealCommand extends Command
                                             gs.setScore(30);
                                             Item item2 = stealItem(npc);
                                             gs.addToInventory(item2);
-                                            s = s + "You broke the '" + npc.getName() + "'s legs. It can't move!"; 
-                                            s = s + "You stole a '" + item2.getPrimaryName() + "' from the '" + npc.getName() + "'."; 
+                                            s = s + "You broke the '" + npc.getName() + "'s legs. It can't move!\n"; 
+                                            s = s + "You stole a '" + item2.getPrimaryName() + "' from the '" + npc.getName() + "'.\n"; 
                                             break;
                                             
                 default:                    npc.setMobile(false);
@@ -250,7 +250,7 @@ public class StealCommand extends Command
                                             for(Item item3 : al)
                                             {
                                                 gs.addToInventory(item3); 
-                                                s = s + "You stole a '" + item3.getPrimaryName() + "' from the '" + npc.getName() + "'."; 
+                                                s = s + "You stole a '" + item3.getPrimaryName() + "' from the '" + npc.getName() + "'.\n"; 
                                             }
                                             
             }
@@ -274,20 +274,20 @@ public class StealCommand extends Command
                                             gs.setScore(-30); 
                                             break;
                                             
-                case 4: case 5: case 6:     s = "Attempt to steal from '" + npc.getName() + "' successful!.";
+                case 4: case 5: case 6:     s = "Attempt to steal from '" + npc.getName() + "' successful!.\n";
                                             gs.setScore(20);
                                             gs.setHealth(gs.getHealth()/4); 
                                             Item item = stealItem(npc);
                                             gs.addToInventory(item); 
-                                            s = s + "You stole a '" + item.getPrimaryName() + "' from the '" + npc.getName() + "'.";
+                                            s = s + "You stole a '" + item.getPrimaryName() + "' from the '" + npc.getName() + "'.\n";
                                             s = s + "You paid for that with a blow to the face.\n"; 
                                             break;
                                             
-                case 7: case 8:             s = "Attempt to steal from '" + npc.getName() + "' successful!.";
+                case 7: case 8:             s = "Attempt to steal from '" + npc.getName() + "' successful!.\n";
                                             gs.setScore(40);
                                             Item item4 = stealItem(npc);
                                             gs.addToInventory(item4); 
-                                            s = s + "You stole a '" + item4.getPrimaryName() + "' from the '" + npc.getName() + "'.";
+                                            s = s + "You stole a '" + item4.getPrimaryName() + "' from the '" + npc.getName() + "'.\n";
                                             break;
                 
                 default:                    npc.setMobile(false);
@@ -302,7 +302,7 @@ public class StealCommand extends Command
                                             for(Item item5 : al)
                                             {
                                                 gs.addToInventory(item5); 
-                                                s = s + "You stole a '" + item5.getPrimaryName() + "' from the '" + npc.getName() + "'."; 
+                                                s = s + "You stole a '" + item5.getPrimaryName() + "' from the '" + npc.getName() + "'.\n"; 
                                             }
                                    
             }
