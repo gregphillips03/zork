@@ -2,10 +2,10 @@ import java.util.*;
 import java.io.*; 
 
 /**
- * SaveCommand is an abstract extension of the Command Class
+ * StealCommand is an abstract extension of the Command Class. It handles all instances where a user attempts to steal items from NPCs. 
  * 
  * @author      William (Greg) Phillips
- * @version     Zork v1
+ * @version     Zork v1.2
  */
 public class StealCommand extends Command
 {
@@ -241,11 +241,70 @@ public class StealCommand extends Command
                                             
                 default:                    npc.setMobile(false);
                                             npc.setHealth(npc.getHealth());
-                                            gs.setHealth(gs.getHealth()*-.5)
+                                            gs.setHealth(gs.getHealth()*-.5);
+                                            gs.setScore(50);
+                                            ArrayList<Item> al = epicSteal(npc); 
                                             s = "Attempt to steal from '" + npc.getName() + "' successful!.!\n";
                                             s = s + "You drive your combat blade through the Ork's throat, killing it with a straight prejudice.\n"; 
-                                            s = s + "The Emperor smiles upon you with his beneficient glory.\n"; 
+                                            s = s + "The Emperor smiles upon you with his beneficient glory, restoring your health.\n";
+                                            for(Item item3 : al)
+                                            {
+                                                gs.addToInventory(item3); 
+                                                s = s + "You stole a '" + item3.getPrimaryName() + "' from the '" + npc.getName() + "'."; 
+                                            }
                                             
+            }
+        }
+        else if(!npc.carriedItems.isEmpty() && npc.getMood() == true)
+        {
+            int i = randInt(0, 9); 
+            switch(i)
+            {
+                case 0:                     s = "Attempt to steal from '" + npc.getName() + "'\n";
+                                            s = s + "The '" + npc.getName() + "' gives you a devastating blow, cracking your skull in two!\n";
+                                            gs.setHealth(gs.getHealth() -1);                                             
+                                            s = s + "Check your health!\n";
+                                            gs.setScore(-30); 
+                                            break;
+                                            
+                case 1: case 2: case 3:     s = "Attempt to steal from '" + npc.getName() + "'\n";
+                                            s = s + "The '" + npc.getName() + "' gives you a glancing blow to the side.\n";
+                                            gs.setHealth(gs.getHealth()/5);                                             
+                                            s = s + "Check your health!\n";
+                                            gs.setScore(-30); 
+                                            break;
+                                            
+                case 4: case 5: case 6:     s = "Attempt to steal from '" + npc.getName() + "' successful!.";
+                                            gs.setScore(20);
+                                            gs.setHealth(gs.getHealth()/4); 
+                                            Item item = stealItem(npc);
+                                            gs.addToInventory(item); 
+                                            s = s + "You stole a '" + item.getPrimaryName() + "' from the '" + npc.getName() + "'.";
+                                            s = s + "You paid for that with a blow to the face.\n"; 
+                                            break;
+                                            
+                case 7: case 8:             s = "Attempt to steal from '" + npc.getName() + "' successful!.";
+                                            gs.setScore(40);
+                                            Item item4 = stealItem(npc);
+                                            gs.addToInventory(item4); 
+                                            s = s + "You stole a '" + item4.getPrimaryName() + "' from the '" + npc.getName() + "'.";
+                                            break;
+                
+                default:                    npc.setMobile(false);
+                                            npc.setHealth(npc.getHealth());
+                                            gs.setHealth(gs.getHealth()*-1);
+                                            gs.setScore(60); 
+                                            ArrayList<Item> al = epicSteal(npc); 
+                                            s = "Attempt to steal from '" + npc.getName() + "' successful!.!\n";
+                                            s = s + "You drive your combat blade through the '" + npc.getName() + "''s throat, killing it with a epic badassery.\n";
+                                            s = s + "A veritable gore of viscera and blood cover your armor. Let none mistake you are a warrior without equal.\n"; 
+                                            s = s + "The Emperor smiles upon you with his beneficient glory, restoring your health beyond capacity.\n";
+                                            for(Item item5 : al)
+                                            {
+                                                gs.addToInventory(item5); 
+                                                s = s + "You stole a '" + item5.getPrimaryName() + "' from the '" + npc.getName() + "'."; 
+                                            }
+                                   
             }
         }
         
@@ -264,5 +323,22 @@ public class StealCommand extends Command
         Item item = npc.carriedItems.get(i);
         npc.removeFromInventory(item); 
         return item; 
+    }
+    
+    /**
+     * Removes all items from NPC inventory during epic steal action.
+     * 
+     * @param npc       NPC to steal from. 
+     * @return          ArrayList of Items stolen from NPC
+     */
+    private static ArrayList<Item> epicSteal(Denizen npc)
+    {
+        ArrayList<Item> al = new ArrayList<Item>(); 
+        for(Item item : npc.carriedItems)
+        {
+            npc.removeFromInventory(item); 
+            al.add(item); 
+        }
+        return al; 
     }
 }

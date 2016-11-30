@@ -5,7 +5,7 @@ import java.io.*;
  * GameState Holds the current state of the game. 
  * 
  * @author      William (Greg) Phillips
- * @version     Zork v1
+ * @version     Zork v1.2
  */
 
 class GameState
