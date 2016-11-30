@@ -87,6 +87,7 @@ public class StealCommand extends Command
         {
             for(String string : sa)
             {
+                string = string.toLowerCase(); 
                 if(string.equals(npc.getName().toLowerCase()))
                 {
                     s = tryStealFromNPC(npc); 

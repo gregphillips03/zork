@@ -242,7 +242,8 @@ public class Denizen
                     if(!tryFollowUser(npcRoom, npc))
                     {
                         int i = randInt(0, npcRoom.exitPath.size() -1); 
-                        npc.goToAdjacentRoom(npcRoom, i, npc); 
+                        npc.goToAdjacentRoom(npcRoom, i, npc);
+                        leaveItemInRoom(npc); 
                     } 
                 }
                 else if(npc.isMobile)
@@ -250,7 +251,8 @@ public class Denizen
                     Room npcRoom = npc.getNpcRoom(); 
                     int i = randInt(0, npcRoom.exitPath.size() - 1); 
                     npc.goToAdjacentRoom(npcRoom, i, npc); 
-//                     takeItemFromRoom(npc); 
+                    takeItemFromRoom(npc);
+                    leaveItemInRoom(npc); 
                 }
             }
         }
@@ -287,7 +289,6 @@ public class Denizen
              npc.setRoom(tempRoom); 
              room.removeNpc(npc); 
              tempRoom.addNpc(npc);
-//              takeItemFromRoom(npc); 
              //System.out.println("tryFollowUser move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "', from " + room.getTitle() +"."); 
              return true;              
          }
@@ -298,7 +299,6 @@ public class Denizen
                  npc.setRoom(tempRoom); 
                  room.removeNpc(npc); 
                  tempRoom.addNpc(npc);
-//                  takeItemFromRoom(npc); 
                  //System.out.println("tryFollowUser move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "', from " + room.getTitle() +"."); 
                  return true; 
              }
@@ -323,31 +323,63 @@ public class Denizen
         //System.out.println("goToAdjacentRoom move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "'."); 
     }
     
-//     /**
-//      * NPC takes item from room
-//      * 
-//      * @param npc       NPC object to work with. 
-//      */
-//     static void takeItemFromRoom(Denizen npc)
-//     {
-//         Room room = npc.getNpcRoom(); 
-//         if(!room.roomItems.isEmpty())
-//         {
-//             ArrayList<Item> al = room.getRoomItems(); 
-//             for(Item item : al)
-//             {
-//                 int i = randInt(0, 9); 
-//                 switch(i)
-//                 {
-//                     case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9:                 room.remove(item); 
-//                                                                     npc.add(item);
-//                                                                     System.out.println("'" + npc.getName() + "' grabbed '" + item.getPrimaryName() + "' from '" + room.getTitle() + "'."); 
-//                                                                     break; 
-//                     
-//                 }
-//             }
-//         }
-//     }
+    /**
+     * NPC takes item from room
+     * 
+     * @param npc       NPC object to work with. 
+     */
+    static void takeItemFromRoom(Denizen npc)
+    {
+        Room room = npc.getNpcRoom(); 
+        if(!room.roomItems.isEmpty())
+        {
+            ArrayList<Item> al = room.getRoomItems();
+            ArrayList<Item> toDrop = new ArrayList<Item>();
+            Iterator<Item> iter = al.iterator(); 
+            while(iter.hasNext())
+            {
+                Item item = iter.next(); 
+                int i = randInt(0, 9);
+                if(item.getWeight() != 99999)
+                {
+                    switch(i)
+                    {
+                        //case 0: case 1: case 2: case 3: case 4: // testing
+                        case 5: case 6: case 7: case 8: case 9:         toDrop.add(item);  
+                                                                        npc.add(item);
+                                                                        //System.out.println("'" + npc.getName() + "' grabbed '" + item.getPrimaryName() + "' from '" + room.getTitle() + "'."); //testing 
+                                                                        break; 
+                    
+                    }
+                }
+            }
+            
+            for(Item item : toDrop)
+            {
+                room.remove(item); 
+            }
+        }
+    }
+    
+    /**
+     * NPC leaves item in room
+     * 
+     * @param npc       NPC object to work with
+     */
+    static void leaveItemInRoom(Denizen npc)
+    {
+        Room room = npc.getNpcRoom(); 
+        ArrayList<Item> al = npc.carriedItems; 
+        if(al.size() > 3)
+        {
+            int i = randInt(0, al.size() -1); 
+            Item item = al.get(i); 
+            npc.removeFromInventory(item); 
+            room.add(item); 
+            //System.out.println("'" + npc.getName() + "' left '" + item.getPrimaryName() + "' in '" + room.getTitle() + "'."); //testing
+        }
+        
+    }
     
     /**
      * Persistence method to store NPC states in save file
