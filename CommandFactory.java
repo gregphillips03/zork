@@ -11,7 +11,8 @@ class CommandFactory
 {
     static CommandFactory commandFactory = new CommandFactory();
     public static List<String> MOVEMENT_COMMANDS = Arrays.asList("n", "w", "e", "s", "u", "d");
-    public static List<String> SAVE_COMMANDS = Arrays.asList("save", "Save", "SAVE"); 
+    public static List<String> SAVE_COMMANDS = Arrays.asList("save", "Save", "SAVE");
+    public static List<String> STEAL_COMMANDS = Arrays.asList("steal", "STEAL", "Steal"); 
     public static List<String> TAKE_COMMANDS = Arrays.asList("take", "Take", "TAKE"); 
     public static List<String> DROP_COMMANDS = Arrays.asList("drop", "Drop", "DROP"); 
     public static List<String> QUIT_COMMANDS = Arrays.asList("q", "quit"); 
@@ -96,6 +97,11 @@ class CommandFactory
             {
                 HealthCommand health = new HealthCommand();
                 return health;
+            }
+            else if(STEAL_COMMANDS.contains(string))
+            {
+                StealCommand steal = new StealCommand(commandString); 
+                return steal; 
             }
             else if(AVAIL_VERBS.contains(string))
             {

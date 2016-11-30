@@ -70,5 +70,50 @@ room, and a "Ork Nob" starts out in the "Decon Secundus" room. Both are angry an
 close enough. You can verify their movement by unlocking the holoplinth, accessing it, and bioscanning. After your 
 first scan, move out of the room and back into it. Then bioscan again. The NPCs will have changed locations. 
 
-NPCs can also carry items. //need to finish writing the "steal" command. 
+NPCs can also carry items. These items can be stolen from the NPC by use of the "steal" command. However, stealing
+items from an angry Ork is no easy task. If there is an Ork in the room you're located in, you can try to steal from it
+Type "Steal from (the name of the Ork)". The interpreter will attempt to verify there is an Ork in the room and 
+determine if you're calling out a correct Ork to steal from. If you don't specify an Ork, the game will prompt you to specify
+one. If the room is empty, the game will inform you as such - and you'll lose points for being an idiot. 
 
+After you try to steal, and the game verifies there is someone to steal from, it's all a roll of the dice. You're
+trying to steal from Orks, which are inherently greedy. Orks will try to hold onto what they have, making them less able to 
+hit you. However, if they're not carrying anything, they'll gladly beat you to death. Failures can result in horrible outcomes 
+as indicated below:
+
+++++Ork is NOT carrying items, but isn't angry:
+
+0:  You make it mad, lose half your health, and aren't informed if the Ork had anything in the first place.
+1:	You make it mad, lose a third of your health, and aren't informed if the Ork had anything in the first place.
+2:  You make it mad, lose one-quarter health, and aren't informed if the Ork had anything in the first place.
+3-5:	You make it mad, and aren't informed if the Ork had anything in the first place.
+
+All take away 10 points. 
+
+6-7:	You make it mad, and are informed it wasn't carrying anything. 
+8-9:	You're informed it wasn't carrying anything. 
+
+++++Ork is NOT carrying items, but is angry: 
+
+0: You receive a world altering blow, reducing your health to 1. Not informed if carrying items or not. 
+1-3:	You receive a mind numbing blow, losing half your health. Not informed if carrying items or not. 
+4-6:	You receive a solid blow, losing one-third health. Not informed if carrying items or not.
+7-8:	You receive a glancing blow, losing one-quarter health. Informed the Ork had nothing to steal. 
+
+All take away 20 points.  
+
+9:	You're informed the ork wasn't carrying anything.
+
+++++Ork IS carrying items, but isn't angry:
+
+0:	You receive a hard blow that reduces your health by a quarter. Lose 10 points. Makes Ork mad. 
+1:	You receive a glancing blow that reduces your health by a fifth. Lose 10 points. Makes Ork mad. 
+2-4:	Makes ork mad. Lose 10 points. 
+5-7:	Successful steal. Get 20 points and an item. 
+8:	Successful steal. Break the orks legs (no longer mobile). Get 30 points and an item. 
+9:	Successful steal. You're so crafty you slit the Ork's throat in the process. Kill the Ork, get all item, and 50 points.
+	You gain 50% health. 
+
+++++Ork IS carrying items, and IS angry:
+
+0:

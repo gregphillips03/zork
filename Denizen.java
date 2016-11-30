@@ -144,6 +144,16 @@ public class Denizen
     }
     
     /**
+     * Setter method for NPC mobility
+     * 
+     * @param mobile     Boolean value to set NPC's mobility to
+     */
+    public void setMobile(boolean mobile)
+    {
+        this.isMobile = mobile; 
+    }
+    
+    /**
      * Getter method for NPC mood
      * 
      * @return      NPC object's mood as boolean. 
@@ -154,13 +164,23 @@ public class Denizen
     }
     
     /**
+     * Setter method for NPC mood
+     * 
+     * @param mood      Boolean value to set NPC's mood to
+     */
+    public void setMood(boolean mood)
+    {
+        this.isAngered = mood; 
+    }
+    
+    /**
      * Setter method for NPC hit points
      * 
      * @param h  Hitpoints of NPC object as integer.
      */
-    private void setHealth(int h)
+    public void setHealth(int h)
     {
-        health = h; 
+        health = health - h; 
     }
     
     /**
@@ -182,6 +202,16 @@ public class Denizen
     void add(Item item)
     {
         this.carriedItems.add(item); 
+    }
+    
+    /**
+     * Removes item from NPC inventory.
+     * 
+     * @param item      Item to remove from NPC inventory ArrayList as Item object.
+     */
+    void removeFromInventory(Item item)
+    {
+        carriedItems.remove(item); 
     }
     
     /**
