@@ -125,10 +125,10 @@ public class Room
                 else
                 {
                     //If we are accessing a room through a locked object, close the door behind us!!! 
-                    if (exit.getLockedObject().length() > 0 )
+                    /*if (exit.getLockedObject().equals("door"))
                     {
                         exit.lock();
-                    }
+                    }*/
                     
                     System.out.println("Moving to Room '" +exit.getDest().getTitle()+ "'.");
                     System.out.print("."); 

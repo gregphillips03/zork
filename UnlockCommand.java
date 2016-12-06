@@ -39,10 +39,14 @@ public class UnlockCommand extends Command
     {
         String response = "Exit is now unlocked...proceed.";
         String [] parts = this.command.split(" "); 
-
+        if(parts.length == 1)
+        {
+            return "test";
+        }
         // parts[0] is the word "unlock"...that is how we got here!
         //parts[1] is the locked object
         this.lockedObject = parts[1];
+        
         //parts[2] is 'with'
         
         //parts[3] is the key needed

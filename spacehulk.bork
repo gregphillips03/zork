@@ -69,10 +69,16 @@ unlock:++++Enter Authorization Code++++---
 redcaccard 0
 unlock:++++Enter Authorization Code++++---
 ---
+oldrustedkey 0
+unlock:++++Enter Authorization Code++++---
+---
+reactorkey 0
+unlock:++++Enter Authorization Code++++---
+---
 ===
 Rooms:
 Engine Control
-Contents: dataslate,holoplinth,orkglyph2,combatdrugs
+Contents: dataslate,holoplinth,orkglyph2,combatdrugs,oldrustedkey
 This room controls the ships reactor.
 The engine hums low, its power contained by arcane forces.
 Control lecturns occupy the vast majority of the room.
@@ -108,7 +114,7 @@ Steel grating lines the floor.
 The diamondplate tread is dull and matte.
 ---
 Equipment Locker
-Contents: datacoil,servoskull1,battlestims
+Contents: datacoil,servoskull1,battlestims,reactorkey
 Radiation suits hang hooks on the wall.
 Various equipment litters the benches, once used to enter the ship's reactor room.
 ---
@@ -203,11 +209,11 @@ Corridor Bravo Eng
 ---
 Intersection Gamma Eng
 n
-Corridor Delta Eng (N)
+Corridor Delta Eng (N):locked:heavymetaldoor:oldrustedkey
 ---
 Corridor Delta Eng (N)
 s
-Intersection Gamma Eng
+Intersection Gamma Eng:locked:heavymetaldoor:oldrustedkey
 ---
 Intersection Gamma Eng
 s
@@ -275,11 +281,11 @@ Decon Secundus
 ---
 Decon Primus
 w
-Reactor Entrance East
+Reactor Entrance East:locked:reactordoor:reactorkey
 ---
 Reactor Entrance East
 e
-Decon Primus
+Decon Primus:locked:reactordoor:reactorkey
 ---
 Reactor Entrance West
 n
