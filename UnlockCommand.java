@@ -80,7 +80,14 @@ public class UnlockCommand extends Command
                 else
                 { 
                     //unlock the exit 
-                    lockedExit.unlock();
+                    for(Exit exit : gs.getAdventurersCurrentRoom().roomExits)
+                    {
+                        if (exit.getLockedObject().equals(lockedObject)) 
+                        {
+                            lockedExit.unlock();
+                        }
+                    }
+                    
                 }
             }
             else
