@@ -10,7 +10,7 @@ import java.io.*;
 public class GeneralCommand extends Command 
 {
     String gen = ""; 
-    
+
     /**
      * Constructor for objects of Class GeneralCommand
      * 
@@ -20,7 +20,7 @@ public class GeneralCommand extends Command
     {
         this.gen = gen; 
     }
-    
+
     /**
      * If "look" displays to user item and npcs in room as well as the rooms description. 
      * If "exits" displays to user available room exits. 
@@ -34,7 +34,7 @@ public class GeneralCommand extends Command
     {
         String s = ""; 
         GameState gs = GameState.instance(); 
-        
+
         if(this.gen.equals("look"))
         {
             s = s + gs.getAdventurersCurrentRoom().getDesc() + "\n"; 
@@ -50,7 +50,7 @@ public class GeneralCommand extends Command
         }
         else if(this.gen.equals("exits"))
         {
-            for(Exit exit : gs.getAdventurersCurrentRoom().exitPath)
+            for(Exit exit : gs.getAdventurersCurrentRoom().roomExits)
             {
                 s = s + exit.describe() + "\n"; 
             }

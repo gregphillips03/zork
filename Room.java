@@ -13,10 +13,16 @@ public class Room
     private String title = ""; 
     private String desc = ""; 
     private boolean beenHere = false; 
-    ArrayList<Exit> exitPath = new ArrayList<Exit>(); 
+    ArrayList<Exit> roomExits = new ArrayList<Exit>(); 
     ArrayList<Item> roomItems = new ArrayList<Item>(); 
     ArrayList<Denizen> npcHere = new ArrayList<Denizen>(); 
     
+    public static class ExitIsLockedException extends Exception {
+        public ExitIsLockedException(String e) {
+            super(e);
+        }
+    }
+
     /**
      * Constructor for objects of class Room
      * 
@@ -100,25 +106,44 @@ public class Room
      * @return                          Destination to exit to as a Room object. Null if there isn't an exit in the specified direction
      * @throws InterruptedException     Pushes IO exception up the stack
      */ 
-    Room leaveBy(String dir) throws InterruptedException
+    Room leaveBy(String dir) throws InterruptedException, ExitIsLockedException
     {
         GameState gs = GameState.instance(); 
-        for(Exit exit : gs.getAdventurersCurrentRoom().exitPath)
+        for(Exit exit : gs.getAdventurersCurrentRoom().roomExits)
         {
             if(exit.getDir().equals(dir))
             {
-                System.out.println("Moving to Room '" +exit.getDest().getTitle()+ "'.");
-                System.out.print("."); 
-                Thread.sleep(150); 
-                System.out.print("."); 
-                Thread.sleep(150); 
-                System.out.print(".\n"); 
-                Thread.sleep(150); 
+                if (exit.isLocked())
+                {                    
+                    String items = "";
+                    for(Item item : exit.getKeys())
+                    {
+                        items = item.getPrimaryName(); 
+                    }
+                    throw new ExitIsLockedException("This exit is locked, you need to use a '" + items + "' to unlock it.");                    
+                }                
+                else
+                {
+                    //If we are accessing a room through a locked object, close the door behind us!!! 
+                    if (exit.getLockedObject().length() > 0 )
+                    {
+                        exit.lock();
+                    }
+                    
+                    System.out.println("Moving to Room '" +exit.getDest().getTitle()+ "'.");
+                    System.out.print("."); 
+                    Thread.sleep(150); 
+                    System.out.print("."); 
+                    Thread.sleep(150); 
+                    System.out.print(".\n"); 
+                    Thread.sleep(150); 
+                }
                 return exit.getDest(); 
             }
         }
         return null; 
     }
+
     
     /**
      * Describes the room.
@@ -136,7 +161,7 @@ public class Room
         String r = "";
         String d = ""; 
         GameState gs = GameState.instance(); 
-        for(Exit exit : gs.getAdventurersCurrentRoom().exitPath)
+        for(Exit exit : gs.getAdventurersCurrentRoom().roomExits)
         {
            s = s + exit.describe() + "\n"; 
         }
@@ -158,7 +183,7 @@ public class Room
      */ 
     public void addExit(Exit exit)
     {
-        this.exitPath.add(exit); 
+        this.roomExits.add(exit); 
     }
     
     /**
@@ -394,13 +419,4 @@ public class Room
         this.npcHere.remove(npc); 
     }
     
-    /**
-     * Unlocks the door based on the key given
-     * 
-     * @param key   String name of the item that unlocks the exit
-     */
-    public void unlockExit(String key)
-    {
-        //will write during next step of project
-    }
 }

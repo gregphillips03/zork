@@ -241,7 +241,7 @@ public class Denizen
                     Room npcRoom = npc.getNpcRoom(); 
                     if(!tryFollowUser(npcRoom, npc))
                     {
-                        int i = randInt(0, npcRoom.exitPath.size() -1); 
+                        int i = randInt(0, npcRoom.roomExits.size() -1); 
                         npc.goToAdjacentRoom(npcRoom, i, npc);
                         leaveItemInRoom(npc); 
                     } 
@@ -249,7 +249,7 @@ public class Denizen
                 else if(npc.isMobile)
                 {
                     Room npcRoom = npc.getNpcRoom(); 
-                    int i = randInt(0, npcRoom.exitPath.size() - 1); 
+                    int i = randInt(0, npcRoom.roomExits.size() - 1); 
                     npc.goToAdjacentRoom(npcRoom, i, npc); 
                     takeItemFromRoom(npc);
                     leaveItemInRoom(npc); 
@@ -292,7 +292,7 @@ public class Denizen
              //System.out.println("tryFollowUser move '" +npc.getName()+ "' to '" +tempRoom.getTitle()+ "', from " + room.getTitle() +"."); 
              return true;              
          }
-         for(Exit exit : tempRoom.exitPath)
+         for(Exit exit : tempRoom.roomExits)
          {
              if(exit.getDest() == room)
              {
@@ -315,7 +315,7 @@ public class Denizen
      */
     static void goToAdjacentRoom(Room room, int i, Denizen npc)
     {
-        Exit exit = room.exitPath.get(i);
+        Exit exit = room.roomExits.get(i);
         Room tempRoom = exit.getDest(); 
         npc.setRoom(tempRoom); 
         room.removeNpc(npc); 

@@ -183,7 +183,7 @@ public class DataSlate
             }
         }
         
-        for(Exit exit : room.exitPath)
+        for(Exit exit : room.roomExits)
         {
             Room tempRoom = exit.getDest();
             System.out.print("Scanning " + tempRoom.getTitle()); 

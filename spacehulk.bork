@@ -11,7 +11,7 @@ swing:++++vrrrrr! vrrrrr!+++
 ---
 dataslate 1
 read:++++Contents Locked - Enter Authorization Code++++
-unlock[Unlock]:++++Enter Authorization Code++++
+access[access]:++++Enter Authorization Code++++
 ---
 powerpack 10
 activate:++++The powerpack softly hums++++
@@ -38,7 +38,7 @@ servoskull3 0
 activate[Score(5),Disappear]:++++The eyes flash four times++++
 ---
 holoplinth 99999
-activate[Unlock]:++++The holoplinth's machine spirit awakens++++
+activate[access]:++++The holoplinth's machine spirit awakens++++
 ---
 purityseal1 0
 wear[Score(5),Wound(-2),Disappear]:++++For The Emperor!++++
@@ -63,6 +63,12 @@ orkglyph3 0
 break[Wound(10),Disappear]:++++Booby Trapped++++
 read:++++The text ".....tha" is all that remains++++
 ---
+greencaccard 0
+unlock:++++Enter Authorization Code++++---
+---
+redcaccard 0
+unlock:++++Enter Authorization Code++++---
+---
 ===
 Rooms:
 Engine Control
@@ -82,18 +88,23 @@ Plasteel and ceramite line the walls.
 ---
 Intersection Gamma Eng
 A common intersection among starship corridors.
+There is a door to the south that requires a green CAC Card.
 Steel grating lines the floor. 
 ---
 Corridor Delta Eng (N)
+Contents: redcaccard
 A corridor common among starships.
 The diamondplate floor has been scuffed by many years of service.
 ---
 Corridor Delta Eng (S)
 A corridor common among starships.
+There is a door to the north that requires a green CAC Card.
 ---
 Intersection Epsilon Eng
 Contents: powerpack
 A common intersection among starship corridors.
+There is a door to the south that requires a green CAC Card.
+Steel grating lines the floor.
 The diamondplate tread is dull and matte.
 ---
 Equipment Locker
@@ -102,11 +113,13 @@ Radiation suits hang hooks on the wall.
 Various equipment litters the benches, once used to enter the ship's reactor room.
 ---
 Corridor Theta Eng (N)
+Contents: greencaccard
 A corridor common among starships.
 A sign on the West wall reads "To Eng Ctrl <-"
 ---
 Corridor Theta Eng (S)
 A corridor common among starships.
+There is a door to the north that requires a green CAC Card.
 A sign on the West wall reads "To Eng Ctrl ->"
 ---
 Decon Primus
@@ -135,11 +148,13 @@ Was there a containment breach in the past?
 ---
 Nozzle Array
 A myriad of pipes feeding into the reactor core.
+There is a door to the south that requires a green CAC Card as well as a red CAC Card.  
 ---
 Reactor Floor
 The main floor of the reactor room.
 There are railings to the east and west, separating you from the space below.
-A caged ladder leads to the containment area below.
+A caged ladder leads to the containment area below.  
+There is a door to the north that requires a green CAC Card as well as a red CAC Card.  
 ---
 Aft Propellant Plenum Exchange
 Contents: purityseal1
@@ -196,11 +211,11 @@ Intersection Gamma Eng
 ---
 Intersection Gamma Eng
 s
-Corridor Delta Eng (S)
+Corridor Delta Eng (S):locked:door:greencaccard
 ---
 Corridor Delta Eng (S)
 n
-Intersection Gamma Eng
+Intersection Gamma Eng:locked:door:greencaccard
 ---
 Corridor Alpha Eng
 w
@@ -228,11 +243,11 @@ Intersection Epsilon Eng
 ---
 Corridor Theta Eng (S)
 n
-Intersection Epsilon Eng
+Intersection Epsilon Eng:locked:door:greencaccard
 ---
 Intersection Epsilon Eng
 s
-Corridor Theta Eng (S)
+Corridor Theta Eng (S):locked:door:greencaccard
 ---
 Corridor Theta Eng (S)
 s
@@ -300,11 +315,11 @@ Reactor Room NE Corner
 ---
 Nozzle Array
 s
-Reactor Floor
+Reactor Floor:locked:door:redcaccard
 ---
 Reactor Floor
 n
-Nozzle Array
+Nozzle Array:locked:door:redcaccard
 ---
 Reactor Floor
 s

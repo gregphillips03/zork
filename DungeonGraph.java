@@ -61,9 +61,9 @@ public class DungeonGraph
         for(String key: d.collection.keySet())
         {
             Room room = d.getRoom(key); 
-            if(!room.exitPath.isEmpty())
+            if(!room.roomExits.isEmpty())
             {
-                for(Exit exit : room.exitPath)
+                for(Exit exit : room.roomExits)
                 {
                     Room dest = exit.getDest();
                     String i = room.getTitle(); 

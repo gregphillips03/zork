@@ -73,7 +73,7 @@ public class Dungeon
                 }
                 while(!scan.nextLine().equals("Rooms:"));  
                 Room r = new Room(scan, this, b);  
-                this.add(r); 
+                this.add(r);  
                 this.setEntry(r);         
                 while(!scan.hasNext(pattern2))
                 {

@@ -81,6 +81,7 @@ public class Interpreter
         
         System.out.print("Enter Data Location: ");
         userFile = in.nextLine(); 
+        
         System.out.println(); 
         in.close(); 
         if(Pattern.matches(pattern1, userFile))

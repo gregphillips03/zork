@@ -31,16 +31,27 @@ public class MovementCommand extends Command
      */
     String execute() throws InterruptedException, FileNotFoundException
     {
+        Room room = null;
         GameState gs = GameState.instance(); 
-        Room room = gs.getAdventurersCurrentRoom().leaveBy(dir); 
+        String response = "You can't go '" + this.dir + "' from " + gs.getAdventurersCurrentRoom().getTitle() + ".";
+        
+        try 
+        {
+            room = gs.getAdventurersCurrentRoom().leaveBy(dir); 
+        }
+
+        catch (Room.ExitIsLockedException exception) {
+            response = exception.getMessage();
+        }
+
         if(room != null)
         {
             gs.setAdventurersCurrentRoom(room);
             Denizen.moveDenizens(); 
             
             gs.setHealth(0.125);
-            return "Movement Complete"; 
+            response = "Movement Complete";
         }
-        return "You can't go '" + this.dir + "' from " + gs.getAdventurersCurrentRoom().getTitle() + "."; 
+        return response;
     }
 }

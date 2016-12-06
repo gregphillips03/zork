@@ -8,18 +8,22 @@ import java.io.*;
  */
 public class UnlockCommand extends Command
 {
+    /**
+     * key   String name of item that unlocks the lockedObject
+     * lockedObject  String name of the object that is unlocked by key
+     */
     private String key;
-    private String door;
+    private String lockedObject;
+    private String command;
     
     /**
      * Constructor for objects of Class UnlockCommand
      * 
-     * @param key   String name of item that unlocks the door
-     * @param door  String name of the exit that is unlocked by item
+     * @param command   String that the user entered that will be parsed to find the key and locked object
      */
-    UnlockCommand(String key, String door)
+    UnlockCommand(String command)
     {
-        
+        this.command = command;
     }
     
     /**
@@ -33,7 +37,56 @@ public class UnlockCommand extends Command
      */
     String execute() throws InterruptedException, FileNotFoundException
     {
-        return "test";
+        String response = "Exit is now unlocked...proceed.";
+        String [] parts = this.command.split(" "); 
+
+        // parts[0] is the word "unlock"...that is how we got here!
+        //parts[1] is the locked object
+        this.lockedObject = parts[1];
+        //parts[2] is 'with'
+        
+        //parts[3] is the key needed
+        this.key = parts[3];
+
+        //Make sure the object requesting to be unlocked is here
+        GameState gs = GameState.instance(); 
+        Exit lockedExit = null; 
+        
+        for(Exit exit : gs.getAdventurersCurrentRoom().roomExits)
+        {
+            if (exit.getLockedObject().equals(lockedObject)) 
+            {
+                lockedExit = exit;
+            }
+        }
+        
+        if (lockedExit == null)
+        {
+            response = "I don't know what '" + lockedObject + "' means.";
+        }
+        else
+        {
+            if (lockedExit.isLocked())
+            {
+                //Make sure the key needed to unlock the object is in the users inventory as well as is an actual key!
+                if (gs.getItemFromInventory(key) == null)
+                {
+                    response = "You are not in possesion of a '" + key + "'";
+                }
+                else
+                { 
+                    //unlock the exit 
+                    lockedExit.unlock();
+                }
+            }
+            else
+            {
+                response = "I don't know what '" + lockedObject + "' means.";
+            }
+            
+        }
+        
+        return response;
     }
    
 }

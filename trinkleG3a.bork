@@ -1,0 +1,84 @@
+Trinkle
+Group Bork v1.0
+===
+Items:Bomb
+95examine:The bomb is a heavy, glistening black sphere. On the top appears to be some form of detonator.kick[Wound(2)]:Ouch! That hurt your foot.detonate[Die]:An ear-splitting halo of shrapnel kills you and seriously degrades the room's interior.---DrPepper
+10kick:The can skitters down the hallway.shake:A liquid fizzes menacingly inside the can.drink[Transform(emptyCan),Wound(-1)]:Gulp, gulp -- that was GOOD!---emptyCan
+2kick:The empty can skitters down the hallway.drink:Sorry, all gone!stomp[Transform(squishedCan)]:The can crunches down into a thin disk, useful for recycling.---squishedCan
+2throw:Zing!stomp:Further stomping seems to have no effect. recycle[Score(5),Disappear]:Boo-ya, helped save the environment.---magicWand
+5break[Wound(10),Disappear]:The wand snaps in half. Strange magic fills the air, making you feel suddenly ill.wave[Score(5),Teleport]:An angelic form briefly appears, smiles, and just as quickly fades away.
+---StarWarsToy
+5touch[Score(1)]:Yoda says, "Do, or do not! There is no try."break:Luckily, it's made of rugged plastic.---chainsaw
+35---WawaTravelMug
+10refill[Win]:You refill the mug with everlasting light roast coffee, and live happily ever after! :)---donut
+7eat[Disappear,Wound(-2)]:You feel mildly guilt-ridden.stomp:The donut is now smooshed.---
+===
+Rooms:
+Rotunda
+You are in a beautiful round entry chamber, with tall white pillars that
+seemingly reach to the skies. There is an elevator here.
+---
+Basement hallway
+Contents: DrPepper
+A long, white hallway stretches to the east and west. It is cold here, and you
+can detect the faint buzz of computer fans. A vending machine hums softly in the
+corner.
+---
+Stephen's office
+Contents: StarWarsToy,WawaTravelMug,donut
+This is a cluttered office, with many geeky toys sprawling on a desk.
+---
+Room B6
+Sunlight streams through tall windows and illuminates a brilliant classroom.
+---
+Room B13
+Contents: Bomb
+Rows of state-of-the-art computers line the room, with happy young people typing
+merrily away at several of them. They look up and wave hello to you.
+The door locks behind you.
+---
+Rotunda balcony
+Contents: chainsaw,magicWand
+You stand on a circular white balcony overlooking an entry hall.
+Columnar bannisters in ancient Grecian style stand between you and the
+precipice.
+---
+===
+Exits:
+Rotunda
+u
+Rotunda balcony
+---
+Rotunda balcony
+d
+Rotunda
+---
+Rotunda
+d
+Basement hallway
+---
+Basement hallway
+u
+Rotunda
+---
+Basement hallway
+s
+Room B13
+---
+Room B6
+w
+Basement hallway
+---
+Basement hallway
+e
+Room B6
+---
+Basement hallway
+w
+Stephen's office
+---
+Stephen's office
+e
+Basement hallway
+---
+===
