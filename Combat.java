@@ -1,9 +1,8 @@
 import java.io.*;
 /**
- * UnlockCommand is an abstract extension of Command Class
- * It allows the user to interact with locked doors
+ * Combat handles logic of Player/NPC combat encounters
  * 
- * @author Shane McSally
+ * @author Corey Staier
  * @version Zork v1
  */
 public class Combat 
@@ -18,6 +17,7 @@ public class Combat
      * Constructor for objects of Class Combat
      * 
      * @param d   Denizen player has encountered
+     * @param i   Item player is using as a weapon
      */
     Denizen target;
     Item weapon;
@@ -57,13 +57,6 @@ public class Combat
             }
             
         }
-        return "";
-    }
-    /**
-     * @return winText or lossText depending on results of Combat
-     */
-    String resultText(){
-        //logic for win or loss text (based on Combat boolean)
         return "";
     }
     /**
