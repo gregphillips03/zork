@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=bogusCommand
 comment0.target=UnknownCommand(java.lang.String)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ Class\ UnknownCommand\r\n\ \r\n\ @param\ bogusCommand\ \ \ \ \ \ String\ input\ from\ CommandFactory\ where\ input\ could\ not\ be\ parsed\ into\ correct\ abstract\ Command\ object\r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ Class\ UnknownCommand\n\ \n\ @param\ bogusCommand\ \ \ \ \ \ String\ input\ from\ CommandFactory\ where\ input\ could\ not\ be\ parsed\ into\ correct\ abstract\ Command\ object\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
-comment1.text=\r\n\ Default\ message\ to\ System\ out\r\n\ \r\n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n\ @return\ \ \ \ String\ message\ to\ user\ that\ programs\ does\ not\ understand\ the\ input\r\n
+comment1.text=\n\ Default\ message\ to\ System\ out\n\ \n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\n\ \n\ @return\ \ \ \ String\ message\ to\ user\ that\ programs\ does\ not\ understand\ the\ input\n
 numComments=2
