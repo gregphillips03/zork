@@ -363,11 +363,19 @@ dependency99.from=DungeonGraph
 dependency99.to=Dungeon
 dependency99.type=UsesDependency
 objectbench.height=100
+<<<<<<< HEAD
 objectbench.width=1457
 package.editor.height=820
 package.editor.width=1349
 package.editor.x=0
 package.editor.y=23
+=======
+objectbench.width=1355
+package.editor.height=860
+package.editor.width=1562
+package.editor.x=1671
+package.editor.y=-9
+>>>>>>> dda41b9463c2c1cc7bf20b69c621651b88c65bc1
 package.numDependencies=121
 package.numTargets=31
 package.showExtends=true
@@ -399,10 +407,10 @@ target10.typeParameters=
 target10.width=120
 target10.x=1350
 target10.y=560
-target11.editor.height=999
+target11.editor.height=1068
 target11.editor.width=1698
-target11.editor.x=144
-target11.editor.y=23
+target11.editor.x=1671
+target11.editor.y=-9
 target11.height=50
 target11.name=Room
 target11.naviview.expanded=true
@@ -453,7 +461,7 @@ target14.x=1350
 target14.y=500
 target15.editor.height=1068
 target15.editor.width=1698
-target15.editor.x=1671
+target15.editor.x=1600
 target15.editor.y=-9
 target15.height=50
 target15.name=StealCommand
@@ -480,13 +488,21 @@ target16.y=60
 target17.editor.height=700
 target17.editor.width=900
 target17.editor.x=0
+<<<<<<< HEAD
 target17.editor.y=2
+=======
+target17.editor.y=0
+>>>>>>> dda41b9463c2c1cc7bf20b69c621651b88c65bc1
 target17.height=50
 target17.name=AttackCommand
 target17.showInterface=false
 target17.type=ClassTarget
 target17.typeParameters=
+<<<<<<< HEAD
 target17.width=130
+=======
+target17.width=120
+>>>>>>> dda41b9463c2c1cc7bf20b69c621651b88c65bc1
 target17.x=210
 target17.y=10
 target18.editor.height=954
@@ -515,10 +531,17 @@ target19.typeParameters=
 target19.width=90
 target19.x=40
 target19.y=510
+<<<<<<< HEAD
 target2.editor.height=999
 target2.editor.width=1698
 target2.editor.x=116
 target2.editor.y=23
+=======
+target2.editor.height=1020
+target2.editor.width=1698
+target2.editor.x=-9
+target2.editor.y=-9
+>>>>>>> dda41b9463c2c1cc7bf20b69c621651b88c65bc1
 target2.height=50
 target2.name=Denizen
 target2.naviview.expanded=true

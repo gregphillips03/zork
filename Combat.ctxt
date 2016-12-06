@@ -1,11 +1,11 @@
 #BlueJ class context
-comment0.params=d
-comment0.target=boolean\ Combat(Denizen)
-comment0.text=\n\ Constructor\ for\ objects\ of\ Class\ Combat\n\ \n\ @param\ d\ \ \ Denizen\ player\ has\ encountered\n
+comment0.params=d\ i
+comment0.target=Combat(Denizen,\ Item)
 comment1.params=
-comment1.target=java.lang.String\ resultText()
-comment1.text=\n\ @return\ winText\ or\ lossText\ depending\ on\ results\ of\ Combat\n
+comment1.target=java.lang.String\ execute()
 comment2.params=
 comment2.target=int\ getPlayerHealth()
-comment2.text=\n\ @return\ Player\ health\ for\ comparison\n
-numComments=3
+comment2.text=\r\n\ @return\ Player\ health\ for\ comparison\r\n
+comment3.params=chosen
+comment3.target=boolean\ isWeapon(Item)
+numComments=4
