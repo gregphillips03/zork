@@ -29,15 +29,19 @@ public class Interpreter
         CommandFactory cf = CommandFactory.instance(); 
         GameState gs = GameState.instance(); 
         introMessage(); 
-
+        int count = 0;
         do
         {
             System.out.println(gs.getAdventurersCurrentRoom().describe()); 
             s = promptUser(commandLine); 
             r = cf.parse(s).execute(); 
-            System.out.println(r); 
+            System.out.println(r);
+            if ( count % 2 == 0) {
+                new RandomEvent();
+            }
+            count += 1;
          }
-        while(!s.equals("q")); 
+        while(!s.equals("q") && gs.playerHealth > 0); 
         KillGame.endGame(); 
     }    
     
@@ -90,7 +94,7 @@ public class Interpreter
            gs.initialize(d); 
         }else if (Pattern.matches(pattern2, userFile))
         {
-           Scanner scanN = new Scanner(new File(userFile)); 
+           Scanner scanN = new Scanner(new File(userFile));
            String s = scanN.nextLine(); 
            if(!s.equals(pattern3))
            {

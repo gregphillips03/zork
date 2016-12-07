@@ -12,12 +12,13 @@ class GameState
 {
     static double playerHealth = 25; 
     static int playerScore = 0; 
-    static Room currentRoom; 
+    static Room currentRoom;
+    static Room entryRoom; 
     static Dungeon currentDungeon; 
     static GameState gameState = new GameState(); 
     static ArrayList<Item> carriedItems = new ArrayList<Item>();
     static String gameType = "";
-    
+    static String saveFile = "";
     /**
      * Constructor for objects of class GameState. Singleton class controls creation.
      */

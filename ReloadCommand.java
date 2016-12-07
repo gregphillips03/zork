@@ -1,3 +1,4 @@
+import java.util.*; 
 import java.io.*;
 /**
  * ReloadCommand is an abstract extension of Command Class
@@ -11,15 +12,16 @@ import java.io.*;
 public class ReloadCommand extends Command
 {
     private String saveFile;
-    
+    private String reload = "";
+    GameState gs = GameState.instance();
     /**
      * Constructor for objects of Class ReloadCommand
      * 
      * @param name   String that contains the command
      */
-    ReloadCommand(String name)
+    ReloadCommand(String reload)
     {
-        
+        this.reload = reload;
     }
     
     /**
@@ -33,7 +35,34 @@ public class ReloadCommand extends Command
      */
     String execute() throws InterruptedException, FileNotFoundException
     {
-        return "test";
+       if((this.reload.equals("reload") || this.reload.equals("restart"))  && gs.saveFile != "")
+        { 
+           String pattern = "Group Bork v1.0 save data";
+           Scanner scanN = new Scanner(new File(gs.saveFile)); 
+           String s = scanN.nextLine(); 
+           System.out.println("+++Atempting to reload state+++");
+           if(!s.equals(pattern))
+           {
+               KillGame.gameKill(s + "/n" +
+                                 "+++Data file not within System Allowable Parameters+++ \n" +
+                                 "+++Check Data Type+++ \n"
+                                 ); 
+           }
+           String whichDungeon = scanN.nextLine(); 
+           int index = whichDungeon.lastIndexOf("/"); 
+           String fileName = whichDungeon.substring(index +1); 
+           Dungeon d = new Dungeon(fileName, false); 
+           scanN.close(); 
+           gs.initialize(d); 
+           gs.restore(gs.saveFile);
+           System.out.println("+++Current session returned to more recent saved state+++");
+            return ""; 
+        }
+        else
+        {
+            System.out.println("+++Reload state failed+++");
+            return ""; 
+        }
     }
    
 }
