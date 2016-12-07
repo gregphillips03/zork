@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=npcName
 comment0.target=AttackCommand(java.lang.String)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ Class\ StealCommand\r\n\ \r\n\ @param\ f\ \ \ \ \ Filename\ of\ save\ file\r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ Class\ StealCommand\n\ \n\ @param\ f\ \ \ \ \ Filename\ of\ save\ file\n
 comment1.params=
 comment1.target=java.lang.String\ execute()
-comment1.text=\r\n\ Takes\ String\ input\ and\ splits\ it,\ asking\ for\ more\ input\ if\ more\ is\ needed\ to\ complete\ attack\ command\r\n\ \r\n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \r\n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\r\n\ \r\n\ @return\ \ String\ message\ to\ user.\ \r\n
+comment1.text=\n\ Takes\ String\ input\ and\ splits\ it,\ asking\ for\ more\ input\ if\ more\ is\ needed\ to\ complete\ attack\ command\n\ \n\ @throws\ InterruptedException\ \ \ \ \ \ Pushes\ thread\ sleep\ disruptions\ up\ the\ stack\ \n\ @throws\ FileNotFoundException\ \ \ \ \ Pushes\ IO\ exception\ up\ the\ stack\ where\ not\ explicitly\ handled\n\ \n\ @return\ \ String\ message\ to\ user.\ \n
 numComments=2

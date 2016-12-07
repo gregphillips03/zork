@@ -64,16 +64,12 @@ break[Wound(10),Disappear]:++++Booby Trapped++++
 read:++++The text ".....tha" is all that remains++++
 ---
 greencaccard 0
-unlock:++++Enter Authorization Code++++---
 ---
 redcaccard 0
-unlock:++++Enter Authorization Code++++---
 ---
 oldrustedkey 0
-unlock:++++Enter Authorization Code++++---
 ---
 reactorkey 0
-unlock:++++Enter Authorization Code++++---
 ---
 ===
 Rooms:

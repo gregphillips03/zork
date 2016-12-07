@@ -15,7 +15,7 @@ public class UnlockCommand extends Command
     private String key;
     private String lockedObject;
     private String command;
-    
+
     /**
      * Constructor for objects of Class UnlockCommand
      * 
@@ -25,7 +25,7 @@ public class UnlockCommand extends Command
     {
         this.command = command;
     }
-    
+
     /**
      * Attempts to unlock door with given parameters
      * 
@@ -46,16 +46,16 @@ public class UnlockCommand extends Command
         // parts[0] is the word "unlock"...that is how we got here!
         //parts[1] is the locked object
         this.lockedObject = parts[1];
-        
+
         //parts[2] is 'with'
-        
+
         //parts[3] is the key needed
         this.key = parts[3];
 
         //Make sure the object requesting to be unlocked is here
         GameState gs = GameState.instance(); 
         Exit lockedExit = null; 
-        
+
         for(Exit exit : gs.getAdventurersCurrentRoom().roomExits)
         {
             if (exit.getLockedObject().equals(lockedObject)) 
@@ -63,7 +63,7 @@ public class UnlockCommand extends Command
                 lockedExit = exit;
             }
         }
-        
+
         if (lockedExit == null)
         {
             response = "I don't know what '" + lockedObject + "' means.";
@@ -80,24 +80,27 @@ public class UnlockCommand extends Command
                 else
                 { 
                     //unlock the exit 
-                    for(Exit exit : gs.getAdventurersCurrentRoom().roomExits)
+                    for(String key: gs.getDungeon().collection.keySet())
                     {
-                        if (exit.getLockedObject().equals(lockedObject)) 
+                        Room rm = gs.getDungeon().getRoom(key);
+                        for(Exit exit : rm.roomExits)
                         {
-                            lockedExit.unlock();
+                            if (exit.getLockedObject().equals(lockedObject)) 
+                            {
+                                exit.unlock();
+                            }
                         }
                     }
-                    
                 }
             }
             else
             {
                 response = "I don't know what '" + lockedObject + "' means.";
             }
-            
+
         }
-        
+
         return response;
     }
-   
+
 }

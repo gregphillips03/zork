@@ -16,7 +16,7 @@ public class Room
     ArrayList<Exit> roomExits = new ArrayList<Exit>(); 
     ArrayList<Item> roomItems = new ArrayList<Item>(); 
     ArrayList<Denizen> npcHere = new ArrayList<Denizen>(); 
-    
+
     public static class ExitIsLockedException extends Exception {
         public ExitIsLockedException(String e) {
             super(e);
@@ -32,7 +32,7 @@ public class Room
     {
         this.title = title; 
     }
-    
+
     /**
      * Constructor for objects of class Room
      * 
@@ -68,7 +68,7 @@ public class Room
         }
         s.nextLine(); //advances token
     }
-    
+
     /**
      * Returns room title.
      * 
@@ -78,7 +78,7 @@ public class Room
     {
         return this.title; 
     }
-    
+
     /**
      * Sets the room's description.
      * 
@@ -88,7 +88,7 @@ public class Room
     {
         this.desc = desc; 
     }
-    
+
     /**
      * Gets the room's description.
      * 
@@ -98,7 +98,7 @@ public class Room
     {
         return this.desc; 
     }
-    
+
     /**
      * Attempts to move from one room to another room. If a direction is found in the room's arraylist of exits, then a Room objet is sent back. Else, null is returned
      * 
@@ -127,10 +127,9 @@ public class Room
                     //If we are accessing a room through a locked object, close the door behind us!!! 
                     /*if (exit.getLockedObject().equals("door"))
                     { 
-                        exit.lock();  
+                    exit.lock();  
                     }*/
-                       
-                    
+
                     System.out.println("Moving to Room '" +exit.getDest().getTitle()+ "'.");
                     System.out.print("."); 
                     Thread.sleep(150); 
@@ -145,7 +144,6 @@ public class Room
         return null; 
     }
 
-    
     /**
      * Describes the room.
      * 
@@ -164,19 +162,19 @@ public class Room
         GameState gs = GameState.instance(); 
         for(Exit exit : gs.getAdventurersCurrentRoom().roomExits)
         {
-           s = s + exit.describe() + "\n"; 
+            s = s + exit.describe() + "\n"; 
         }
         for(Item item : gs.getAdventurersCurrentRoom().roomItems)
         {
-           r = r + "There is a '" + item.getPrimaryName() + "' here." + "\n"; 
+            r = r + "There is a '" + item.getPrimaryName() + "' here." + "\n"; 
         }
         for(Denizen den : gs.getAdventurersCurrentRoom().npcHere)
         {
-           d = d + "There is a '" + den.getName() + "' here." + "\n"; 
+            d = d + "There is a '" + den.getName() + "' here." + "\n"; 
         }
         return ("You are now in room, '" + this.getTitle() + "'.\n" + "Description:" + this.desc + "\n" + s + r + d); 
     }
-    
+
     /**
      * Adds an Exit to the current room.
      * 
@@ -186,7 +184,7 @@ public class Room
     {
         this.roomExits.add(exit); 
     }
-    
+
     /**
      * Persistence method to write to save file. Currently checks if the room has been visited, if there are items in the room, and if there are NPCs in the room
      * 
@@ -198,6 +196,7 @@ public class Room
         {
             w.write(this.getTitle() + ":\n"); 
             w.write("beenHere=true\n"); 
+            printUnlockedExits(w);
             w.write("---\n");           
         }
         else if (!this.beenHere && !this.roomItems.isEmpty() && this.npcHere.isEmpty()) // have NOT been here and does have items but not NPCs
@@ -225,7 +224,8 @@ public class Room
                 s = s + item.getPrimaryName() + ","; 
             }
             String r = s.substring(0, s.lastIndexOf(",")); 
-            w.write(r + "\n"); 
+            w.write(r + "\n");
+            printUnlockedExits(w);
             w.write("---\n");        
         }
         else if (this.beenHere && this.roomItems.isEmpty() && !this.npcHere.isEmpty()) // have been here and does NOT have items but has NPC
@@ -239,7 +239,8 @@ public class Room
                 s = s + npc.getName() + ","; 
             }
             String r = s.substring(0, s.lastIndexOf(",")); 
-            w.write(r + "\n"); 
+            w.write(r + "\n");
+            printUnlockedExits(w);
             w.write("---\n"); 
         }
         else if(!this.beenHere && !this.roomItems.isEmpty() && !this.npcHere.isEmpty()) // have NOT been here and does have items and NPCs
@@ -262,6 +263,7 @@ public class Room
             }
             String z = x.substring(0, x.lastIndexOf(",")); 
             w.write(z + "\n"); 
+            printUnlockedExits(w);
             w.write("---\n");         
         }
         else if(!this.beenHere && this.roomItems.isEmpty() && !this.npcHere.isEmpty()) // have not been here, no items, but does have NPC
@@ -275,7 +277,8 @@ public class Room
                 s = s + npc.getName() + ","; 
             }
             String r = s.substring(0, s.lastIndexOf(",")); 
-            w.write(r + "\n"); 
+            w.write(r + "\n");
+            printUnlockedExits(w);
             w.write("---\n");             
         }
         else if(this.beenHere && !this.roomItems.isEmpty() && !this.npcHere.isEmpty()) //visited, has items, has npcs
@@ -298,10 +301,31 @@ public class Room
             }
             String z = x.substring(0, x.lastIndexOf(",")); 
             w.write(z + "\n"); 
+            printUnlockedExits(w);
             w.write("---\n");          
         }
     }
     
+    void printUnlockedExits(PrintWriter w)
+    {
+        String directions = ""; 
+        for(Exit exit : this.roomExits)
+        {
+            if(!exit.getLockedObject().equals(""))
+            {   
+                if(!exit.isLocked())
+                {
+                    directions = directions + exit.getDir() + ",";
+                }
+            }
+        }
+        if(directions.length() > 1)
+        {
+            w.write("UnlockedExits: ");
+            w.write(directions.substring(0, directions.lastIndexOf(","))  + "\n"); 
+        }
+    }
+
     /**
      * Hydration method to restore game from save file. 
      * 
@@ -311,10 +335,12 @@ public class Room
     {
         String pattern2 = "Contents:";
         String pattern3 = "NPCs:"; 
+        String pattern4 = "UnlockedExits:";
         Pattern p = Pattern.compile(pattern2);
         Pattern pp = Pattern.compile(pattern3); 
+        Pattern unlocked = Pattern.compile(pattern4);
         GameState gs = GameState.instance(); 
-        
+
         if(r.nextLine().equals("beenHere=true"))
         {
             this.beenHere = true;
@@ -355,9 +381,26 @@ public class Room
                 }
             }
         }
+        if(r.hasNext(unlocked))
+        {
+            String sub = r.nextLine();//entire line
+            String [] parts = sub.split(" "); //split by spaces
+            String sub2 = parts[1]; //unlocked directions
+            String [] pieces = sub2.split(","); //split by commas
+            for(String string : pieces)
+            {
+                for(Exit exit : roomExits)
+                {
+                    if(exit.getDir().equals(string))
+                    {
+                        exit.unlock();
+                    }
+                }
+            }
+        }
         r.nextLine(); 
     }
-    
+
     /**
      * Adds an item to the roomItems array list.
      * 
@@ -367,7 +410,7 @@ public class Room
     {
         this.roomItems.add(item); 
     }
-    
+
     /**
      * Removes an item from the roomItems array list.
      * 
@@ -377,7 +420,7 @@ public class Room
     {
         this.roomItems.remove(item); 
     }
-    
+
     /**
      * 
      */
@@ -419,5 +462,5 @@ public class Room
     {
         this.npcHere.remove(npc); 
     }
-    
+
 }

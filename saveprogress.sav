@@ -1,14 +1,17 @@
 Group Bork v1.0 save data
 Dungeon file: /spacehulk.bork
 Room states:
-Decon Secundus:
-beenHere=false
-NPCs: OrkNob
----
 Engine Control:
 beenHere=true
-Contents: orkglyph2,combatdrugs,holoplinth
-NPCs: OrkBoy
+Contents: holoplinth,orkglyph2,combatdrugs,oldrustedkey,boltpistol
+---
+Corridor Delta Eng (N):
+beenHere=false
+Contents: redcaccard
+---
+Decon Primus:
+beenHere=false
+NPCs: Squig
 ---
 Aft Propellant Plenum Exchange:
 beenHere=false
@@ -20,14 +23,23 @@ Contents: chainsword
 ---
 Equipment Locker:
 beenHere=false
-Contents: datacoil,servoskull1,battlestims
+Contents: datacoil,servoskull1,battlestims,reactorkey
+---
+Corridor Theta Eng (S):
+beenHere=true
+NPCs: OrkNob
+UnlockedExits: n
 ---
 Corridor Bravo Eng:
 beenHere=false
-Contents: boltpistol
-NPCs: Squig
+NPCs: OrkBoy
 ---
 Intersection Epsilon Eng:
+beenHere=true
+Contents: powerpack
+UnlockedExits: s
+---
+Corridor Theta Eng (N):
 beenHere=true
 ---
 Reactor Entrance West:
@@ -36,12 +48,18 @@ Contents: servoskull2
 ---
 ===
 Adventurer:
-Current room: Engine Control
-Health: 24.5
-Score: 75
-Inventory: powerpack,dataslate
+Current room: Corridor Theta Eng (S)
+Health: 24.375
+Score: 0
+Inventory: greencaccard
 ===
 NPC States:
+Squig
+5
+isMobile=true
+isAngered=true
+Carries: squigbomb
+---
 OrkNob
 100
 isMobile=true
@@ -52,18 +70,12 @@ OrkBoy
 20
 isMobile=true
 isAngered=false
-Carries: smallbag,orkglyph
----
-Squig
-5
-isMobile=true
-isAngered=true
-Carries: squigbomb
+Carries: smallbag,orkglyph,dataslate
 ---
 ===
 Holoplinth State:
-isLocked=false
+isLocked=true
 ===
 DataSlate State:
-isLocked=false
+isLocked=true
 ===
