@@ -171,6 +171,7 @@ public class Dungeon
      */
     public void setEntry(Room rm)
     {
+        gs.entryRoom = rm;
         this.entry = rm;  
     }    
     

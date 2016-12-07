@@ -17,11 +17,11 @@ class CommandFactory
     public static List<String> DROP_COMMANDS = Arrays.asList("drop", "Drop", "DROP"); 
     public static List<String> QUIT_COMMANDS = Arrays.asList("q", "quit"); 
     public static List<String> GENERAL_COMMANDS = Arrays.asList("exits", "look");
+    public static List<String> RELOAD_COMMANDS = Arrays.asList("reload", "restart");
     public static List<String> INV_COMMANDS = Arrays.asList("i", "inventory"); 
     public static List<String> SCORE_COMMANDS = Arrays.asList("score", "Score", "SCORE");
     public static List<String> HEALTH_COMMANDS = Arrays.asList("health", "Health", "HEALTH");
     public static List<String> ATTACK_COMMANDS = Arrays.asList("attack", "Attack", "ATTACK", "fight", "Fight", "FIGHT");
-    public static List<String> UNLOCK_COMMANDS = Arrays.asList("unlock", "Unlock", "UNLOCK");
     public static List<String> AVAIL_VERBS = new ArrayList<>(); 
     GameState gs = GameState.instance(); 
     /**
@@ -60,9 +60,15 @@ class CommandFactory
                 MovementCommand move = new MovementCommand(string);            
                 return move; 
             }
+            else if(RELOAD_COMMANDS.contains(string))
+            {
+                ReloadCommand reload = new ReloadCommand(string); 
+                return reload; 
+            }
             else if(SAVE_COMMANDS.contains(string))
             {
-                SaveCommand save = new SaveCommand("saveprogress.sav"); 
+                SaveCommand save = new SaveCommand("saveprogress.sav");
+                gs.saveFile = "saveprogress.sav";
                 return save; 
             }
             else if(INV_COMMANDS.contains(string))
@@ -104,11 +110,6 @@ class CommandFactory
             {
                 StealCommand steal = new StealCommand(commandString); 
                 return steal; 
-            }
-            else if(UNLOCK_COMMANDS.contains(string))
-            {
-                UnlockCommand unlock = new UnlockCommand(commandString); 
-                return unlock; 
             }
             else if(ATTACK_COMMANDS.contains(string)){
                 AttackCommand attack = new AttackCommand(commandString);
