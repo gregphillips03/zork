@@ -71,6 +71,8 @@ oldrustedkey 0
 ---
 reactorkey 0
 ---
+silvercoin 0
+---
 ===
 Rooms:
 Engine Control
@@ -129,6 +131,7 @@ Primary decontamination chamber for reactor room.
 A large, ceramite door leads to ship's reactor room.
 ---
 Decon Secundus
+Contents: silvercoin
 Secondary decontamination chamber for reactor room.
 A large, ceramite door leads to ship's reactor room.
 ---
@@ -309,11 +312,11 @@ Reactor Room NW Corner
 ---
 Reactor Room NE Corner
 w
-Nozzle Array
+Nozzle Array:locked:strangedoor:silvercoin 
 ---
 Nozzle Array
 e
-Reactor Room NE Corner
+Reactor Room NE Corner:locked:strangedoor:silvercoin
 ---
 Nozzle Array
 s
