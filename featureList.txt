@@ -134,3 +134,39 @@ Thought for the day: Don't try to pick pocket Orks, unless your willing to pay t
 --- 
 
 Locked Doors(Shane)
+
+Locked doors adds a bit of a challenge to our game. As you go through the dungeon, you will encounter doors that you cannot pass through 
+unless you have the key specific to that door. There are certain items that act as keys and there are specific doors that can be
+unlocked with those specific keys. The basic idea is if you are in a room, and you type ’n’, it will say, this door is locked and you can type 
+this exact phrase: “unlock door with key”. The 2 things you will change in that statement are “door” and “key”. The name of the door is different
+(because different rooms have different doors) and different keys unlock those different doors. 
+Some examples of this are:
+unlock door with greencaccard
+unlock heavymetaldoor with oldrustedkey
+unlock reactordoor with reactor key
+etc…
+
+Once you unlock a door, it will stay open so you do not need to reopen it. If you save and restart from that save file, the doors will be unlocked. Here is a breakdown of which door is in which room and 
+which key unlocks that door. I have also included Room Diagram(1).PNG which shows these exits 
+
+Intersection Gamma Eng north exit - heavymetaldoor - oldrustedkey
+Corridor Delta Eng(N) south exit- heavymetaldoor - oldrustedkey
+
+Intersection Gamma Eng south exit - door - greencaccard
+Corridor Delta Eng(S) north exit - door - greencaccard
+
+Corridor Theta Eng(S) north exit - door - greencaccard
+Intersection Epsilon Eng south exit - door - greencaccard
+
+Decon Primus west exit - reactordoor - reactorkey
+Reactor Entrance east east exit - reactordoor - reactorkey
+
+Reactor Room NE Corner west exit - strangedoor - silvercoin
+Nozzle Array east exit - strange - silvercoin
+
+Nozzle Array south exit - door - redcaccard
+Reactor Floor north exit - door - redcaccard
+
+I’ll let you figure out where the keys are :)
+
+--- 
