@@ -173,7 +173,16 @@ I’ll let you figure out where the keys are :)
 
 Combat (Corey)
 
-Combat occurs when the player attacks an NPC. This can be triggered using variations of ‘fight’ and ‘attack’ and prompts the user to give their intended target and the weapon they want to use. Once combat begins, the player does damage proportional to their item’s ability (if the item is a weapon) or their item’s weight (if the item is not a weapon). If the enemy is not killed, the player then takes health damage from that enemy and are given the opportunity to move or attack, again being prompted for target and weapon (to account for fighting multiple enemies). Combat can be tested in the first room. To do this, type “take combatdrugs” to pick up the item. Once this is done, enter “attack OrkBoy”. When prompted for a weapon, type “combatdrugs”. 
+Combat occurs when the player attacks an NPC. 
+This can be triggered using variations of ‘fight’ and ‘attack’ and prompts the user to give their intended target and
+the weapon they want to use. Once combat begins, the player does damage proportional to their item’s ability 
+(if the item is a weapon) or their item’s weight (if the item is not a weapon). 
+If the enemy is not killed, the player then takes health damage from that enemy and are 
+given the opportunity to move or attack, again being prompted for target and weapon 
+(to account for fighting multiple enemies). Combat can be tested in the first room. 
+To do this, type “take combatdrugs” to pick up the item. 
+Once this is done, enter “attack OrkBoy”. 
+When prompted for a weapon, type “combatdrugs”. 
 While using weapons will be much more effective, you have just engaged in combat! 
 
 ---
