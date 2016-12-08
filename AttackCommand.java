@@ -2,8 +2,8 @@
 /**
  * Write a description of class AttackCommand here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Corey Staier 
+ * @version 7 December 2016
  */
 import java.util.*; 
 import java.io.*; 
@@ -12,7 +12,7 @@ public class AttackCommand extends Command
     private String npcName = ""; 
     Denizen target;
     /**
-     * Constructor for objects of Class StealCommand
+     * Constructor for objects of Class AttackCommand
      * 
      * @param f     Filename of save file
      */
@@ -20,14 +20,6 @@ public class AttackCommand extends Command
     {
         this.npcName = npcName; 
     }
-    
-    /**
-     * Random number generator
-     * 
-     * @param min   Bottom limit for random number
-     * @param max   Upper limit fo random number
-     * @return      randomly generated integer
-     */   
     /**
      * Takes String input and splits it, asking for more input if more is needed to complete attack command
      * 
