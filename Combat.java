@@ -46,6 +46,7 @@ public class Combat
         }
         else{
             int playerHealth = (int)gs.getHealth();
+            System.out.println("You have done " + damageDoable + " damage to your target.");
             gs.setHealth(playerHealth - 5);
             System.out.println("The " + this.target.getName() + " attacks, dealing 5 damage.");
             if(gs.getHealth() <= 0){
