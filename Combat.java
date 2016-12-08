@@ -3,14 +3,12 @@ import java.io.*;
  * Combat handles logic of Player/NPC combat encounters
  * 
  * @author Corey Staier
- * @version Zork v1
+ * @version Zork v1 7 December 2016
  */
 public class Combat 
 {
     private int playerHealth;
     private int attackerName;
-    private String winText;
-    private String lossText;
     private Boolean victory;
     private boolean testValue = true;
     /**
