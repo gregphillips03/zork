@@ -186,3 +186,19 @@ When prompted for a weapon, type “combatdrugs”.
 While using weapons will be much more effective, you have just engaged in combat! 
 
 ---
+
+Reload (Josh)
+
+Reload is a function built into the game that allows the user to revert to the most recently created save file
+this is useful for a plethora of reasons but most importantly its there to allow forgiveness if the player choses so.
+lets say your playing and having the greatest game of your life, you have all the best items/weapons and the highest score then BAM
+you die to some random event or are killed by an enemy. well thankfully for you, you remembered to save the game a few turns ago and all you need to do is call the 'reload' or 'restart' command and then you are fully loaded back safe and sound.
+
+---
+
+Random Event (Josh)
+
+The random event is built into the game to add some depth, allow for some variance, and to make the game feel more intreactive.
+everytime the player presses enter on the keyboard a counter is increased by 1, whenever the counter is an even number a random number is then generated. that random number is what dictates whether or not a random event occurs on that turn, there are a total of 10 random events that can occur over the course of the game, some of them can happen semi frequently and others could possibly never happen to you even over mulitple play throughs of the game, which may be a good thing as the super rare events typically kill you. Most events only trigger a text output for the player to read, but some affect the health of the player. In one event the player gets lost due to confusion and ends up back at the start of the dungeon.
+
+---
